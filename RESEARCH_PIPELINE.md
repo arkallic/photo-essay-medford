@@ -15,18 +15,38 @@ The work was done in one long conversation (Oct 10–11, 2026) between the photo
 - **Decided what counts as a service, and how each is shown.**
   - Chose which places to add: the employment department, city hall, the park along S Ivy, Health & Human Services, St Mark's, First Presbyterian, Bank of America, the old library, McLoughlin field, the Lausmann Annex, and others.
   - Chose which to merge: the courthouse and county offices.
-  - Picked the icons (crosses for churches, scales for courts, a running man for the YMCA, trees for parks, an apple for the food pantry, buses for stops) and their sizes and colours.
+  - Picked the icons and their sizes and colours:
+    - crosses for churches;
+    - a government-building icon, based on an example image they supplied;
+    - scales for courts;
+    - a running man for the YMCA;
+    - trees for parks;
+    - a school icon;
+    - a medical cross for clinics;
+    - a clearer apple for the food pantry;
+    - a money sign for the bank;
+    - a recreation icon for the school field;
+    - bus icons, first small cars, then larger buses in their own bubble and in a colour that stands out.
+  - Asked for the jail dot to be removed.
   - Corrected how places were described (for example, the sheriff entry is a jail with some sheriff staff).
 - **Defined the categories and chose what to measure, how to measure it, and how to show it.** The full list is in [Measurements and statistics the photographer chose](#measurements-and-statistics-the-photographer-chose) below.
 - **Directed the research and how it was done.**
-  - Asked for business vs. house to be verified, and approved downloading the Jackson County assessor data to do it.
+  - Asked for business vs. house to be verified. They first asked whether Google Maps could be used, then approved downloading the Jackson County assessor data instead.
   - Asked how we know the county map server really belongs to Jackson County, and for proof.
   - Asked for every formula to be written down with sources proving it.
+- **Designed the page.**
+  - Icons must never overlap the photo numbers or each other. Popups show the name only.
+  - The page has an icon legend and a building colour key.
+  - Icon sizes were set at the zoom level they planned to use for screenshots.
+  - The list is compressed to fit a reasonable screenshot.
+  - The stats sit under the map in a drawer that covers most of the window. A button that is always visible opens it, and it starts closed on every load.
+  - The map opens fully zoomed out on a computer and closer in on a phone.
 - **Reviewed every version.** Checked the map in the browser and reported problems: overlapping icons, the zoom limits, the map not fitting smaller windows, a stats drawer that was too short, and wording that was confusing or wrong.
 - **Set the rules for the files.**
   - Keep only the final map.
   - Rename it, and organise everything behind it into `raw data`.
   - Write `SOURCES.md` and these documents.
+  - Publish it all on GitHub, with a public web page for the map.
   - Never delete permanently; move things to the Trash.
   - Never download owner names or addresses.
   - Leave the photographer's own folders (`photos/`, `preview screenshots/`) untouched.
