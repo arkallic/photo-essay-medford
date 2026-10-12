@@ -1,0 +1,296 @@
+1: <!doctype html>
+2: <html lang="en">
+3: <head>
+4: <meta charset="utf-8">
+5: <meta name="viewport" content="width=device-width, initial-scale=1">
+6: <title>Services Along Walk</title>
+7: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+8: <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+9: <style>
+10:   :root { --bg:#faf8f5; --fg:#1f1d1a; --muted:#6b665e; --accent:#d9480f; --zone:#2b6cb0; --card:#fff; --line:#e6e1d9; }
+11:   @media (prefers-color-scheme: dark) {
+12:     :root:not([data-theme="light"]) { --bg:#171614; --fg:#eeeae4; --muted:#a39d93; --accent:#ff7a3d; --zone:#5b9bd5; --card:#22201d; --line:#34312c; }
+13:   }
+14:   :root[data-theme="dark"] { --bg:#171614; --fg:#eeeae4; --muted:#a39d93; --accent:#ff7a3d; --zone:#5b9bd5; --card:#22201d; --line:#34312c; }
+15:   * { box-sizing:border-box; }
+16:   html, body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+17:     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+18:   .layout { display:block; }
+19:   #map { height:72vh; min-height:420px; }
+20:   aside { border-top:1px solid var(--line); padding:20px 24px 28px; max-width:1240px; margin:0 auto; }
+21:   h1 { font-size:20px; margin:0 0 4px; }
+22:   .sub { color:var(--muted); font-size:13px; margin:0 0 16px; line-height:1.4; }
+23:   #list { margin-top:12px; }
+24:   #list h3 { font-size:13px; margin:14px 0 8px; padding-top:10px; border-top:1px solid var(--line); }
+25:   #list h3:first-child { margin-top:0; padding-top:0; border-top:0; }
+26:   #list h3 span { font-weight:400; color:var(--muted); }
+27:   #list .cols { columns:250px auto; column-gap:20px; }
+28:   #list .grp { break-inside:avoid; margin-bottom:10px; }
+29:   h2 { font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 3px;
+30:     display:flex; align-items:center; gap:6px; }
+31:   .dot { width:10px; height:10px; border-radius:50%; display:inline-block; flex-shrink:0; }
+32:   .svc { padding:2px 4px; margin:0 -4px; border-radius:4px; cursor:pointer; font-size:12.5px; line-height:1.35; }
+33:   .svc:hover, .svc.active { background:var(--card); box-shadow:inset 0 0 0 1px var(--accent); }
+34:   .svc .nm { font-weight:600; }
+35:   .svc .meta { color:var(--muted); font-size:11.5px; }
+36:   .pin { background:var(--accent); color:#fff; border:2px solid #fff; border-radius:50%;
+37:     width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+38:     font-weight:700; font-size:13px; box-shadow:0 1px 4px rgba(0,0,0,.4); }
+39:   /* --s shrinks every marker together when zoomed out */
+40:   #map { --s:1; }
+41:   .zone { opacity:.32; }
+42:   .ic { width:22px; height:22px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center;
+43:     box-shadow:0 1px 3px rgba(0,0,0,.45); }
+44:   .ic svg { width:15px; height:15px; fill:currentColor; display:block; }
+45:   .ic svg.big { width:19px; height:19px; }
+46:   .ic.bus { width:26px; height:26px; color:#212529; border:2px solid #212529; }
+47:   .ic.bus svg { width:17px; height:17px; }
+48:   .li-ic { width:13px; height:13px; fill:currentColor; vertical-align:-2px; margin-right:4px; }
+49:   .pin, .ic, .blk { transform:scale(var(--s)); transform-origin:center; }
+50:   .leaflet-popup-content { margin:10px; }
+51:   .leaflet-popup-content img { width:240px; border-radius:6px; display:block; }
+52:   .icon-key { background:rgba(255,255,255,.95); color:#1f1d1a; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,.3);
+53:     font:11.5px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width:290px; }
+54:   .icon-key summary { cursor:pointer; font-weight:600; padding:5px 9px; list-style:none; }
+55:   .icon-key summary::-webkit-details-marker { display:none; }
+56:   .icon-key summary::after { content:" ▾"; color:#888; }
+57:   .icon-key:not([open]) summary::after { content:" ▸"; }
+58:   .icon-key .rows { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:3px 10px; padding:0 9px 7px; }
+59:   .icon-key .row { display:flex; align-items:center; gap:5px; line-height:1.2; min-width:0; }
+60:   .icon-key .ic, .icon-key .pin { transform:none; width:17px; height:17px; flex-shrink:0; box-shadow:0 0 0 1px rgba(0,0,0,.15); }
+61:   .icon-key .ic svg { width:12px; height:12px; }
+62:   .icon-key .ic.bus { border-width:1.5px; }
+63:   .icon-key .pin { font-size:9px; border-width:1.5px; }
+64:   .homes { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:6px; }
+65:   .homes-d { font-size:12px; color:var(--muted); line-height:1.45; margin-top:2px; }
+66:   .homes-d b { color:var(--fg); }
+67:   .sum { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin-bottom:8px; }
+68:   .stats { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin:0 0 10px; }
+69:   .howto { font-size:12px; color:var(--muted); line-height:1.45; margin:4px 0 8px; }
+70:   .howto b { color:var(--fg); }
+71:   .tile { border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); }
+72:   .t-h { font-weight:600; font-size:12.5px; line-height:1.25; }
+73:   .t-note { display:block; font-weight:400; color:var(--muted); font-size:11px; }
+74:   .t-big { font-size:20px; font-weight:700; line-height:1.2; margin:2px 0 3px; }
+75:   .t-big span { font-size:12px; font-weight:500; color:var(--muted); }
+76:   .t-l { font-size:11.5px; color:var(--muted); line-height:1.45; }
+77:   .t-l b { color:var(--fg); }
+78:   .src { font-size:11px; color:var(--muted); margin-top:20px; line-height:1.4; }
+79:   .src a { color:inherit; }
+80:   /*HOMES_CSS*/
+81:   @media (max-width: 760px) {
+82:     #map { height:60vh; min-height:320px; }
+83:     aside { padding:16px 14px 24px; }
+84:     .leaflet-popup-content img { width:200px; }
+85:     .icon-key { max-width:250px; font-size:11px; }
+86:   }
+87: </style>
+88: </head>
+89: <body>
+90: <div class="layout">
+91:   <div id="map"></div>
+92:   <aside>
+93:     <h1>Services Along the Walk</h1>
+94:     <p class="sub">The shaded area covers the loop of the walking route plus about 150 m (≈500 ft) outside it. It bulges out in three spots to take in nearby services (the Education Service District and Holly Theater, Medford Police, and Station 71five with its bus stop) and is trimmed around two lone houses at its edge. Every number below counts only what is inside the shading. Medford, OR.</p>
+95:     <div class="homes">
+96:       <div class="sum">
+97:         <div class="tile sum-t"><div class="t-h">Homes</div><div class="t-big">≈ 640</div><div class="t-l">497 houses<br>92 duplex–fourplex<br>50 apartment bldgs</div></div>
+98:         <div class="tile sum-t"><div class="t-h">Shaded area</div><div class="t-big">≈ 214</div><div class="t-l">acres<br>≈ 0.33 sq mi</div></div>
+99:         <div class="tile sum-t"><div class="t-h">Density</div><div class="t-big">≈ 3</div><div class="t-l">homes per acre<br>of shaded area</div></div>
+100:         <div class="tile sum-t"><div class="t-h">Other buildings</div><div class="t-big">98</div><div class="t-l">39 businesses<br>59 public buildings<br>+ 225 garages/sheds (not counted)</div></div>
+101:       </div>
+102: [long line len 445]       <div class="howto"><b>Reading the tiles:</b> walk times run from each home to its <i>nearest</i> one inside the shading. <b>Typical home</b> is the middle home (half walk less, half more). <b>Fa
+103:       <div class="stats">
+104:         <div class="tile"><div class="t-h">Services <span class=t-note>map icons, not bus stops</span></div><div class="t-big">29<span> inside</span></div><div class="t-l">1 per ≈ 7 acres<br>≈ 22 homes each<br>Typical home: <b>≈ 4 min</b> walk<br>Farthest home: ≈ 10 min<br><b>100%</b> of homes within 10 min</div></div>
+105:         <div class="tile"><div class="t-h">Bus stops <span class=t-note>each side of the street counts</span></div><div class="t-big">9<span> inside</span></div><div class="t-l">1 per ≈ 24 acres<br>≈ 71 homes each<br>Typical home: <b>≈ 7 min</b> walk<br>Farthest home: ≈ 15 min<br><b>78%</b> of homes within 10 min</div></div>
+106:         <div class="tile"><div class="t-h">Government & courts</div><div class="t-big">9<span> inside</span></div><div class="t-l">1 per ≈ 24 acres<br>≈ 71 homes each<br>Typical home: <b>≈ 8 min</b> walk<br>Farthest home: ≈ 18 min<br><b>74%</b> of homes within 10 min</div></div>
+107:         <div class="tile"><div class="t-h">Health & social</div><div class="t-big">5<span> inside</span></div><div class="t-l">1 per ≈ 43 acres<br>≈ 130 homes each<br>Typical home: <b>≈ 8 min</b> walk<br>Farthest home: ≈ 16 min<br><b>73%</b> of homes within 10 min</div></div>
+108:         <div class="tile"><div class="t-h">Parks & open space <span class=t-note>2 parks + school field; YMCA not counted</span></div><div class="t-big">3<span> inside</span></div><div class="t-l">1 per ≈ 71 acres<br>≈ 210 homes each<br>Typical home: <b>≈ 7 min</b> walk<br>Farthest home: ≈ 19 min<br><b>73%</b> of homes within 10 min</div></div>
+109:         <div class="tile"><div class="t-h">Places of worship</div><div class="t-big">5<span> inside</span></div><div class="t-l">1 per ≈ 43 acres<br>≈ 130 homes each<br>Typical home: <b>≈ 9 min</b> walk<br>Farthest home: ≈ 17 min<br><b>55%</b> of homes within 10 min</div></div>
+110:         <div class="tile"><div class="t-h">Banking & finance</div><div class="t-big">2<span> inside</span></div><div class="t-l">1 per ≈ 107 acres<br>≈ 320 homes each<br>Typical home: <b>≈ 16 min</b> walk<br>Farthest home: ≈ 25 min<br><b>13%</b> of homes within 10 min</div></div>
+111:         <div class="tile"><div class="t-h">Education</div><div class="t-big">2<span> inside</span></div><div class="t-l">1 per ≈ 107 acres<br>≈ 320 homes each<br>Typical home: <b>≈ 7 min</b> walk<br>Farthest home: ≈ 19 min<br><b>70%</b> of homes within 10 min</div></div>
+112:         <div class="tile"><div class="t-h">Businesses <span class=t-note>business buildings (county records); not listed below</span></div><div class="t-big">39<span> buildings</span></div><div class="t-l">1 per ≈ 5 acres<br>≈ 16 homes each<br>Typical home: <b>≈ 5 min</b> walk<br>Farthest home: ≈ 14 min<br><b>90%</b> of homes within 10 min</div></div>
+113:         <div class="tile"><div class="t-h">Streets <span class="t-note">road access inside the shading</span></div><div class="t-big">≈ 8.3<span> mi of streets</span></div><div class="t-l">+ ≈ 3.7 mi of alleys<br>75 intersections (3+ way)<br>≈ 220 intersections per sq mi<br>≈ 77 homes per street mile</div></div>
+114:       </div>
+115:       <div class="homes-d"><i>Approximate, shaded area only.</i> Homes: Jackson County assessor records matched to building outlines; each building counts as one home (a duplex or apartment building is one). Density uses the whole shaded area, streets and public land included. Businesses and public buildings are county building types and are counted, not listed.</div>
+116:     </div>
+117:     <div id="list"></div>
+118:     <p class="src">Place data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, downloaded Oct 11, 2026. Businesses not mapped in OpenStreetMap won't appear. Home counts and building types from Jackson County Assessor &amp; GIS records (property and building class codes), Oct 11, 2026.</p>
+119:   </aside>
+120: </div>
+121: <script>
+122:   const stops = [
+123: [long line len 348493]     { n:1, lat:42.32662167, lng:-122.88713833, time:"3:38 PM", src:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICK
+124: [long line len 338913]     { n:2, lat:42.32378000, lng:-122.88760333, time:"3:43 PM", src:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICK
+125: [long line len 234861]     { n:3, lat:42.32367833, lng:-122.88433000, time:"3:48 PM", src:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICK
+126: [long line len 351545]     { n:4, lat:42.32258333, lng:-122.87790500, time:"3:59 PM", src:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICK
+127: [long line len 191345]     { n:5, lat:42.32481333, lng:-122.87884500, time:"4:30 PM", src:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICK
+128: [long line len 339989]     { n:6, lat:42.32836667, lng:-122.88093667, time:"4:37 PM", src:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICK
+129:   ];
+130: [long line len 642]   const route = [[42.32662, -122.88716], [42.325946, -122.887235], [42.325922, -122.887524], [42.323788, -122.887588], [42.323724, -122.884324], [42.323724, -122.879208], [42.32251, -122.879208], [42.
+131: [long line len 4722]   const zoneRings = [[[42.3211423, -122.8792656], [42.3211521, -122.8794354], [42.3211699, -122.879581], [42.3212022, -122.8797508], [42.3212405, -122.8798964], [42.3212896, -122.880042], [42.3213507,
+132: [long line len 8991]   const services = [{"name": "First Presbyterian Church", "kind": "amenity=place_of_worship", "lat": 42.324193, "lng": -122.874986, "addr": "85 South Holly Street", "osm": "way/953191379", "phone": "+
+133: [long line len 901]   const busStops = [{"name": "Hamilton and West Main - Probation Office", "ref": "220140", "lat": 42.3232804, "lng": -122.8852733}, {"name": "W Main St - East of Summit Ave", "ref": "220150", "lat": 4
+134:   const marks = [];   // everything the declutter keeps apart: photo pins (fixed), icons and bus stops, block bubbles
+135: 
+136:   const COLORS = {
+137:     "Health & social services": "#c2255c", "Government & courts": "#5f3dc4", "Education": "#1971c2", "Places of worship": "#7a5c2e",
+138:     "Recreation & parks": "#2b8a3e", "Banking & finance": "#0c8599", "Arts & culture": "#e67700"
+139:   };
+140: 
+141:   // How far out you can look: west to N Ross Ln, east to E 9th St (north/south kept in proportion).
+142:   const VIEW = L.latLngBounds([[42.3170, -122.8994], [42.3340, -122.8693]]);
+143:   const map = L.map("map", { zoomSnap: 0.25, zoomDelta: 0.5, maxBounds: VIEW, maxBoundsViscosity: 1 });
+144:   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+145:     maxZoom: 19, attribution: "&copy; OpenStreetMap contributors"
+146:   }).addTo(map);
+147:   const fitMinZoom = () => map.setMinZoom(map.getBoundsZoom(VIEW, true));
+148: 
+149:   const css = getComputedStyle(document.documentElement);
+150:   const accent = css.getPropertyValue("--accent").trim();
+151:   const zoneColor = css.getPropertyValue("--zone").trim();
+152: 
+153:   // Shaded zone: the exact outline used for every count (band + local bulges - small notches).
+154:   L.polygon(zoneRings, { color: zoneColor, weight: 1, opacity: 1, fillColor: zoneColor, fillOpacity: 1, interactive: false, className: "zone" }).addTo(map);
+155:   /*HOMES_LAYERS*/
+156:   const path = L.polyline(route, { color: accent, weight: 4, opacity: .9, lineJoin: "round", lineCap: "round" }).addTo(map);
+157: 
+158:   stops.forEach(s => {
+159:     const m = L.marker([s.lat, s.lng], {
+160:       icon: L.divIcon({ className: "", html: `<div class="pin">${s.n}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] }),
+161:       zIndexOffset: 1000
+162:     }).addTo(map).bindPopup(`<img src="${s.src}" alt="Photo ${s.n}"><b>Photo #${s.n} · ${s.time}</b>`);
+163:     marks.push({ m, ll: L.latLng(s.lat, s.lng), kind: "pin" });
+164:   });
+165: 
+166:   // Glyphs (24×24): building/runner/tree/cap/dollar/bus/book adapted from Material Icons (Apache 2.0); cross, scales, apple and track drawn here.
+167:   const ICONS = {
+168:     cross: `<svg viewBox="0 0 24 24"><rect x="10" y="2" width="4" height="20" rx=".6"/><rect x="5" y="6.5" width="14" height="4" rx=".6"/></svg>`,
+169:     gov: `<svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/></svg>`,
+170:     scales: `<svg viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.7"/><rect x="11" y="4" width="2" height="15"/><rect x="3" y="5.6" width="18" height="1.8" rx=".9"/><rect x="7" y="19" width="10" height="2.4" rx="1"/><path d="M5 7.2 2 14h1.4L5 10.3 6.6 14H8L5 7.2Zm14 0L16 14h1.4l1.6-3.7 1.6 3.7H22l-3-6.8Z"/><path d="M1.6 14h6.8a3.4 3 0 0 1-6.8 0Zm14 0h6.8a3.4 3 0 0 1-6.8 0Z"/></svg>`,
+171:     run: `<svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>`,
+172:     medical: `<svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>`,
+173:     school: `<svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>`,
+174: [long line len 425]     apple: `<svg class="big" viewBox="0 0 24 24"><path fill="#e03131" d="M12 8.2c-1.8-1.3-4.1-1.6-5.8-.7C3.4 9 2.5 12.4 3.5 15.8c1 3.5 3.4 6.4 5.6 6.4 1.2 0 1.8-.6 2.9-.6s1.7.6 2.9.6c2.2 0 4.6-2.9 5.6
+175: [long line len 402]     money: `<svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 
+176:     people: `<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`,
+177:     shield: `<svg viewBox="0 0 24 24"><path d="M12 1.5 3.5 4.8v6.1c0 5.3 3.6 10.2 8.5 11.6 4.9-1.4 8.5-6.3 8.5-11.6V4.8L12 1.5Z"/><path fill="#fff" d="m12 6.8 1.5 3.1 3.4.5-2.5 2.4.6 3.4-3-1.6-3 1.6.6-3.4-2.5-2.4 3.4-.5Z"/></svg>`,
+178:     mask: `<svg viewBox="0 0 24 24"><path d="M4 3h16v8.5C20 16.7 16.4 21 12 21s-8-4.3-8-9.5V3Z"/><path fill="#fff" d="M7 8.2c.7-1 2.6-1 3.3 0-.5 1.2-2.8 1.2-3.3 0Zm6.7 0c.7-1 2.6-1 3.3 0-.5 1.2-2.8 1.2-3.3 0ZM7.8 13h8.4c-.6 2.4-2.2 3.8-4.2 3.8s-3.6-1.4-4.2-3.8Z"/></svg>`,
+179:     tree: `<svg viewBox="0 0 24 24"><path d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.95v-4H21l-4-6z"/></svg>`,
+180:     track: `<svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="6.5" y="9" width="11" height="6" rx="3"/></svg>`,
+181: [long line len 445]     book: `<svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 2
+182:     bus: `<svg viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/></svg>`
+183:   };
+184:   const ICON_LABEL = { cross: "Church", gov: "Government office", scales: "Court", shield: "Jail / police", medical: "Medical clinic",
+185:     apple: "Food pantry", people: "Community center", school: "School", tree: "Park", track: "Field & track", run: "Fitness center",
+186:     money: "Bank / finance", mask: "Theater", book: "Library (historic)" };
+187: 
+188:   const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+189: 
+190:   busStops.forEach(b => {
+191:     const m = L.marker([b.lat, b.lng], {
+192:       icon: L.divIcon({ className: "", html: `<div class="ic bus">${ICONS.bus}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] }),
+193:       title: `Bus stop: ${b.name}`
+194:     }).addTo(map).bindPopup(`<b>${esc(b.name)}</b>`);
+195:     addMark(m, b, "icon");
+196:   });
+197: 
+198:   const list = document.getElementById("list");
+199:   const items = [];
+200:   // Sections use the same inside/outside rule as the stats; the "nearby" section only appears if something is outside.
+201:   const sections = [[true, "Inside the shaded area", "counted in the stats"], [false, "Nearby, outside the shading", "not counted"]].map(([inside, title, sub]) => {
+202:     const n = services.filter(s => s.inside === inside).length;
+203:     if (!n) return null;
+204:     const h3 = document.createElement("h3");
+205:     h3.innerHTML = `${title} (${n}) <span>· ${sub}</span>`;
+206:     const cols = document.createElement("div");
+207:     cols.className = "cols";
+208:     list.append(h3, cols);
+209:     return { inside, cols };
+210:   }).filter(Boolean);
+211:   Object.keys(COLORS).forEach(cat => sections.forEach(({ inside, cols }) => {
+212:     const group = services.filter(s => s.cat === cat && s.inside === inside).sort((a, b) => a.name.localeCompare(b.name));
+213:     if (!group.length) return;
+214:     const grp = document.createElement("div");
+215:     grp.className = "grp";
+216:     grp.innerHTML = `<h2><span class="dot" style="background:${COLORS[cat]}"></span>${esc(cat)} (${group.length})</h2>`;
+217:     cols.appendChild(grp);
+218:     group.forEach(s => {
+219:       const m = L.marker([s.lat, s.lng], {
+220:         icon: L.divIcon({ className: "", html: `<div class="ic" style="color:${COLORS[cat]}">${ICONS[s.icon]}</div>`, iconSize: [22, 22], iconAnchor: [11, 11] }),
+221:         title: s.name
+222:       }).addTo(map).bindPopup(`<b>${esc(s.name)}</b>`);
+223:       addMark(m, s, "icon");
+224:       const el = document.createElement("div");
+225:       el.className = "svc";
+226:       el.innerHTML = `<span class="nm">${ICONS[s.icon].replace("<svg ", `<svg class="li-ic" style="color:${COLORS[cat]}" `)}${esc(s.name)}</span> ${s.note ? `<span class="meta">${esc(s.note)}</span>` : ""}`;
+227:       el.onclick = () => { map.setView([s.lat, s.lng], 18); m.openPopup(); };
+228:       m.on("popupopen", () => { items.forEach(x => x.classList.remove("active")); el.classList.add("active"); });
+229:       items.push(el);
+230:       grp.appendChild(el);
+231:     });
+232:   }));
+233: 
+234:   // Icon legend (only the icons on this map), collapsible.
+235:   const iconKey = L.control({ position: "topright" });
+236:   iconKey.onAdd = () => {
+237:     const d = L.DomUtil.create("details", "icon-key"); d.open = true;
+238:     const used = [...new Set(services.map(s => s.icon))];
+239:     const color = k => COLORS[(services.find(s => s.icon === k) || {}).cat] || "#333";
+240:     d.innerHTML = `<summary>Map icons</summary><div class="rows">` +
+241:       `<div class="row"><span class="pin">1</span>Photo (in order)</div>` +
+242:       `<div class="row"><span class="ic bus">${ICONS.bus}</span>Bus stop</div>` +
+243:       used.map(k => `<div class="row"><span class="ic" style="color:${color(k)}">${ICONS[k]}</span>${ICON_LABEL[k] || k}</div>`).join("") + `</div>`;
+244:     L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+245:     return d;
+246:   };
+247:   iconKey.addTo(map);
+248: 
+249:   function addMark(m, p, kind) {
+250:     const leader = kind === "icon" ? L.polyline([], { color: "#555", weight: 1, opacity: .7, interactive: false }).addTo(map) : null;
+251:     marks.push({ m, ll: L.latLng(p.lat, p.lng), kind, leader });
+252:   }
+253: 
+254:   // Shrink markers when zoomed out, then keep everything apart in screen space (boxes, not circles):
+255:   // photo pins never move; icons and bus stops move off pins and each other (with a thin leader line back to the true spot);
+256:   // block bubbles give way to everything else.
+257:   function declutter() {
+258:     const z = map.getZoom();
+259:     map.getContainer().style.setProperty("--s", z >= 17 ? 1 : z >= 16 ? .85 : .72);
+260:     const GAP = 2, PRI = { pin: 0, icon: 1, bubble: 2 };
+261:     const live = marks.filter(o => map.hasLayer(o.m));
+262:     live.forEach(o => o.m.setLatLng(o.ll));
+263:     const box = live.map(o => {
+264:       const el = o.m.getElement(), inner = el && el.firstElementChild;
+265:       const r = inner ? inner.getBoundingClientRect() : { width: 20, height: 20 };
+266:       const p = map.latLngToLayerPoint(o.ll);
+267:       return { x: p.x, y: p.y, w: r.width, h: r.height, pri: PRI[o.kind] };
+268:     });
+269:     for (let it = 0; it < 80; it++) {
+270:       let moved = false;
+271:       for (let i = 0; i < box.length; i++) for (let j = i + 1; j < box.length; j++) {
+272:         const a = box[i], b = box[j];
+273:         const dx = b.x - a.x, dy = b.y - a.y;
+274:         const px = (a.w + b.w) / 2 + GAP - Math.abs(dx), py = (a.h + b.h) / 2 + GAP - Math.abs(dy);
+275:         if (px <= 0 || py <= 0) continue;
+276:         if (a.pri === 0 && b.pri === 0) continue;
+277:         let sa, sb;   // share of the push each takes
+278:         if (a.pri === b.pri) { sa = .5; sb = .5; } else if (a.pri < b.pri) { sa = 0; sb = 1; } else { sa = 1; sb = 0; }
+279:         if (px < py) { const s = (dx >= 0 ? 1 : -1) * px; a.x -= s * sa; b.x += s * sb; }
+280:         else { const s = (dy >= 0 ? 1 : -1) * py; a.y -= s * sa; b.y += s * sb; }
+281:         moved = true;
+282:       }
+283:       if (!moved) break;
+284:     }
+285:     live.forEach((o, i) => {
+286:       const home = map.latLngToLayerPoint(o.ll), at = L.point(box[i].x, box[i].y);
+287:       if (o.kind !== "pin") o.m.setLatLng(map.layerPointToLatLng(at));
+288:       if (o.leader) o.leader.setLatLngs(home.distanceTo(at) > 3 ? [o.ll, map.layerPointToLatLng(at)] : []);
+289:     });
+290:   }
+291:   map.on("zoomend", declutter);
+292:   const fit = () => { map.invalidateSize(); fitMinZoom(); map.fitBounds(path.getBounds(), { padding: [50, 50] }); declutter(); };
+293:   fit(); window.addEventListener("load", fit); window.addEventListener("resize", fitMinZoom);
+294: </script>
+295: </body>
+296: </html>

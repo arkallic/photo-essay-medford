@@ -1,0 +1,520 @@
+{
+ "zone_same_both_pages": true,
+ "zone_same_as_zone_json": true,
+ "zone_ring_closed": [
+  true
+ ],
+ "zone_m2_shoelace": 865946.5605220862,
+ "zone_m2_json": 865942.58203125,
+ "acres": 213.9800551679899,
+ "sqmi": 0.3343438361999842,
+ "bclass_counts": {
+  "public": 59,
+  "business": 39,
+  "outbuilding": 225,
+  "apartment": 50,
+  "house": 497,
+  "multi": 92
+ },
+ "centroid_max_dev_m": 0.006916108908744808,
+ "area_max_dev_m2": 0.04996301989740459,
+ "bclass_all_inside_by_c": {
+  "public|True": 59,
+  "business|True": 39,
+  "outbuilding|True": 225,
+  "apartment|True": 50,
+  "house|True": 497,
+  "multi|True": 92
+ },
+ "BLDG_counts": {
+  "public": 59,
+  "business": 39,
+  "outbuilding": 225,
+  "apartment": 50,
+  "house": 497,
+  "multi": 92
+ },
+ "BLDG_inside": {
+  "public|True": 59,
+  "business|True": 39,
+  "outbuilding|True": 225,
+  "apartment|True": 50,
+  "house|True": 497,
+  "multi|True": 92
+ },
+ "BLOCKS_sum_h": 497,
+ "BLOCKS_sum_a": 142,
+ "BLOCKS_n": 44,
+ "homes_n": 639,
+ "homes_outside_zone": [],
+ "road_missing_nodes": 0,
+ "road_segments": 1171,
+ "services_same_both_pages": true,
+ "bus_same_both_pages": true,
+ "services_total": 29,
+ "services_inside": 29,
+ "services_inside_flag_mismatch": [],
+ "bus_total": 9,
+ "bus_inside": 9,
+ "cat_counts_inside": {
+  "Places of worship": 5,
+  "Banking & finance": 2,
+  "Government & courts": 9,
+  "Health & social services": 5,
+  "Education": 2,
+  "Arts & culture": 2,
+  "Recreation & parks": 4
+ },
+ "icon_counts_inside": {
+  "cross": 5,
+  "money": 2,
+  "shield": 2,
+  "people": 1,
+  "scales": 3,
+  "gov": 7,
+  "mask": 1,
+  "tree": 2,
+  "run": 1,
+  "apple": 1,
+  "school": 1,
+  "medical": 1,
+  "book": 1,
+  "track": 1
+ },
+ "biz_inside": 39,
+ "group_members": {
+  "Services": [
+   "First Presbyterian Church",
+   "Bank of America",
+   "Christ Unity Church",
+   "Jackson County Jail",
+   "Station 71five community center",
+   "James A. Redden Federal Courthouse",
+   "Center for NonProfit Legal Services",
+   "Southern Oregon Education Service District",
+   "Historic Holly Theater",
+   "Oregon Pacific Financial Advisors, Inc.",
+   "First United Methodist Church",
+   "Alba Park",
+   "Medford City Hall",
+   "Jackson County Circuit Court",
+   "First Library",
+   "St. Mark's Episcopal Church",
+   "Jackson County Health & Human Services",
+   "Medford Police",
+   "Rogue Valley Family YMCA",
+   "God's Food Pantry",
+   "McLoughlin Middle School",
+   "La Clinica",
+   "Jackson County Adult Supervision Service",
+   "Oregon Employment Department",
+   "St Marks Episcopal Parish Church",
+   "Jackson County Courthouse & County Offices",
+   "Old Medford Public Library",
+   "McLoughlin field & track",
+   "Lausmann Annex"
+  ],
+  "Bus stops": [
+   "bus Hamilton and West Main - Probation Office",
+   "bus W Main St - East of Summit Ave",
+   "bus 384 W Main St",
+   "bus 762 W Main St",
+   "bus West Main and Hamilton - Probation Office",
+   "bus Medford City Hall",
+   "bus W 8th St - East of Lincoln St",
+   "bus W 8th St - East of Cannon St",
+   "bus W 8th St - West of Mistletoe St"
+  ],
+  "Government & courts": [
+   "Jackson County Jail",
+   "James A. Redden Federal Courthouse",
+   "Medford City Hall",
+   "Jackson County Circuit Court",
+   "Medford Police",
+   "Jackson County Adult Supervision Service",
+   "Oregon Employment Department",
+   "Jackson County Courthouse & County Offices",
+   "Lausmann Annex"
+  ],
+  "Health & social": [
+   "Station 71five community center",
+   "Center for NonProfit Legal Services",
+   "Jackson County Health & Human Services",
+   "God's Food Pantry",
+   "La Clinica"
+  ],
+  "Parks & open space": [
+   "Alba Park",
+   "First Library",
+   "McLoughlin field & track"
+  ],
+  "Places of worship": [
+   "First Presbyterian Church",
+   "Christ Unity Church",
+   "First United Methodist Church",
+   "St. Mark's Episcopal Church",
+   "St Marks Episcopal Parish Church"
+  ],
+  "Banking & finance": [
+   "Bank of America",
+   "Oregon Pacific Financial Advisors, Inc."
+  ],
+  "Education": [
+   "Southern Oregon Education Service District",
+   "McLoughlin Middle School"
+  ],
+  "Businesses": [
+   "biz 953191382",
+   "biz 953191383",
+   "biz 953191389",
+   "biz 953191412",
+   "biz 953191739",
+   "biz 953191742",
+   "biz 953191975",
+   "biz 953192629",
+   "biz 953192630",
+   "biz 953192832",
+   "biz 953222037",
+   "biz 953222656",
+   "biz 953222657",
+   "biz 953222659",
+   "biz 953222660",
+   "biz 953222661",
+   "biz 953222662",
+   "biz 953222668",
+   "biz 953222669",
+   "biz 954473190",
+   "biz 954473194",
+   "biz 954473195",
+   "biz 967132820",
+   "biz 967134065",
+   "biz 967134066",
+   "biz 991030198",
+   "biz 991030203",
+   "biz 991030214",
+   "biz 991030215",
+   "biz 991030216",
+   "biz 991030217",
+   "biz 991030219",
+   "biz 991030220",
+   "biz 1122799721",
+   "biz 1122799865",
+   "biz 1122800016",
+   "biz 1122804155",
+   "biz 1122804420",
+   "biz 1122804736"
+  ]
+ },
+ "tiles": {
+  "Services": {
+   "n": 29,
+   "acres_each": 7.378622591999651,
+   "homes_each": 22.03448275862069,
+   "median": 3.971666160695858,
+   "max": 9.882876344156752,
+   "pct10": 100.0,
+   "pct5": 68.54460093896714,
+   "worst_home": "1122804706",
+   "worst_home_latlng": [
+    42.3263848,
+    -122.8891658
+   ],
+   "worst_cls": "house",
+   "worst_dest": "La Clinica",
+   "worst_m": 592.9725806494051,
+   "worst_straight_m": 375.1541851955881,
+   "worst_access_m": 35.94520340116076,
+   "worst_route_streets": [
+    "Pennsylvania Avenue",
+    "Summit Avenue",
+    "West 4th Street",
+    "(alley)",
+    "W Main St"
+   ],
+   "worst_dest_access_m": 25.05876270335194
+  },
+  "Bus stops": {
+   "n": 9,
+   "acres_each": 23.77556168533221,
+   "homes_each": 71.0,
+   "median": 6.814596486911324,
+   "max": 15.453387345830125,
+   "pct10": 78.40375586854461,
+   "pct5": 35.0547730829421,
+   "worst_home": "1122804315",
+   "worst_home_latlng": [
+    42.3294457,
+    -122.8849111
+   ],
+   "worst_cls": "house",
+   "worst_dest": "bus Hamilton and West Main - Probation Office",
+   "worst_m": 927.2032407498075,
+   "worst_straight_m": 630.8944533826717,
+   "worst_access_m": 29.0299784763994,
+   "worst_route_streets": [
+    "(alley)",
+    "Oak Street",
+    "West 2nd Street",
+    "Rose Avenue",
+    "West 4th Street",
+    "Rose Avenue",
+    "Hamilton Street"
+   ],
+   "worst_dest_access_m": 8.01872545565177
+  },
+  "Government & courts": {
+   "n": 9,
+   "acres_each": 23.77556168533221,
+   "homes_each": 71.0,
+   "median": 7.586961359113735,
+   "max": 18.28685180549764,
+   "pct10": 74.17840375586854,
+   "pct5": 15.492957746478874,
+   "worst_home": "1122804750",
+   "worst_home_latlng": [
+    42.3290839,
+    -122.8850218
+   ],
+   "worst_cls": "apartment",
+   "worst_dest": "Jackson County Adult Supervision Service",
+   "worst_m": 1097.2111083298585,
+   "worst_straight_m": 638.3686825985307,
+   "worst_access_m": 30.706909063481422,
+   "worst_route_streets": [
+    "Fairmount Street",
+    "Summit Avenue",
+    "Palm Street",
+    "Rose Avenue",
+    "West 4th Street",
+    "Rose Avenue",
+    "West Main Street"
+   ],
+   "worst_dest_access_m": 39.34684844635875
+  },
+  "Health & social": {
+   "n": 5,
+   "acres_each": 42.79601103359798,
+   "homes_each": 127.8,
+   "median": 7.6106812435862174,
+   "max": 15.83846374660289,
+   "pct10": 72.9264475743349,
+   "pct5": 27.54303599374022,
+   "worst_home": "1122804315",
+   "worst_home_latlng": [
+    42.3294457,
+    -122.8849111
+   ],
+   "worst_cls": "house",
+   "worst_dest": "God's Food Pantry",
+   "worst_m": 950.3078247961735,
+   "worst_straight_m": 628.0715627423858,
+   "worst_access_m": 29.0299784763994,
+   "worst_route_streets": [
+    "(alley)",
+    "Oak Street",
+    "West 2nd Street",
+    "North Peach Street",
+    "Palm Street",
+    "(alley)",
+    "Quince Street",
+    "West Main Street"
+   ],
+   "worst_dest_access_m": 24.79064160227027
+  },
+  "Parks & open space": {
+   "n": 3,
+   "acres_each": 71.32668505599663,
+   "homes_each": 213.0,
+   "median": 6.9455558496246015,
+   "max": 19.04754493610112,
+   "pct10": 73.2394366197183,
+   "pct5": 26.134585289514867,
+   "worst_home": "1122799794",
+   "worst_home_latlng": [
+    42.3234388,
+    -122.888744
+   ],
+   "worst_cls": "house",
+   "worst_dest": "First Library",
+   "worst_m": 1142.852696166067,
+   "worst_straight_m": 717.2685711586929,
+   "worst_access_m": 27.916263745118897,
+   "worst_route_streets": [
+    "(alley)",
+    "Elm St",
+    "?",
+    "W Main St",
+    "West Main Street"
+   ],
+   "worst_dest_access_m": 18.115960829789834
+  },
+  "Places of worship": {
+   "n": 5,
+   "acres_each": 42.79601103359798,
+   "homes_each": 127.8,
+   "median": 9.158793455231557,
+   "max": 17.233653464716447,
+   "pct10": 55.242566510172146,
+   "pct5": 15.179968701095461,
+   "worst_home": "1122799794",
+   "worst_home_latlng": [
+    42.3234388,
+    -122.888744
+   ],
+   "worst_cls": "house",
+   "worst_dest": "First United Methodist Church",
+   "worst_m": 1034.0192078829868,
+   "worst_straight_m": 806.7180269539399,
+   "worst_access_m": 27.916263745118897,
+   "worst_route_streets": [
+    "(alley)",
+    "Elm St",
+    "?",
+    "W Main St",
+    "West Main Street",
+    "Mistletoe Street"
+   ],
+   "worst_dest_access_m": 27.894367710709485
+  },
+  "Banking & finance": {
+   "n": 2,
+   "acres_each": 106.99002758399494,
+   "homes_each": 319.5,
+   "median": 15.879011679431938,
+   "max": 24.572554427408363,
+   "pct10": 12.832550860719875,
+   "pct5": 0.9389671361502347,
+   "worst_home": "1122804750",
+   "worst_home_latlng": [
+    42.3290839,
+    -122.8850218
+   ],
+   "worst_cls": "apartment",
+   "worst_dest": "Bank of America",
+   "worst_m": 1474.3532656445018,
+   "worst_straight_m": 879.8540969982197,
+   "worst_access_m": 30.706909063481422,
+   "worst_route_streets": [
+    "Fairmount Street",
+    "Summit Avenue",
+    "(alley)",
+    "Oak Street",
+    "West 2nd Street",
+    "North Holly Street"
+   ],
+   "worst_dest_access_m": 22.695212707380616
+  },
+  "Education": {
+   "n": 2,
+   "acres_each": 106.99002758399494,
+   "homes_each": 319.5,
+   "median": 6.918908385184543,
+   "max": 18.914232392514396,
+   "pct10": 69.79655712050078,
+   "pct5": 34.74178403755869,
+   "worst_home": "1122799794",
+   "worst_home_latlng": [
+    42.3234388,
+    -122.888744
+   ],
+   "worst_cls": "house",
+   "worst_dest": "McLoughlin Middle School",
+   "worst_m": 1134.8539435508637,
+   "worst_straight_m": 695.8111049374077,
+   "worst_access_m": 27.916263745118897,
+   "worst_route_streets": [
+    "(alley)",
+    "Elm St",
+    "?",
+    "W Main St",
+    "Summit Avenue",
+    "(alley)",
+    "Ross Court",
+    "West 4th Street",
+    "Rose Avenue",
+    "West 2nd Street"
+   ],
+   "worst_dest_access_m": 4.302990926934632
+  },
+  "Businesses": {
+   "n": 39,
+   "acres_each": 5.48666808123051,
+   "homes_each": 16.384615384615383,
+   "median": 5.314401219401619,
+   "max": 14.451098663752612,
+   "pct10": 90.14084507042253,
+   "pct5": 47.26134585289515,
+   "worst_home": "1122804315",
+   "worst_home_latlng": [
+    42.3294457,
+    -122.8849111
+   ],
+   "worst_cls": "house",
+   "worst_dest": "biz 1122804420",
+   "worst_m": 867.0659198251567,
+   "worst_straight_m": 612.4040711000955,
+   "worst_access_m": 29.0299784763994,
+   "worst_route_streets": [
+    "(alley)",
+    "Oak Street",
+    "West 2nd Street",
+    "Rose Avenue",
+    "West 4th Street",
+    "Rose Avenue"
+   ],
+   "worst_dest_access_m": 21.35034693643743
+  }
+ },
+ "streets": {
+  "street_mi": 8.332638565842005,
+  "alley_mi": 3.6837399025438198,
+  "intersections": 75,
+  "per_sqmi": 224.31997207551197,
+  "homes_per_street_mi": 76.68639350558819,
+  "intersections_incl_alleys": 136,
+  "by_highway_mi": {
+   "residential": 4.750847612727349,
+   "tertiary": 2.092188236398229,
+   "secondary": 1.4723886188234372,
+   "unclassified": 0.0,
+   "primary": 0.0,
+   "secondary_link": 0.0,
+   "tertiary_link": 0.017214097892981905
+  },
+  "close_intersection_pairs": [
+   [
+    "35428399",
+    "35561842",
+    13.7,
+    [
+     "Hamilton Street",
+     "Rose Avenue",
+     "W Main St",
+     "West Main Street"
+    ]
+   ],
+   [
+    "8833991809",
+    "35561765",
+    18.1,
+    [
+     "North Oakdale Avenue",
+     "West 2nd Street"
+    ]
+   ],
+   [
+    "35687351",
+    "35590852",
+    12.7,
+    [
+     "North Holly Street",
+     "West 2nd Street"
+    ]
+   ]
+  ],
+  "deg_hist": {
+   "3": 44,
+   "4": 31
+  }
+ }
+}

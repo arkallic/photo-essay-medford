@@ -1,0 +1,59 @@
+{
+ "note": "Photo pins, numbered by capture time (Pacific Daylight Time). lat/lng kept as text to preserve the original digits. Images: camera metadata removed; #3 rotated upright.",
+ "photos": [
+  {
+   "n": 1,
+   "lat": "42.32662167",
+   "lng": "-122.88713833",
+   "time": "3:38 PM",
+   "image": "photo-1.jpg",
+   "original_file": "4F083B64-3BE4-4378-8570-36FC796E459A_1_201_a.heic",
+   "taken": "2026-10-10"
+  },
+  {
+   "n": 2,
+   "lat": "42.32378000",
+   "lng": "-122.88760333",
+   "time": "3:43 PM",
+   "image": "photo-2.jpg",
+   "original_file": "C500F2FF-EFFC-4909-911F-0BCAC072E14B.heic",
+   "taken": "2026-10-10"
+  },
+  {
+   "n": 3,
+   "lat": "42.32367833",
+   "lng": "-122.88433000",
+   "time": "3:48 PM",
+   "image": "photo-3.jpg",
+   "original_file": "3DEADFC5-1E5B-4D8C-B5C8-78CF0A0670E4.heic",
+   "taken": "2026-10-10"
+  },
+  {
+   "n": 4,
+   "lat": "42.32258333",
+   "lng": "-122.87790500",
+   "time": "3:59 PM",
+   "image": "photo-4.jpg",
+   "original_file": "37DDE59A-BAFE-4968-89DE-A4A48765A51E.heic",
+   "taken": "2026-10-10"
+  },
+  {
+   "n": 5,
+   "lat": "42.32481333",
+   "lng": "-122.87884500",
+   "time": "4:30 PM",
+   "image": "photo-5.jpg",
+   "original_file": "25E9C114-2913-4EA0-8777-39BCCD2C8ED6.heic",
+   "taken": "2026-10-10"
+  },
+  {
+   "n": 6,
+   "lat": "42.32836667",
+   "lng": "-122.88093667",
+   "time": "4:37 PM",
+   "image": "photo-6.jpg",
+   "original_file": "A5EBF80D-F317-46B1-B495-817E51B0AB82.heic",
+   "taken": "2026-10-10"
+  }
+ ]
+}

@@ -1,0 +1,1282 @@
+{
+ "services": [
+  {
+   "name": "First Presbyterian Church",
+   "kind": "amenity=place_of_worship",
+   "lat": 42.324193,
+   "lng": -122.874986,
+   "addr": "85 South Holly Street",
+   "osm": "way/953191379",
+   "phone": "+1-541-779-1711",
+   "web": "https://www.firstpreschurchmedford.org/",
+   "hours": null,
+   "cat": "Places of worship",
+   "type": "Church",
+   "icon": "cross",
+   "inside": true
+  },
+  {
+   "name": "Bank of America",
+   "kind": "amenity=bank",
+   "cat": "Banking & finance",
+   "type": "Bank",
+   "lat": 42.324935,
+   "lng": -122.875929,
+   "addr": "",
+   "osm": "way/953191389",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "icon": "money",
+   "inside": true
+  },
+  {
+   "name": "Christ Unity Church",
+   "kind": "amenity=place_of_worship",
+   "cat": "Places of worship",
+   "type": "Church",
+   "lat": 42.329574,
+   "lng": -122.87985,
+   "addr": "",
+   "osm": "way/953205274",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "icon": "cross",
+   "inside": true
+  },
+  {
+   "name": "Jackson County Jail",
+   "kind": "view",
+   "cat": "Government & courts",
+   "type": "County jail (with some sheriff's office staff)",
+   "icon": "shield",
+   "lat": 42.322021,
+   "lng": -122.878775,
+   "addr": "787 West 8th Street",
+   "osm": "node/966179963",
+   "phone": "+1-541-774-6800",
+   "web": null,
+   "hours": null,
+   "note": "some sheriff's staff",
+   "inside": true
+  },
+  {
+   "name": "Station 71five community center",
+   "kind": "view",
+   "cat": "Health & social services",
+   "type": "Community center",
+   "icon": "people",
+   "lat": 42.322231,
+   "lng": -122.887005,
+   "addr": "",
+   "osm": "node/2084102145",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "James A. Redden Federal Courthouse",
+   "kind": "view",
+   "cat": "Government & courts",
+   "type": "Federal courthouse",
+   "icon": "scales",
+   "lat": 42.325514,
+   "lng": -122.877248,
+   "addr": "",
+   "osm": "way/555335250",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "Center for NonProfit Legal Services",
+   "kind": "view",
+   "cat": "Health & social services",
+   "type": "Nonprofit legal aid",
+   "icon": "scales",
+   "lat": 42.32445,
+   "lng": -122.875398,
+   "addr": "223\u2013225 West Main Street",
+   "osm": "way/953191380",
+   "phone": "+1-541-779-7291",
+   "web": "https://cnpls.org/",
+   "hours": "Mon\u2013Fri 8:30am\u201312pm, 1pm\u20134pm",
+   "inside": true
+  },
+  {
+   "name": "Southern Oregon Education Service District",
+   "kind": "view",
+   "cat": "Education",
+   "type": "Education service district office",
+   "icon": "gov",
+   "lat": 42.326059,
+   "lng": -122.876363,
+   "addr": "101 North Grape Street",
+   "osm": "way/953191399",
+   "phone": "+1-541-776-8590",
+   "web": "https://www.soesd.k12.or.us",
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "Historic Holly Theater",
+   "kind": "view",
+   "cat": "Arts & culture",
+   "type": "Theater",
+   "icon": "mask",
+   "lat": 42.325807,
+   "lng": -122.876698,
+   "addr": "",
+   "osm": "way/953191735",
+   "phone": null,
+   "web": "https://www.hollytheatre.org/",
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "Oregon Pacific Financial Advisors, Inc.",
+   "kind": "view",
+   "cat": "Banking & finance",
+   "type": "Financial advisors",
+   "icon": "money",
+   "lat": 42.324378,
+   "lng": -122.874974,
+   "addr": "210 West 8th Street",
+   "osm": "way/1529522902",
+   "phone": "+1-541-772-1116",
+   "web": "https://www.opfa.com/",
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "First United Methodist Church",
+   "kind": "amenity=place_of_worship",
+   "lat": 42.323448,
+   "lng": -122.878957,
+   "addr": "",
+   "osm": "node/11133007432",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Places of worship",
+   "type": "Church",
+   "icon": "cross",
+   "inside": true
+  },
+  {
+   "name": "Alba Park",
+   "kind": "leisure=park",
+   "lat": 42.323948,
+   "lng": -122.876002,
+   "addr": "304 West Main Street",
+   "osm": "way/198250488",
+   "phone": null,
+   "web": "https://www.medfordoregon.gov/Government/Departments/Parks-Recreation-and-Facilities/City-Parks-and-Facilities/Alba-Park_",
+   "hours": "6am\u201310:30pm",
+   "cat": "Recreation & parks",
+   "type": "Park",
+   "icon": "tree",
+   "inside": true
+  },
+  {
+   "name": "Medford City Hall",
+   "kind": "amenity=townhall",
+   "lat": 42.322526,
+   "lng": -122.875954,
+   "addr": "",
+   "osm": "way/204768006",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Government & courts",
+   "type": "City hall",
+   "icon": "gov",
+   "inside": true
+  },
+  {
+   "name": "Jackson County Circuit Court",
+   "kind": "amenity=courthouse",
+   "lat": 42.321974,
+   "lng": -122.877656,
+   "addr": "100 South Oakdale Avenue",
+   "osm": "way/204768357",
+   "phone": "+1-541-776-7171",
+   "web": "https://www.courts.oregon.gov/courts/jackson/Pages/default.aspx",
+   "hours": null,
+   "cat": "Government & courts",
+   "type": "Courthouse",
+   "icon": "scales",
+   "inside": true
+  },
+  {
+   "name": "First Library",
+   "kind": "leisure=park",
+   "lat": 42.323631,
+   "lng": -122.876956,
+   "addr": "",
+   "osm": "way/480316275",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Recreation & parks",
+   "type": "Park",
+   "icon": "tree",
+   "inside": true
+  },
+  {
+   "name": "St. Mark's Episcopal Church",
+   "kind": "amenity=place_of_worship",
+   "lat": 42.325124,
+   "lng": -122.878602,
+   "addr": "",
+   "osm": "way/953191414",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Places of worship",
+   "type": "Church",
+   "icon": "cross",
+   "inside": true
+  },
+  {
+   "name": "Jackson County Health & Human Services",
+   "kind": "healthcare=yes",
+   "lat": 42.323241,
+   "lng": -122.875239,
+   "addr": "140 South Holly Street",
+   "osm": "way/953191898",
+   "phone": "+1-541-774-8209",
+   "web": "https://jacksoncountyor.gov/departments/health___human_services/programs_and_services/public_health/location___office_hours.php",
+   "hours": "Mon\u2013Fri 8am\u201312pm, 1pm\u20135pm",
+   "cat": "Health & social services",
+   "type": "Public health & social services",
+   "icon": "gov",
+   "inside": true
+  },
+  {
+   "name": "Medford Police",
+   "kind": "amenity=police",
+   "lat": 42.322205,
+   "lng": -122.87455,
+   "addr": "411 West 8th Street",
+   "osm": "way/953191972",
+   "phone": "+1-541-774-2250",
+   "web": null,
+   "hours": null,
+   "cat": "Government & courts",
+   "type": "Police station",
+   "icon": "shield",
+   "inside": true
+  },
+  {
+   "name": "Rogue Valley Family YMCA",
+   "kind": "leisure=sports_centre",
+   "lat": 42.324588,
+   "lng": -122.879656,
+   "addr": "",
+   "osm": "way/953192628",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Recreation & parks",
+   "type": "Fitness / community center",
+   "icon": "run",
+   "inside": true
+  },
+  {
+   "name": "God's Food Pantry",
+   "kind": "amenity=social_facility",
+   "lat": 42.32394,
+   "lng": -122.883176,
+   "addr": "",
+   "osm": "way/953222666",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Health & social services",
+   "type": "Food pantry",
+   "icon": "apple",
+   "inside": true
+  },
+  {
+   "name": "McLoughlin Middle School",
+   "kind": "amenity=school",
+   "lat": 42.329019,
+   "lng": -122.880563,
+   "addr": "",
+   "osm": "way/954465393",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Education",
+   "type": "Middle school",
+   "icon": "school",
+   "inside": true
+  },
+  {
+   "name": "La Clinica",
+   "kind": "amenity=doctors",
+   "lat": 42.323476,
+   "lng": -122.886853,
+   "addr": "",
+   "osm": "way/954473193",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Health & social services",
+   "type": "Medical clinic",
+   "icon": "medical",
+   "inside": true
+  },
+  {
+   "name": "Jackson County Adult Supervision Service",
+   "kind": "office=government",
+   "lat": 42.323357,
+   "lng": -122.884376,
+   "addr": "1101 West Main Street",
+   "osm": "way/954473298",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Government & courts",
+   "type": "Government office \u00b7 Election office / ballot drop box",
+   "note": "also election office / ballot drop box",
+   "icon": "gov",
+   "inside": true
+  },
+  {
+   "name": "Oregon Employment Department",
+   "kind": "office=employment",
+   "lat": 42.324748,
+   "lng": -122.878984,
+   "addr": "",
+   "osm": "way/429478438",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Government & courts",
+   "type": "Employment office",
+   "icon": "gov",
+   "inside": true
+  },
+  {
+   "name": "St Marks Episcopal Parish Church",
+   "kind": "building=church",
+   "lat": 42.325745,
+   "lng": -122.879304,
+   "addr": "",
+   "osm": "way/954466806",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "cat": "Places of worship",
+   "type": "Church",
+   "icon": "cross",
+   "inside": true
+  },
+  {
+   "name": "Jackson County Courthouse & County Offices",
+   "kind": "merged",
+   "cat": "Government & courts",
+   "type": "County offices",
+   "icon": "gov",
+   "lat": 42.322976,
+   "lng": -122.877805,
+   "addr": "",
+   "osm": "way/953192627+way/953192625",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "Old Medford Public Library",
+   "kind": "building=library",
+   "cat": "Arts & culture",
+   "type": "Historic library building",
+   "icon": "book",
+   "note": "historic building",
+   "lat": 42.323578,
+   "lng": -122.876807,
+   "addr": "413 West Main Street",
+   "osm": "way/224277673",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "McLoughlin field & track",
+   "kind": "leisure=track",
+   "cat": "Recreation & parks",
+   "type": "School field & running track",
+   "icon": "track",
+   "note": "public use",
+   "lat": 42.329161,
+   "lng": -122.883025,
+   "addr": "",
+   "osm": "way/356319132",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "inside": true
+  },
+  {
+   "name": "Lausmann Annex",
+   "kind": "building",
+   "cat": "Government & courts",
+   "type": "City of Medford offices",
+   "icon": "gov",
+   "note": "City of Medford offices",
+   "lat": 42.321935,
+   "lng": -122.875125,
+   "addr": "200 South Ivy Street",
+   "osm": "way/224277672",
+   "phone": null,
+   "web": null,
+   "hours": null,
+   "inside": true
+  }
+ ],
+ "busStops": [
+  {
+   "name": "Hamilton and West Main - Probation Office",
+   "ref": "220140",
+   "lat": 42.3232804,
+   "lng": -122.8852733
+  },
+  {
+   "name": "W Main St - East of Summit Ave",
+   "ref": "220150",
+   "lat": 42.3237706,
+   "lng": -122.8874919
+  },
+  {
+   "name": "384 W Main St",
+   "ref": "250010",
+   "lat": 42.3243712,
+   "lng": -122.8766195
+  },
+  {
+   "name": "762 W Main St",
+   "ref": "250020",
+   "lat": 42.3237975,
+   "lng": -122.8802382
+  },
+  {
+   "name": "West Main and Hamilton - Probation Office",
+   "ref": "250030",
+   "lat": 42.3237764,
+   "lng": -122.884449
+  },
+  {
+   "name": "Medford City Hall",
+   "ref": "220300",
+   "lat": 42.3229818,
+   "lng": -122.8765548
+  },
+  {
+   "name": "W 8th St - East of Lincoln St",
+   "ref": "220270",
+   "lat": 42.3223626,
+   "lng": -122.8866322
+  },
+  {
+   "name": "W 8th St - East of Cannon St",
+   "ref": "220280",
+   "lat": 42.3223908,
+   "lng": -122.8830117
+  },
+  {
+   "name": "W 8th St - West of Mistletoe St",
+   "ref": "220290",
+   "lat": 42.3223977,
+   "lng": -122.8795127
+  }
+ ],
+ "zoneRings": [
+  [
+   [
+    42.3211423,
+    -122.8792656
+   ],
+   [
+    42.3211521,
+    -122.8794354
+   ],
+   [
+    42.3211699,
+    -122.879581
+   ],
+   [
+    42.3212022,
+    -122.8797508
+   ],
+   [
+    42.3212405,
+    -122.8798964
+   ],
+   [
+    42.3212896,
+    -122.880042
+   ],
+   [
+    42.3213507,
+    -122.8801876
+   ],
+   [
+    42.3214259,
+    -122.8803332
+   ],
+   [
+    42.3215016,
+    -122.8804545
+   ],
+   [
+    42.3215922,
+    -122.8805758
+   ],
+   [
+    42.3216788,
+    -122.8806729
+   ],
+   [
+    42.3217729,
+    -122.8807616
+   ],
+   [
+    42.3218768,
+    -122.8808427
+   ],
+   [
+    42.3219709,
+    -122.8809029
+   ],
+   [
+    42.322079,
+    -122.8809582
+   ],
+   [
+    42.322205,
+    -122.8810056
+   ],
+   [
+    42.322349,
+    -122.881042
+   ],
+   [
+    42.3223556,
+    -122.8810611
+   ],
+   [
+    42.3223556,
+    -122.8843367
+   ],
+   [
+    42.3223868,
+    -122.8859381
+   ],
+   [
+    42.3223782,
+    -122.8859623
+   ],
+   [
+    42.3220069,
+    -122.886403
+   ],
+   [
+    42.3219529,
+    -122.8864861
+   ],
+   [
+    42.3219162,
+    -122.8865689
+   ],
+   [
+    42.3218889,
+    -122.886666
+   ],
+   [
+    42.3218755,
+    -122.886763
+   ],
+   [
+    42.3218763,
+    -122.8868844
+   ],
+   [
+    42.3218969,
+    -122.8870057
+   ],
+   [
+    42.3219407,
+    -122.887127
+   ],
+   [
+    42.3219991,
+    -122.887224
+   ],
+   [
+    42.322097,
+    -122.8873328
+   ],
+   [
+    42.322115,
+    -122.8873409
+   ],
+   [
+    42.322136,
+    -122.8872968
+   ],
+   [
+    42.3221821,
+    -122.8872483
+   ],
+   [
+    42.322241,
+    -122.8872272
+   ],
+   [
+    42.322277,
+    -122.8872308
+   ],
+   [
+    42.322313,
+    -122.8872471
+   ],
+   [
+    42.3223421,
+    -122.8872726
+   ],
+   [
+    42.322367,
+    -122.8873081
+   ],
+   [
+    42.3223833,
+    -122.8873454
+   ],
+   [
+    42.322394,
+    -122.8873939
+   ],
+   [
+    42.3223928,
+    -122.8874667
+   ],
+   [
+    42.3223695,
+    -122.8875395
+   ],
+   [
+    42.3223366,
+    -122.887588
+   ],
+   [
+    42.3224215,
+    -122.8876851
+   ],
+   [
+    42.3224368,
+    -122.8878792
+   ],
+   [
+    42.3224631,
+    -122.888049
+   ],
+   [
+    42.3225089,
+    -122.8882431
+   ],
+   [
+    42.3225642,
+    -122.888413
+   ],
+   [
+    42.3226597,
+    -122.8886313
+   ],
+   [
+    42.3227735,
+    -122.8888254
+   ],
+   [
+    42.3229037,
+    -122.8889953
+   ],
+   [
+    42.3230512,
+    -122.8891419
+   ],
+   [
+    42.3232133,
+    -122.8892615
+   ],
+   [
+    42.3233753,
+    -122.8893462
+   ],
+   [
+    42.3235554,
+    -122.8894052
+   ],
+   [
+    42.3237354,
+    -122.8894307
+   ],
+   [
+    42.3259861,
+    -122.889366
+   ],
+   [
+    42.3261661,
+    -122.8893385
+   ],
+   [
+    42.3263282,
+    -122.8892849
+   ],
+   [
+    42.3264362,
+    -122.8892329
+   ],
+   [
+    42.3265442,
+    -122.8891664
+   ],
+   [
+    42.3266523,
+    -122.8890835
+   ],
+   [
+    42.3267423,
+    -122.889
+   ],
+   [
+    42.3270304,
+    -122.8889343
+   ],
+   [
+    42.3271744,
+    -122.8888833
+   ],
+   [
+    42.3273365,
+    -122.8887973
+   ],
+   [
+    42.3274985,
+    -122.8886761
+   ],
+   [
+    42.3276245,
+    -122.8885518
+   ],
+   [
+    42.3277326,
+    -122.8884183
+   ],
+   [
+    42.3278309,
+    -122.8882674
+   ],
+   [
+    42.327919,
+    -122.8880975
+   ],
+   [
+    42.327988,
+    -122.8879277
+   ],
+   [
+    42.3280475,
+    -122.8877336
+   ],
+   [
+    42.3280929,
+    -122.8875152
+   ],
+   [
+    42.3281176,
+    -122.8872968
+   ],
+   [
+    42.3281287,
+    -122.8872814
+   ],
+   [
+    42.3284528,
+    -122.8872799
+   ],
+   [
+    42.3285968,
+    -122.8872628
+   ],
+   [
+    42.3287769,
+    -122.8872116
+   ],
+   [
+    42.3289569,
+    -122.8871244
+   ],
+   [
+    42.3290469,
+    -122.8870655
+   ],
+   [
+    42.329137,
+    -122.886995
+   ],
+   [
+    42.329227,
+    -122.8869113
+   ],
+   [
+    42.329299,
+    -122.8868331
+   ],
+   [
+    42.329371,
+    -122.886743
+   ],
+   [
+    42.329441,
+    -122.8866417
+   ],
+   [
+    42.329499,
+    -122.8865447
+   ],
+   [
+    42.3295612,
+    -122.8864233
+   ],
+   [
+    42.3296491,
+    -122.886205
+   ],
+   [
+    42.3297167,
+    -122.8859623
+   ],
+   [
+    42.3297572,
+    -122.8857197
+   ],
+   [
+    42.3297731,
+    -122.8854771
+   ],
+   [
+    42.3297576,
+    -122.8809883
+   ],
+   [
+    42.3297729,
+    -122.8805273
+   ],
+   [
+    42.3297636,
+    -122.8803574
+   ],
+   [
+    42.3297424,
+    -122.8801876
+   ],
+   [
+    42.3297087,
+    -122.8800177
+   ],
+   [
+    42.3296591,
+    -122.8798404
+   ],
+   [
+    42.3295994,
+    -122.879678
+   ],
+   [
+    42.3295331,
+    -122.8795342
+   ],
+   [
+    42.3294611,
+    -122.8794054
+   ],
+   [
+    42.329371,
+    -122.879272
+   ],
+   [
+    42.329281,
+    -122.8791614
+   ],
+   [
+    42.329173,
+    -122.8790518
+   ],
+   [
+    42.3290649,
+    -122.8789626
+   ],
+   [
+    42.3289569,
+    -122.8788906
+   ],
+   [
+    42.3288129,
+    -122.8788178
+   ],
+   [
+    42.3286688,
+    -122.8787686
+   ],
+   [
+    42.3280387,
+    -122.8786517
+   ],
+   [
+    42.328022,
+    -122.878659
+   ],
+   [
+    42.3280287,
+    -122.8787318
+   ],
+   [
+    42.3280201,
+    -122.8788046
+   ],
+   [
+    42.3280026,
+    -122.8788565
+   ],
+   [
+    42.3279666,
+    -122.878915
+   ],
+   [
+    42.3279283,
+    -122.8789501
+   ],
+   [
+    42.3278766,
+    -122.8789735
+   ],
+   [
+    42.3278226,
+    -122.8789753
+   ],
+   [
+    42.3277866,
+    -122.8789643
+   ],
+   [
+    42.3277506,
+    -122.8789419
+   ],
+   [
+    42.3277146,
+    -122.8789039
+   ],
+   [
+    42.3276786,
+    -122.878834
+   ],
+   [
+    42.3276652,
+    -122.8787803
+   ],
+   [
+    42.3276613,
+    -122.8787318
+   ],
+   [
+    42.3276744,
+    -122.8786347
+   ],
+   [
+    42.3276605,
+    -122.8786212
+   ],
+   [
+    42.3270664,
+    -122.8786002
+   ],
+   [
+    42.3269403,
+    -122.8785514
+   ],
+   [
+    42.3265082,
+    -122.8781036
+   ],
+   [
+    42.3257805,
+    -122.8774943
+   ],
+   [
+    42.3257763,
+    -122.8774701
+   ],
+   [
+    42.3262461,
+    -122.8769605
+   ],
+   [
+    42.3263056,
+    -122.8768635
+   ],
+   [
+    42.3263516,
+    -122.8767421
+   ],
+   [
+    42.3263719,
+    -122.8766451
+   ],
+   [
+    42.3263799,
+    -122.876548
+   ],
+   [
+    42.3263734,
+    -122.8764267
+   ],
+   [
+    42.3263545,
+    -122.8763297
+   ],
+   [
+    42.3263216,
+    -122.8762326
+   ],
+   [
+    42.3262854,
+    -122.8761598
+   ],
+   [
+    42.3262356,
+    -122.876087
+   ],
+   [
+    42.3261661,
+    -122.8760164
+   ],
+   [
+    42.3248698,
+    -122.8752045
+   ],
+   [
+    42.3240595,
+    -122.874463
+   ],
+   [
+    42.3239335,
+    -122.8743683
+   ],
+   [
+    42.3237894,
+    -122.8742865
+   ],
+   [
+    42.3236634,
+    -122.8742352
+   ],
+   [
+    42.3235194,
+    -122.8741976
+   ],
+   [
+    42.322241,
+    -122.8740062
+   ],
+   [
+    42.322187,
+    -122.8740046
+   ],
+   [
+    42.322133,
+    -122.8740128
+   ],
+   [
+    42.322079,
+    -122.8740312
+   ],
+   [
+    42.3220249,
+    -122.874061
+   ],
+   [
+    42.3219786,
+    -122.8740974
+   ],
+   [
+    42.3219349,
+    -122.8741431
+   ],
+   [
+    42.3218701,
+    -122.874243
+   ],
+   [
+    42.321824,
+    -122.8743643
+   ],
+   [
+    42.3218027,
+    -122.8744856
+   ],
+   [
+    42.3218021,
+    -122.8746069
+   ],
+   [
+    42.3219029,
+    -122.8755775
+   ],
+   [
+    42.3219009,
+    -122.8756018
+   ],
+   [
+    42.321748,
+    -122.8759172
+   ],
+   [
+    42.3216778,
+    -122.876087
+   ],
+   [
+    42.3213047,
+    -122.8771617
+   ],
+   [
+    42.3212585,
+    -122.8773245
+   ],
+   [
+    42.3212235,
+    -122.8774943
+   ],
+   [
+    42.3212035,
+    -122.8776399
+   ],
+   [
+    42.3211923,
+    -122.8777855
+   ],
+   [
+    42.3211432,
+    -122.87912
+   ],
+   [
+    42.3211423,
+    -122.8792656
+   ]
+  ]
+ ],
+ "route": [
+  [
+   42.32662,
+   -122.88716
+  ],
+  [
+   42.325946,
+   -122.887235
+  ],
+  [
+   42.325922,
+   -122.887524
+  ],
+  [
+   42.323788,
+   -122.887588
+  ],
+  [
+   42.323724,
+   -122.884324
+  ],
+  [
+   42.323724,
+   -122.879208
+  ],
+  [
+   42.32251,
+   -122.879208
+  ],
+  [
+   42.322558,
+   -122.877902
+  ],
+  [
+   42.3229067,
+   -122.8768982
+  ],
+  [
+   42.3233312,
+   -122.8760241
+  ],
+  [
+   42.3241924,
+   -122.8768146
+  ],
+  [
+   42.3237479,
+   -122.877696
+  ],
+  [
+   42.324359,
+   -122.878244
+  ],
+  [
+   42.324811,
+   -122.878854
+  ],
+  [
+   42.325747,
+   -122.879636
+  ],
+  [
+   42.326303,
+   -122.880224
+  ],
+  [
+   42.326858,
+   -122.880438
+  ],
+  [
+   42.32781,
+   -122.880471
+  ],
+  [
+   42.328405,
+   -122.880578
+  ],
+  [
+   42.328389,
+   -122.880931
+  ],
+  [
+   42.328405,
+   -122.885437
+  ],
+  [
+   42.326755,
+   -122.885437
+  ],
+  [
+   42.326755,
+   -122.887128
+  ],
+  [
+   42.32662,
+   -122.88716
+  ]
+ ]
+}

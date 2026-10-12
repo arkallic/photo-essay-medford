@@ -1,0 +1,33 @@
+NAMED, not on map, centroid or vertex inside zone: 17
+  relation/18896068 42.324171,-122.875027 sd 31 vin 23/23 {'addr:housenumber': '85', 'addr:street': 'South Holly Street', 'amenity': 'place_of_worship', 'building': 'yes', 'denomination': 'presbyterian', 'email': 'FPCM@firstpresmedford.or', 'fax': '+1-541-779-5091', 'name': 'First Presbyterian Church', 'opening_hours:office': 'Mo-Th 09:00-12:00', 'phone': '+1-541-779-1711', 'religion': 'christian', 'service_times': 'Su 08:30; 11:00', 'type': 'multipolygon', 'website': 'https://firstpreschurchmedford.com'}
+  way/480315042 42.322534,-122.876917 sd 115 vin 5/5 {'amenity': 'fountain', 'name': 'Fish Fountain'}
+  way/954473194 42.323476,-122.886123 sd 122 vin 12/12 {'addr:housenumber': '1213', 'addr:street': 'West Main Street', 'amenity': 'restaurant', 'building': 'commercial', 'name': 'Flavor Restaurant & Bar', 'opening_hours': '11:00-21:00', 'phone': '+1 541-500-8744', 'website': 'https://flavorglobalkitchen.com/'}
+  way/954466794 42.326477,-122.879960 sd 127 vin 12/12 {'building': 'yes', 'name': 'Four Oaks Apartments'}
+  way/953192298 42.322002,-122.878722 sd 94 vin 20/20 {'addr:housenumber': '787', 'addr:street': 'West 8th Street', 'amenity': 'prison', 'building': 'yes', 'name': 'Jackson County Jail', 'note': 'The Jackson County Jail was built in 1981, and houses 292 male and female inmates. The jail has its own kitchen, which is staffed by inmate workers and supervised by a civilian cook.', 'phone': '+1-541-774-6800', 'website': 'https://jacksoncountyor.org/sheriff/Jail/Jail-Information', 'wheelchair': 'yes'}
+  way/953192833 42.323973,-122.880439 sd 187 vin 13/13 {'building': 'government', 'name': 'Jackson County Motor Storage'}
+  node/2487394435 42.325486,-122.877112 sd 44 vin 1/1 {'amenity': 'courthouse', 'name': 'James A. Redden Federal Courthouse', 'wikidata': 'Q6128241'}
+  way/604162089 42.329008,-122.880939 sd 83 vin 56/56 {'building': 'school', 'name': 'McLoughlin Middle School'}
+  relation/7637876 42.319613,-122.874023 sd -246 vin 3/112 {'description': 'Historic districts in Medford, Oregon, listed on the National Register of Historic Places (excluding districts consisting of a single property)', 'historic': 'yes', 'name': 'Medford historic districts', 'place': 'neighbourhood', 'type': 'multipolygon'}
+  way/953191382 42.324461,-122.875589 sd 52 vin 7/7 {'addr:housenumber': '229', 'addr:street': 'West Main Street', 'amenity': 'cafe', 'building': 'commercial', 'internet_access': 'wlan', 'internet_access:fee': 'customers', 'name': 'Mellelo Coffee', 'opening_hours': 'Mo-Fr 07:00-17:00; Sa 08:00-15:00', 'phone': '+1-541-734-3271', 'website': 'https://mellelo.com/'}
+  way/967132820 42.325357,-122.879579 sd 171 vin 10/10 {'building': 'commercial', 'name': 'NW Seasonal Workers Association'}
+  way/953191737 42.324276,-122.877294 sd 167 vin 19/19 {'building': 'yes', 'name': 'New Medford Apartments'}
+  node/13607981354 42.326170,-122.880434 sd 177 vin 1/1 {'addr:housenumber': '516', 'addr:street': 'West 4th Street', 'amenity': 'college', 'education': 'college', 'name': 'Pacific Bible College', 'operator': 'Pacific Bible College', 'operator:type': 'private', 'religion': 'christian', 'short_name': 'PBC', 'website': 'https://pacificbible.edu/'}
+  way/954473190 42.323907,-122.887450 sd 163 vin 12/12 {'addr:country': 'US', 'addr:housenumber': '1320', 'addr:street': 'West Main Street', 'amenity': 'restaurant', 'building': 'commercial', 'cuisine': 'sandwich', 'delivery': 'no', 'internet_access': 'yes', 'internet_access:fee': 'no', 'name': 'Sauced-Up Sandwiches', 'opening_hours': 'Mo-Fr 10:00-17:00', 'payment:american_express': 'yes', 'payment:cash': 'yes', 'payment:cryptocurrencies': 'no', 'payment:discover_card': 'yes', 'payment:mastercard': 'yes', 'payment:visa': 'yes', 'payment:visa_debit': 'yes', 'phone': '+1-458-226-2006', 'seats': '15', 'takeaway': 'yes', 'website': 'http://saucedupsandwiches.com', 'wheelchair': 'yes'}
+  way/953191413 42.324448,-122.878029 sd 154 vin 20/20 {'building': 'yes', 'name': 'Schuller Apartments'}
+  node/13453874444 42.326153,-122.876463 sd 24 vin 1/1 {'addr:housenumber': '101', 'addr:street': 'North Grape Street', 'government': 'education', 'name': 'Southern Oregon Education Service District', 'office': 'educational_institution', 'operator': 'Southern Oregon Education Service District', 'operator:type': 'government', 'phone': '+1-541-776-8590', 'website': 'https://www.soesd.k12.or.us'}
+  way/953191388 42.325188,-122.875547 sd 11 vin 17/19 {'building': 'yes', 'name': 'The Official Britt Music & Arts Festival'}
+
+UNNAMED POI-tagged inside (summary by main tag):
+   27 amenity=parking
+   4 man_made=flagpole
+   3 landuse=grass
+   2 amenity=shelter
+   1 amenity=fountain
+   1 leisure=pitch
+   1 amenity=parking_space
+   1 landuse=commercial
+
+UNNAMED non-parking/non-landuse POIs:
+  way/461554288 42.323967,-122.875983 sd 109 {'amenity': 'fountain'}
+  way/953192301 42.323571,-122.876388 sd 162 {'amenity': 'shelter', 'building': 'yes', 'shelter_type': 'gazebo'}
+  way/953192302 42.323746,-122.875805 sd 111 {'amenity': 'shelter', 'building': 'yes', 'shelter_type': 'gazebo'}

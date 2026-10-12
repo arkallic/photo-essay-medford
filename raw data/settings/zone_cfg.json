@@ -1,0 +1,57 @@
+{
+ "buf": 152,
+ "bulges": [
+  {
+   "name": "Southern Oregon ESD + Historic Holly Theater",
+   "targets": [
+    [
+     42.326059,
+     -122.876363
+    ],
+    [
+     42.325807,
+     -122.876698
+    ]
+   ],
+   "margin": 30
+  },
+  {
+   "name": "Medford Police",
+   "targets": [
+    [
+     42.322205,
+     -122.87455
+    ]
+   ],
+   "margin": 30
+  },
+  {
+   "name": "Station 71five community center + W 8th St bus stop",
+   "targets": [
+    [
+     42.322231,
+     -122.887005
+    ],
+    [
+     42.3223624,
+     -122.8866322
+    ]
+   ],
+   "margin": 30
+  }
+ ],
+ "carves": [
+  {
+   "name": "lone house, W 8th St near Lincoln St (1122799914)",
+   "lat": 42.3222483,
+   "lng": -122.8874259,
+   "clear": 12
+  },
+  {
+   "name": "lone house, N Oakdale Ave near W 3rd St (967132180)",
+   "lat": 42.327845,
+   "lng": -122.8787296,
+   "clear": 12
+  }
+ ]
+}

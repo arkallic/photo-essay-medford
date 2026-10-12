@@ -1,0 +1,243 @@
+zone area m2 865947 acres 214.0 sqmi 0.334  ring pts 170
+
+=== SERVICES vs OSM ===
+
+# First Presbyterian Church | Places of worship | cross | note: None | inside flag: True
+    way/953191379 {'addr:housenumber': '85', 'addr:street': 'South Holly Street', 'amenity': 'place_of_worship', 'building': 'church', 'denomination': 'presbyterian', 'email': 'FPCM@firstpresmedford.or', 'name': 'First Presbyterian', 'opening_hours:office': 'Mo-Th 09:00-12:00', 'phone': '+1-541-779-1711', 'religion': 'christian', 'service_times': 'Su 08:30; 11:00', 'website': 'https://firstpreschurchmedford.com/'}
+    osm centroid 42.324174,-122.875178 vmean 42.324187,-122.874984 | map pt 42.324193,-122.874986 | d(map,centroid)=16.0 m d(map,vmean)=0.7 m
+    vertices inside: 18/18 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 27.3 m  flag True OK
+
+# Bank of America | Banking & finance | money | note: None | inside flag: True
+    way/953191389 {'amenity': 'bank', 'brand': 'Bank of America', 'brand:wikidata': 'Q487907', 'building': 'commercial', 'name': 'Bank of America'}
+    osm centroid 42.324769,-122.875467 vmean 42.324934,-122.875932 | map pt 42.324935,-122.875929 | d(map,centroid)=42.3 m d(map,vmean)=0.3 m
+    vertices inside: 30/30 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 51.1 m  flag True OK
+
+# Christ Unity Church | Places of worship | cross | note: None | inside flag: True
+    way/953205274 {'building': 'church', 'name': 'Christ Unity Church'}
+    osm centroid 42.329573,-122.879872 vmean 42.329566,-122.879854 | map pt 42.329574,-122.879850 | d(map,centroid)=1.8 m d(map,vmean)=0.9 m
+    vertices inside: 11/17 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 8.8 m  flag True OK
+
+# Jackson County Jail | Government & courts | shield | note: some sheriff's staff | inside flag: True
+    node/966179963 {'amenity': 'police', 'name': 'Jackson County Sheriff'}
+    osm centroid 42.322021,-122.878775 vmean 42.322021,-122.878775 | map pt 42.322021,-122.878775 | d(map,centroid)=0.1 m d(map,vmean)=0.1 m
+    vertices inside: 1/1 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 96.0 m  flag True OK
+
+# Station 71five community center | Health & social services | people | note: None | inside flag: True
+    node/2084102145 {'amenity': 'community_centre', 'name': 'Station 71five community center'}
+    osm centroid 42.322231,-122.887005 vmean 42.322231,-122.887005 | map pt 42.322231,-122.887005 | d(map,centroid)=0.0 m d(map,vmean)=0.0 m
+    vertices inside: 1/1 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 18.3 m  flag True OK
+
+# James A. Redden Federal Courthouse | Government & courts | scales | note: None | inside flag: True
+    way/555335250 {'amenity': 'courthouse', 'building': 'yes', 'name': 'James A. Redden Federal Courthouse', 'wikidata': 'Q6128241'}
+    osm centroid 42.325576,-122.877400 vmean 42.325507,-122.877201 | map pt 42.325514,-122.877248 | d(map,centroid)=14.3 m d(map,vmean)=4.0 m
+    vertices inside: 5/5 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 34.4 m  flag True OK
+
+# Center for NonProfit Legal Services | Health & social services | scales | note: None | inside flag: True
+    way/953191380 {'addr:housenumber': '223;225', 'addr:street': 'West Main Street', 'building': 'commercial', 'contact:city': 'Medford', 'contact:pobox': '1586', 'contact:postcode': '97501', 'contact:state': 'OR', 'fax': '+1-541-779-7308', 'name': 'Center for NonProfit Legal Services', 'office': 'lawyer', 'opening_hours': 'Mo-Fr 08:30-12:00,13:00-16:00', 'phone': '+1-541-779-7291', 'website': 'https://cnpls.org/'}
+    osm centroid 42.324170,-122.874455 vmean 42.324454,-122.875409 | map pt 42.324450,-122.875398 | d(map,centroid)=83.7 m d(map,vmean)=1.0 m
+    vertices inside: 9/9 ; centroid inside: False
+    map point inside (recomputed): True  signed edge dist 39.4 m  flag True OK
+
+# Southern Oregon Education Service District | Education | gov | note: None | inside flag: True
+    way/953191399 {'addr:housenumber': '101', 'addr:street': 'North Grape Street', 'building': 'office', 'government': 'education', 'name': 'Southern Oregon Education Service District', 'office': 'educational_institution', 'operator': 'Southern Oregon Education Service District', 'operator:type': 'government', 'phone': '+1-541-776-8590', 'website': 'https://www.soesd.k12.or.us'}
+    osm centroid 42.326033,-122.876416 vmean 42.326097,-122.876426 | map pt 42.326059,-122.876363 | d(map,centroid)=5.2 m d(map,vmean)=6.6 m
+    vertices inside: 6/6 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 29.8 m  flag True OK
+
+# Historic Holly Theater | Arts & culture | mask | note: None | inside flag: True
+    way/953191735 {'amenity': 'theatre', 'building': 'commercial', 'name': 'Historic Holly Theater', 'website': 'https://www.hollytheatre.org/'}
+    osm centroid 42.325848,-122.876903 vmean 42.325797,-122.876694 | map pt 42.325807,-122.876698 | d(map,centroid)=17.5 m d(map,vmean)=1.1 m
+    vertices inside: 17/17 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 47.4 m  flag True OK
+
+# Oregon Pacific Financial Advisors, Inc. | Banking & finance | money | note: None | inside flag: True
+    way/1529522902 {'addr:housenumber': '210', 'addr:street': 'West 8th Street', 'atm': 'no', 'building': 'commercial', 'email': 'info@opfa.com', 'fax': '+1-541-772-6927', 'name': 'Oregon Pacific Financial Advisors, Inc.', 'office': 'financial', 'phone': '+1-541-772-1116', 'website': 'https://www.opfa.com/'}
+    osm centroid 42.324254,-122.874575 vmean 42.324360,-122.874981 | map pt 42.324378,-122.874974 | d(map,centroid)=35.7 m d(map,vmean)=2.1 m
+    vertices inside: 7/7 ; centroid inside: False
+    map point inside (recomputed): True  signed edge dist 15.0 m  flag True OK
+
+# First United Methodist Church | Places of worship | cross | note: None | inside flag: True
+    node/11133007432 {'amenity': 'place_of_worship', 'denomination': 'methodist', 'name': 'First United Methodist Church', 'religion': 'christian'}
+    osm centroid 42.323448,-122.878957 vmean 42.323448,-122.878957 | map pt 42.323448,-122.878957 | d(map,centroid)=0.1 m d(map,vmean)=0.1 m
+    vertices inside: 1/1 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 210.8 m  flag True OK
+
+# Alba Park | Recreation & parks | tree | note: None | inside flag: True
+    way/198250488 {'addr:housenumber': '304', 'addr:street': 'West Main Street', 'leisure': 'park', 'name': 'Alba Park', 'opening_hours': '06:00-22:30', 'operator': 'City of Medford', 'operator:type': 'government', 'operator:wikidata': 'Q836663', 'website': 'https://www.medfordoregon.gov/Government/Departments/Parks-Recreation-and-Facilities/City-Parks-and-Facilities/Alba-Park_'}
+    osm centroid 42.323935,-122.875966 vmean 42.323927,-122.875905 | map pt 42.323948,-122.876002 | d(map,centroid)=3.3 m d(map,vmean)=8.4 m
+    vertices inside: 8/8 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 111.9 m  flag True OK
+
+# Medford City Hall | Government & courts | gov | note: None | inside flag: True
+    way/204768006 {'amenity': 'townhall', 'building': 'yes', 'name': 'Medford City Hall'}
+    osm centroid 42.322578,-122.875944 vmean 42.322577,-122.875943 | map pt 42.322526,-122.875954 | d(map,centroid)=5.8 m d(map,vmean)=5.8 m
+    vertices inside: 5/5 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 75.3 m  flag True OK
+
+# Jackson County Circuit Court | Government & courts | scales | note: None | inside flag: True
+    way/204768357 {'addr:housenumber': '100', 'addr:street': 'South Oakdale Avenue', 'amenity': 'courthouse', 'building': 'yes', 'building:levels': '3', 'level': '3', 'name': 'Jackson County Circuit Court', 'note': 'Monday thru Friday,excluding holidays 8:00 AM to 12:00 PM and 1:00 PM to 4:00 PM', 'phone': '+1-541-776-7171', 'website': 'https://courts.oregon.gov/jackson/Pages/index.aspx'}
+    osm centroid 42.322041,-122.877669 vmean 42.322031,-122.877640 | map pt 42.321974,-122.877656 | d(map,centroid)=7.5 m d(map,vmean)=6.5 m
+    vertices inside: 5/5 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 83.9 m  flag True OK
+
+# First Library | Recreation & parks | tree | note: None | inside flag: True
+    way/480316275 {'leisure': 'park', 'name': 'First Library'}
+    osm centroid 42.323713,-122.877023 vmean 42.323632,-122.876936 | map pt 42.323631,-122.876956 | d(map,centroid)=10.6 m d(map,vmean)=1.7 m
+    vertices inside: 22/22 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 196.7 m  flag True OK
+
+# St. Mark's Episcopal Church | Places of worship | cross | note: None | inside flag: True
+    way/953191414 {'amenity': 'place_of_worship', 'building': 'yes', 'denomination': 'anglican', 'name': "St. Mark's Episcopal Church", 'religion': 'christian'}
+    osm centroid 42.325240,-122.878782 vmean 42.325116,-122.878598 | map pt 42.325124,-122.878602 | d(map,centroid)=19.6 m d(map,vmean)=0.9 m
+    vertices inside: 47/47 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 116.9 m  flag True OK
+
+# Jackson County Health & Human Services | Health & social services | gov | note: None | inside flag: True
+    way/953191898 {'addr:housenumber': '140', 'addr:street': 'South Holly Street', 'building': 'yes', 'building:levels': '2', 'description': 'Mental Health Crisis: Call 541-774-8201 anytime', 'email': 'HHSHELP@jacksoncounty.org', 'healthcare': 'yes', 'name': 'Jackson County Health & Human Services', 'opening_hours': 'Mo-Fr 08:00-12:00; 13:00-17:00', 'operator': 'Jackson County', 'phone': '+1-541-774-8209', 'website': 'https://jacksoncountyor.gov/departments/health___human_services/programs_and_services/public_health/location___office_hours.php'}
+    osm centroid 42.323204,-122.875282 vmean 42.323219,-122.875242 | map pt 42.323241,-122.875239 | d(map,centroid)=5.4 m d(map,vmean)=2.4 m
+    vertices inside: 19/19 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 88.7 m  flag True OK
+
+# Medford Police | Government & courts | shield | note: None | inside flag: True
+    way/953191972 {'addr:housenumber': '411', 'addr:street': 'West 8th Street', 'amenity': 'police', 'building': 'government', 'building:levels': '3', 'name': 'Medford Police', 'phone': '+1-541-774-2250', 'website': 'http://www.ci.medford.or.us/SectionIndex.asp?SectionID=7'}
+    osm centroid 42.322260,-122.874336 vmean 42.322167,-122.874574 | map pt 42.322205,-122.874550 | d(map,centroid)=18.7 m d(map,vmean)=4.6 m
+    vertices inside: 12/13 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 44.6 m  flag True OK
+
+# Rogue Valley Family YMCA | Recreation & parks | run | note: None | inside flag: True
+    way/953192628 {'building': 'commercial', 'leisure': 'sports_centre', 'name': 'Rogue Valley Family YMCA'}
+    osm centroid 42.324540,-122.879656 vmean 42.324590,-122.879664 | map pt 42.324588,-122.879656 | d(map,centroid)=5.4 m d(map,vmean)=0.7 m
+    vertices inside: 26/26 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 222.0 m  flag True OK
+
+# God's Food Pantry | Health & social services | apple | note: None | inside flag: True
+    way/953222666 {'amenity': 'social_facility', 'building': 'yes', 'name': "God's Food Pantry", 'social_facility': 'food_bank'}
+    osm centroid 42.323685,-122.882535 vmean 42.323935,-122.883180 | map pt 42.323940,-122.883176 | d(map,centroid)=59.9 m d(map,vmean)=0.6 m
+    vertices inside: 25/25 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 176.0 m  flag True OK
+
+# McLoughlin Middle School | Education | school | note: None | inside flag: True
+    way/954465393 {'amenity': 'school', 'name': 'McLoughlin Middle School'}
+    osm centroid 42.329044,-122.881900 vmean 42.328995,-122.880454 | map pt 42.329019,-122.880563 | d(map,centroid)=110.2 m d(map,vmean)=9.3 m
+    vertices inside: 29/29 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 83.5 m  flag True OK
+
+# La Clinica | Health & social services | medical | note: None | inside flag: True
+    way/954473193 {'amenity': 'doctors', 'building': 'yes', 'healthcare': 'doctor', 'name': 'La Clinica'}
+    osm centroid 42.323501,-122.887007 vmean 42.323473,-122.886867 | map pt 42.323476,-122.886853 | d(map,centroid)=13.0 m d(map,vmean)=1.2 m
+    vertices inside: 11/11 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 128.0 m  flag True OK
+
+# Jackson County Adult Supervision Service | Government & courts | gov | note: also election office / ballot drop box | inside flag: True
+    way/954473298 {'addr:housenumber': '1101', 'addr:street': 'West Main Street', 'building': 'yes', 'building:levels': '1', 'name': 'Jackson County Adult Supervision Service', 'note': 'Adult Supervision Services consists of monitoring the behavior and movement of offenders in the community to ensure compliance with the conditions of the releasing authority.', 'office': 'government', 'website': 'https://jacksoncountyor.org/community-justice'}
+    osm centroid 42.323316,-122.884347 vmean 42.323347,-122.884385 | map pt 42.323357,-122.884376 | d(map,centroid)=5.2 m d(map,vmean)=1.3 m
+    vertices inside: 19/19 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 111.1 m  flag True OK
+
+# Oregon Employment Department | Government & courts | gov | note: None | inside flag: True
+    way/429478438 {'building': 'yes', 'name': 'Oregon Employment Department'}
+    osm centroid 42.324758,-122.878988 vmean 42.324704,-122.878973 | map pt 42.324748,-122.878984 | d(map,centroid)=1.2 m d(map,vmean)=5.0 m
+    vertices inside: 7/7 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 168.0 m  flag True OK
+
+# St Marks Episcopal Parish Church | Places of worship | cross | note: None | inside flag: True
+    way/954466806 {'building': 'church', 'name': 'St Marks Episcopal Parish Church'}
+    osm centroid 42.325719,-122.879200 vmean 42.325737,-122.879302 | map pt 42.325745,-122.879304 | d(map,centroid)=9.1 m d(map,vmean)=0.9 m
+    vertices inside: 19/19 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 128.8 m  flag True OK
+
+# Jackson County Courthouse & County Offices | Government & courts | gov | note: None | inside flag: True
+    way/953192627 {'alt_name': 'Jackson County Clerk', 'amenity': 'courthouse', 'building': 'yes', 'name': 'Jackson County Courthouse', 'wikidata': 'Q6117035'}
+    osm centroid 42.322820,-122.877932 vmean 42.322797,-122.877937 | map pt 42.322976,-122.877805 | d(map,centroid)=20.2 m d(map,vmean)=22.7 m
+    vertices inside: 18/18 ; centroid inside: True
+    way/953192625 {'addr:housenumber': '10', 'addr:street': 'South Oakdale Avenue', 'building': 'government', 'emergency': 'psap', 'name': 'Jackson County Offices', 'office': 'government'}
+    osm centroid 42.323211,-122.877906 vmean 42.323157,-122.877684 | map pt 42.322976,-122.877805 | d(map,centroid)=27.4 m d(map,vmean)=22.5 m
+    vertices inside: 21/21 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 190.6 m  flag True OK
+
+# Old Medford Public Library | Arts & culture | book | note: historic building | inside flag: True
+    way/224277673 {'addr:housenumber': '413', 'addr:street': 'West Main Street', 'building': 'library', 'building:levels': '3', 'name': 'Old Medford Public Library', 'wikidata': 'Q6805304'}
+    osm centroid 42.323574,-122.876877 vmean 42.323576,-122.876797 | map pt 42.323578,-122.876807 | d(map,centroid)=5.8 m d(map,vmean)=0.8 m
+    vertices inside: 14/14 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 189.9 m  flag True OK
+
+# McLoughlin field & track | Recreation & parks | track | note: public use | inside flag: True
+    way/356319132 {}
+    osm centroid 42.329029,-122.882983 vmean 42.329061,-122.883097 | map pt 42.329161,-122.883025 | d(map,centroid)=15.1 m d(map,vmean)=12.6 m
+    vertices inside: 40/40 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 67.1 m  flag True OK
+
+# Lausmann Annex | Government & courts | gov | note: City of Medford offices | inside flag: True
+    way/224277672 {'addr:housenumber': '200', 'addr:street': 'South Ivy Street', 'building': 'yes', 'building:levels': '2', 'name': 'Lausmann Annex', 'phone': '+1-541-774-2380', 'website': 'http://www.ci.medford.or.us/Page.asp?NavID=888'}
+    osm centroid 42.321894,-122.875061 vmean 42.321925,-122.875092 | map pt 42.321935,-122.875125 | d(map,centroid)=7.0 m d(map,vmean)=2.9 m
+    vertices inside: 5/7 ; centroid inside: True
+    map point inside (recomputed): True  signed edge dist 8.7 m  flag True OK
+
+=== BUS STOPS ===
+  node 12710960854 IN  sd=174 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '762 W Main St', 'public_transport': 'platform', 'ref': '250020'}
+  node 12735150757 IN  sd=167 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '762 W Main St', 'public_transport': 'stop_position', 'ref': '250020'}
+  node 12710960855 IN  sd=158 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'West Main and Hamilton - Probation Office', 'public_transport': 'platform', 'ref': '250030'}
+  node 12735150742 IN  sd=152 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Medford City Hall', 'public_transport': 'stop_position', 'ref': '220300'}
+  node 12710759481 IN  sd=151 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W Main St - East of Summit Ave', 'public_transport': 'platform', 'ref': '220150'}
+  node 12735150756 IN  sd=150 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'West Main and Hamilton - Probation Office', 'public_transport': 'stop_position', 'ref': '250030'}
+  node 12710960871 IN  sd=143 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Medford City Hall', 'public_transport': 'platform', 'ref': '220300'}
+  node 12735150755 IN  sd=143 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W Main St - East of Summit Ave', 'public_transport': 'stop_position', 'ref': '220150'}
+  node 12710960853 IN  sd=129 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '384 W Main St', 'public_transport': 'platform', 'ref': '250010'}
+  node 12735150758 IN  sd=128 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '384 W Main St', 'public_transport': 'stop_position', 'ref': '250010'}
+  node 12735365196 IN  sd=127 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - West of Mistletoe St', 'public_transport': 'stop_position', 'ref': '220290'}
+  node 12714515025 IN  sd=124 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - West of Mistletoe St', 'public_transport': 'platform', 'ref': '220290'}
+  node 12710759480 IN  sd=101 m | {'bench': 'yes', 'bus': 'yes', 'highway': 'bus_stop', 'name': 'Hamilton and West Main - Probation Office', 'public_transport': 'platform', 'ref': '220140', 'shelter': 'no'}
+  node 12735389006 IN  sd=101 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Hamilton and West Main - Probation Office', 'public_transport': 'stop_position', 'ref': '220140'}
+  node 12735365198 IN  sd=47 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Lincoln St', 'public_transport': 'stop_position', 'ref': '220270'}
+  node 12714515023 IN  sd=40 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Lincoln St', 'public_transport': 'platform', 'ref': '220270'}
+  node 12735365197 IN  sd=12 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Cannon St', 'public_transport': 'stop_position', 'ref': '220280'}
+  node 12714515024 IN  sd=4 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Cannon St', 'public_transport': 'platform', 'ref': '220280'}
+  node 12735365199 out sd=-40 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Elm St', 'public_transport': 'stop_position', 'ref': '220260'}
+  node 12735150741 out sd=-42 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Grape St', 'public_transport': 'stop_position', 'ref': '220310'}
+  node 12710960872 out sd=-43 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Grape St', 'public_transport': 'platform', 'ref': '220310'}
+  node 12714515022 out sd=-47 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'W 8th St - East of Elm St', 'public_transport': 'platform', 'ref': '220260'}
+  node 12710759467 out sd=-48 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '10th St - East of Holly St', 'public_transport': 'platform', 'ref': '220010'}
+  node 12735389014 out sd=-51 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '10th St - East of Holly St', 'public_transport': 'stop_position', 'ref': '220010'}
+  node 12710793961 out sd=-57 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Columbus Ave - South of Bryant St', 'public_transport': 'platform', 'ref': '300390'}
+  node 12735825246 out sd=-65 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Columbus and Main', 'public_transport': 'stop_position', 'ref': '300090'}
+  node 11388367037 out sd=-73 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '10 S Columbus Ave', 'public_transport': 'stop_position', 'ref': '250040'}
+  node 12710793962 out sd=-74 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Columbus and Main', 'public_transport': 'platform', 'ref': '300090'}
+  node 12710960856 out sd=-81 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': '10 S Columbus Ave', 'public_transport': 'platform', 'ref': '250040'}
+  node 12710793964 out sd=-90 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Columbus Ave - South of Palm St', 'public_transport': 'platform', 'ref': '300400'}
+  node 12735825247 out sd=-96 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Columbus Ave - South of Sunset Ave', 'public_transport': 'stop_position', 'ref': '300080'}
+  node 12710793963 out sd=-104 m | {'bus': 'yes', 'highway': 'bus_stop', 'name': 'Columbus Ave - South of Sunset Ave', 'public_transport': 'platform', 'ref': '300080'}
+map bus stops 9 unique coords 9 unique names 9 unique refs 9
+inside highway=bus_stop: 18  inside bus_stop-or-platform: 18
+    12710759480 Hamilton and West Main - Probation Office 220140 on map
+    12710759481 W Main St - East of Summit Ave 220150 on map
+    12710960853 384 W Main St 250010 on map
+    12710960854 762 W Main St 250020 on map
+    12710960855 West Main and Hamilton - Probation Office 250030 on map
+    12710960871 Medford City Hall 220300 on map
+    12714515023 W 8th St - East of Lincoln St 220270 on map
+    12714515024 W 8th St - East of Cannon St 220280 on map
+    12714515025 W 8th St - West of Mistletoe St 220290 on map
+    12735150742 Medford City Hall 220300 MISSING
+    12735150755 W Main St - East of Summit Ave 220150 MISSING
+    12735150756 West Main and Hamilton - Probation Office 250030 MISSING
+    12735150757 762 W Main St 250020 MISSING
+    12735150758 384 W Main St 250010 MISSING
+    12735365196 W 8th St - West of Mistletoe St 220290 MISSING
+    12735365197 W 8th St - East of Cannon St 220280 MISSING
+    12735365198 W 8th St - East of Lincoln St 220270 MISSING
+    12735389006 Hamilton and West Main - Probation Office 220140 MISSING
+  map stop Hamilton and West Main - Probation Office 220140 -> osm [('12710759480', 'Hamilton and West Main - Probation Office', '220140', 'platform')] inside True sd 101
+  map stop W Main St - East of Summit Ave 220150 -> osm [('12710759481', 'W Main St - East of Summit Ave', '220150', 'platform')] inside True sd 151
+  map stop 384 W Main St 250010 -> osm [('12710960853', '384 W Main St', '250010', 'platform')] inside True sd 129
+  map stop 762 W Main St 250020 -> osm [('12710960854', '762 W Main St', '250020', 'platform')] inside True sd 174
+  map stop West Main and Hamilton - Probation Office 250030 -> osm [('12710960855', 'West Main and Hamilton - Probation Office', '250030', 'platform')] inside True sd 158
+  map stop Medford City Hall 220300 -> osm [('12710960871', 'Medford City Hall', '220300', 'platform')] inside True sd 143
+  map stop W 8th St - East of Lincoln St 220270 -> osm [('12714515023', 'W 8th St - East of Lincoln St', '220270', 'platform')] inside True sd 40
+  map stop W 8th St - East of Cannon St 220280 -> osm [('12714515024', 'W 8th St - East of Cannon St', '220280', 'platform')] inside True sd 4
+  map stop W 8th St - West of Mistletoe St 220290 -> osm [('12714515025', 'W 8th St - West of Mistletoe St', '220290', 'platform')] inside True sd 124

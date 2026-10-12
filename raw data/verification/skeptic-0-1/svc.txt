@@ -1,0 +1,319 @@
+services-along-walk.html:1: <!doctype html>
+services-along-walk.html:2: <html lang="en">
+services-along-walk.html:3: <head>
+services-along-walk.html:4: <meta charset="utf-8">
+services-along-walk.html:5: <meta name="viewport" content="width=device-width, initial-scale=1">
+services-along-walk.html:6: <title>Services Along Walk</title>
+services-along-walk.html:7: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+services-along-walk.html:8: <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+services-along-walk.html:9: <style>
+services-along-walk.html:10:   :root { --bg:#faf8f5; --fg:#1f1d1a; --muted:#6b665e; --accent:#d9480f; --zone:#2b6cb0; --card:#fff; --line:#e6e1d9; }
+services-along-walk.html:11:   @media (prefers-color-scheme: dark) {
+services-along-walk.html:12:     :root:not([data-theme="light"]) { --bg:#171614; --fg:#eeeae4; --muted:#a39d93; --accent:#ff7a3d; --zone:#5b9bd5; --card:#22201d; --line:#34312c; }
+services-along-walk.html:13:   }
+services-along-walk.html:14:   :root[data-theme="dark"] { --bg:#171614; --fg:#eeeae4; --muted:#a39d93; --accent:#ff7a3d; --zone:#5b9bd5; --card:#22201d; --line:#34312c; }
+services-along-walk.html:15:   * { box-sizing:border-box; }
+services-along-walk.html:16:   html, body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+services-along-walk.html:17:     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+services-along-walk.html:18:   .layout { display:block; }
+services-along-walk.html:19:   #map { height:72vh; min-height:420px; }
+services-along-walk.html:20:   /* caret bar under the map: collapse the stats so the map fills the screen */
+services-along-walk.html:21:   .toggle-bar { display:flex; justify-content:center; border-top:1px solid var(--line); background:var(--card); }
+services-along-walk.html:22:   .toggle-bar button { font:inherit; font-size:13px; color:var(--muted); background:none; border:0; cursor:pointer;
+services-along-walk.html:23:     padding:5px 16px; display:flex; align-items:center; gap:6px; }
+services-along-walk.html:24:   .toggle-bar button:hover { color:var(--fg); }
+services-along-walk.html:25:   .toggle-bar .caret { display:inline-block; transition:transform .15s; }
+services-along-walk.html:26:   body.collapsed #map { height:calc(100vh - 31px); min-height:0; }
+services-along-walk.html:27:   body.collapsed aside { display:none; }
+services-along-walk.html:28:   body.collapsed .toggle-bar .caret { transform:rotate(180deg); }
+services-along-walk.html:29:   aside { border-top:1px solid var(--line); padding:20px 24px 28px; max-width:1240px; margin:0 auto; }
+services-along-walk.html:30:   h1 { font-size:20px; margin:0 0 4px; }
+services-along-walk.html:31:   .sub { color:var(--muted); font-size:13px; margin:0 0 16px; line-height:1.4; }
+services-along-walk.html:32:   #list { margin-top:12px; }
+services-along-walk.html:33:   #list h3 { font-size:13px; margin:14px 0 8px; padding-top:10px; border-top:1px solid var(--line); }
+services-along-walk.html:34:   #list h3:first-child { margin-top:0; padding-top:0; border-top:0; }
+services-along-walk.html:35:   #list h3 span { font-weight:400; color:var(--muted); }
+services-along-walk.html:36:   #list .cols { columns:250px auto; column-gap:20px; }
+services-along-walk.html:37:   #list .grp { break-inside:avoid; margin-bottom:10px; }
+services-along-walk.html:38:   h2 { font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 3px;
+services-along-walk.html:39:     display:flex; align-items:center; gap:6px; }
+services-along-walk.html:40:   .dot { width:10px; height:10px; border-radius:50%; display:inline-block; flex-shrink:0; }
+services-along-walk.html:41:   .svc { padding:2px 4px; margin:0 -4px; border-radius:4px; cursor:pointer; font-size:12.5px; line-height:1.35; }
+services-along-walk.html:42:   .svc:hover, .svc.active { background:var(--card); box-shadow:inset 0 0 0 1px var(--accent); }
+services-along-walk.html:43:   .svc .nm { font-weight:600; }
+services-along-walk.html:44:   .svc .meta { color:var(--muted); font-size:11.5px; }
+services-along-walk.html:45:   .pin { background:var(--accent); color:#fff; border:2px solid #fff; border-radius:50%;
+services-along-walk.html:46:     width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+services-along-walk.html:47:     font-weight:700; font-size:13px; box-shadow:0 1px 4px rgba(0,0,0,.4); }
+services-along-walk.html:48:   /* --s shrinks every marker together when zoomed out */
+services-along-walk.html:49:   #map { --s:1; }
+services-along-walk.html:50:   .zone { opacity:.32; }
+services-along-walk.html:51:   .ic { width:22px; height:22px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center;
+services-along-walk.html:52:     box-shadow:0 1px 3px rgba(0,0,0,.45); }
+services-along-walk.html:53:   .ic svg { width:15px; height:15px; fill:currentColor; display:block; }
+services-along-walk.html:54:   .ic svg.big { width:19px; height:19px; }
+services-along-walk.html:55:   .ic.bus { width:26px; height:26px; color:#212529; border:2px solid #212529; }
+services-along-walk.html:56:   .ic.bus svg { width:17px; height:17px; }
+services-along-walk.html:57:   .li-ic { width:13px; height:13px; fill:currentColor; vertical-align:-2px; margin-right:4px; }
+services-along-walk.html:58:   .pin, .ic, .blk { transform:scale(var(--s)); transform-origin:center; }
+services-along-walk.html:59:   .leaflet-popup-content { margin:10px; }
+services-along-walk.html:60:   .leaflet-popup-content img { width:240px; border-radius:6px; display:block; }
+services-along-walk.html:61:   .icon-key { background:rgba(255,255,255,.95); color:#1f1d1a; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,.3);
+services-along-walk.html:62:     font:11.5px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width:290px; }
+services-along-walk.html:63:   .icon-key summary { cursor:pointer; font-weight:600; padding:5px 9px; list-style:none; }
+services-along-walk.html:64:   .icon-key summary::-webkit-details-marker { display:none; }
+services-along-walk.html:65:   .icon-key summary::after { content:" ▾"; color:#888; }
+services-along-walk.html:66:   .icon-key:not([open]) summary::after { content:" ▸"; }
+services-along-walk.html:67:   .icon-key .rows { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:3px 10px; padding:0 9px 7px; }
+services-along-walk.html:68:   .icon-key .row { display:flex; align-items:center; gap:5px; line-height:1.2; min-width:0; }
+services-along-walk.html:69:   .icon-key .ic, .icon-key .pin { transform:none; width:17px; height:17px; flex-shrink:0; box-shadow:0 0 0 1px rgba(0,0,0,.15); }
+services-along-walk.html:70:   .icon-key .ic svg { width:12px; height:12px; }
+services-along-walk.html:71:   .icon-key .ic.bus { border-width:1.5px; }
+services-along-walk.html:72:   .icon-key .pin { font-size:9px; border-width:1.5px; }
+services-along-walk.html:73:   .homes { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:6px; }
+services-along-walk.html:74:   .homes-d { font-size:12px; color:var(--muted); line-height:1.45; margin-top:2px; }
+services-along-walk.html:75:   .homes-d b { color:var(--fg); }
+services-along-walk.html:76:   .sum { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin-bottom:8px; }
+services-along-walk.html:77:   .stats { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin:0 0 10px; }
+services-along-walk.html:78:   .howto { font-size:12px; color:var(--muted); line-height:1.45; margin:4px 0 8px; }
+services-along-walk.html:79:   .howto b { color:var(--fg); }
+services-along-walk.html:80:   .tile { border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); }
+services-along-walk.html:81:   .t-h { font-weight:600; font-size:12.5px; line-height:1.25; }
+services-along-walk.html:82:   .t-note { display:block; font-weight:400; color:var(--muted); font-size:11px; }
+services-along-walk.html:83:   .t-big { font-size:20px; font-weight:700; line-height:1.2; margin:2px 0 3px; }
+services-along-walk.html:84:   .t-big span { font-size:12px; font-weight:500; color:var(--muted); }
+services-along-walk.html:85:   .t-l { font-size:11.5px; color:var(--muted); line-height:1.45; }
+services-along-walk.html:86:   .t-l b { color:var(--fg); }
+services-along-walk.html:87:   .src { font-size:11px; color:var(--muted); margin-top:20px; line-height:1.4; }
+services-along-walk.html:88:   .src a { color:inherit; }
+services-along-walk.html:89:   /*HOMES_CSS*/
+services-along-walk.html:90:   @media (max-width: 760px) {
+services-along-walk.html:91:     #map { height:60vh; min-height:320px; }
+services-along-walk.html:92:     aside { padding:16px 14px 24px; }
+services-along-walk.html:93:     .leaflet-popup-content img { width:200px; }
+services-along-walk.html:94:     .icon-key { max-width:250px; font-size:11px; }
+services-along-walk.html:95:   }
+services-along-walk.html:96: </style>
+services-along-walk.html:97: </head>
+services-along-walk.html:98: <body>
+services-along-walk.html:99: <div class="layout">
+services-along-walk.html:100:   <div id="map"></div>
+services-along-walk.html:101:   <div class="toggle-bar"><button id="statsToggle" type="button" aria-expanded="true" aria-controls="stats-panel"><span class="caret">▾</span><span class="lbl">Hide stats</span></button></div>
+services-along-walk.html:102:   <aside id="stats-panel">
+services-along-walk.html:103:     <h1>Services Along the Walk</h1>
+services-along-walk.html:104:     <p class="sub">The shaded area covers the loop of the walking route plus about 150 m (≈500 ft) outside it. It bulges out in three spots to take in nearby services (the Education Service District and Holly Theater, Medford Police, and Station 71five with its bus stop) and is trimmed around two lone houses at its edge. Every number below counts only what is inside the shading. Medford, OR.</p>
+services-along-walk.html:105:     <div class="homes">
+services-along-walk.html:106:       <div class="sum">
+services-along-walk.html:107:         <div class="tile sum-t"><div class="t-h">Homes</div><div class="t-big">≈ 640</div><div class="t-l">497 houses<br>92 duplex–fourplex<br>50 apartment bldgs</div></div>
+services-along-walk.html:108:         <div class="tile sum-t"><div class="t-h">Shaded area</div><div class="t-big">≈ 214</div><div class="t-l">acres<br>≈ 0.33 sq mi</div></div>
+services-along-walk.html:109:         <div class="tile sum-t"><div class="t-h">Density</div><div class="t-big">≈ 3</div><div class="t-l">homes per acre<br>of shaded area</div></div>
+services-along-walk.html:110:         <div class="tile sum-t"><div class="t-h">Other buildings</div><div class="t-big">98</div><div class="t-l">39 businesses<br>59 public buildings<br>+ 225 garages/sheds (not counted)</div></div>
+services-along-walk.html:111:       </div>
+services-along-walk.html:112:       <div class="howto"><b>Reading the tiles:</b> walk times run from each home to its <i>nearest</i> one inside the shading. <b>Typical home</b> is the middle home (half walk less, half more). <b>Farthest home</b> is the worst-off home's walk to its own nearest one, not the walk to the farthest service. Times use the pace from the photo walk (≈ 2.2 mph, from the photo timestamps; the #4→#5 stretch with the food stop is left out).</div>
+services-along-walk.html:113:       <div class="stats">
+services-along-walk.html:114:         <div class="tile"><div class="t-h">Services <span class=t-note>map icons, not bus stops</span></div><div class="t-big">29<span> inside</span></div><div class="t-l">1 per ≈ 7 acres<br>≈ 22 homes each<br>Typical home: <b>≈ 4 min</b> walk<br>Farthest home: ≈ 10 min<br><b>100%</b> of homes within 10 min</div></div>
+services-along-walk.html:115:         <div class="tile"><div class="t-h">Bus stops <span class=t-note>each side of the street counts</span></div><div class="t-big">9<span> inside</span></div><div class="t-l">1 per ≈ 24 acres<br>≈ 71 homes each<br>Typical home: <b>≈ 7 min</b> walk<br>Farthest home: ≈ 15 min<br><b>78%</b> of homes within 10 min</div></div>
+services-along-walk.html:116:         <div class="tile"><div class="t-h">Government & courts</div><div class="t-big">9<span> inside</span></div><div class="t-l">1 per ≈ 24 acres<br>≈ 71 homes each<br>Typical home: <b>≈ 8 min</b> walk<br>Farthest home: ≈ 18 min<br><b>74%</b> of homes within 10 min</div></div>
+services-along-walk.html:117:         <div class="tile"><div class="t-h">Health & social</div><div class="t-big">5<span> inside</span></div><div class="t-l">1 per ≈ 43 acres<br>≈ 130 homes each<br>Typical home: <b>≈ 8 min</b> walk<br>Farthest home: ≈ 16 min<br><b>73%</b> of homes within 10 min</div></div>
+services-along-walk.html:118:         <div class="tile"><div class="t-h">Parks & open space <span class=t-note>2 parks + school field; YMCA not counted</span></div><div class="t-big">3<span> inside</span></div><div class="t-l">1 per ≈ 71 acres<br>≈ 210 homes each<br>Typical home: <b>≈ 7 min</b> walk<br>Farthest home: ≈ 19 min<br><b>73%</b> of homes within 10 min</div></div>
+services-along-walk.html:119:         <div class="tile"><div class="t-h">Places of worship</div><div class="t-big">5<span> inside</span></div><div class="t-l">1 per ≈ 43 acres<br>≈ 130 homes each<br>Typical home: <b>≈ 9 min</b> walk<br>Farthest home: ≈ 17 min<br><b>55%</b> of homes within 10 min</div></div>
+services-along-walk.html:120:         <div class="tile"><div class="t-h">Banking & finance</div><div class="t-big">2<span> inside</span></div><div class="t-l">1 per ≈ 107 acres<br>≈ 320 homes each<br>Typical home: <b>≈ 16 min</b> walk<br>Farthest home: ≈ 25 min<br><b>13%</b> of homes within 10 min</div></div>
+services-along-walk.html:121:         <div class="tile"><div class="t-h">Education</div><div class="t-big">2<span> inside</span></div><div class="t-l">1 per ≈ 107 acres<br>≈ 320 homes each<br>Typical home: <b>≈ 7 min</b> walk<br>Farthest home: ≈ 19 min<br><b>70%</b> of homes within 10 min</div></div>
+services-along-walk.html:122:         <div class="tile"><div class="t-h">Businesses <span class=t-note>business buildings (county records); not listed below</span></div><div class="t-big">39<span> buildings</span></div><div class="t-l">1 per ≈ 5 acres<br>≈ 16 homes each<br>Typical home: <b>≈ 5 min</b> walk<br>Farthest home: ≈ 14 min<br><b>90%</b> of homes within 10 min</div></div>
+services-along-walk.html:123:         <div class="tile"><div class="t-h">Streets <span class="t-note">road access inside the shading</span></div><div class="t-big">≈ 8.3<span> mi of streets</span></div><div class="t-l">+ ≈ 3.7 mi of alleys<br>75 intersections (3+ way)<br>≈ 220 intersections per sq mi<br>≈ 77 homes per street mile</div></div>
+services-along-walk.html:124:       </div>
+services-along-walk.html:125:       <div class="homes-d"><i>Approximate, shaded area only.</i> Homes: Jackson County assessor records matched to building outlines; each building counts as one home (a duplex or apartment building is one). Density uses the whole shaded area, streets and public land included. Businesses and public buildings are county building types and are counted, not listed.</div>
+services-along-walk.html:126:     </div>
+services-along-walk.html:127:     <div id="list"></div>
+services-along-walk.html:128:     <p class="src">Place data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, downloaded Oct 11, 2026. Businesses not mapped in OpenStreetMap won't appear. Home counts and building types from Jackson County Assessor &amp; GIS records (property and building class codes), Oct 11, 2026.</p>
+services-along-walk.html:129:   </aside>
+services-along-walk.html:130: </div>
+services-along-walk.html:131: <script>
+services-along-walk.html:132:   const stops = [
+services-along-walk.html:133:     { n:1, lat:42.32662167, lng:-122.88713833, time:"3:38 PM", src:"data:IMG", file:"4F083B64-3BE4-4378-8570-36FC796E459A_1_201_a.heic" },
+services-along-walk.html:134:     { n:2, lat:42.32378000, lng:-122.88760333, time:"3:43 PM", src:"data:IMG", file:"C500F2FF-EFFC-4909-911F-0BCAC072E14B.heic" },
+services-along-walk.html:135:     { n:3, lat:42.32367833, lng:-122.88433000, time:"3:48 PM", src:"data:IMG", file:"3DEADFC5-1E5B-4D8C-B5C8-78CF0A0670E4.heic" },
+services-along-walk.html:136:     { n:4, lat:42.32258333, lng:-122.87790500, time:"3:59 PM", src:"data:IMG", file:"37DDE59A-BAFE-4968-89DE-A4A48765A51E.heic" },
+services-along-walk.html:137:     { n:5, lat:42.32481333, lng:-122.87884500, time:"4:30 PM", src:"data:IMG", file:"25E9C114-2913-4EA0-8777-39BCCD2C8ED6.heic" },
+services-along-walk.html:138:     { n:6, lat:42.32836667, lng:-122.88093667, time:"4:37 PM", src:"data:IMG", file:"A5EBF80D-F317-46B1-B495-817E51B0AB82.heic" },
+services-along-walk.html:139:   ];
+services-along-walk.html:140:   const route = [[42.32662, -122.88716], [42.325946, -122.887235], [42.325922, -122.887524], [42.323788, -122.887588], [42.323724, -122.884324], [42.323724, -122.879208], [42.32251, -122.879208], [42.322558, -122.877902], [42.3229067, -122.8768982], [42.3233312, -122.8760241], [42.3241924, -122.8768146], [42.3237479, -122.877696], [42.324359, -122.878244], [42.324811, -122.878854], [42.325747, -122.879636], [42.326303, -122.880224], [42.326858, -122.880438], [42.32781, -122.880471], [42.328405, -122.880578], [42.328389, -122.880931], [42.328405, -122.885437], [42.326755, -122.885437], [42.3267 ...[642 chars]
+services-along-walk.html:141:   const zoneRings = [[[42.3211423, -122.8792656], [42.3211521, -122.8794354], [42.3211699, -122.879581], [42.3212022, -122.8797508], [42.3212405, -122.8798964], [42.3212896, -122.880042], [42.3213507, -122.8801876], [42.3214259, -122.8803332], [42.3215016, -122.8804545], [42.3215922, -122.8805758], [42.3216788, -122.8806729], [42.3217729, -122.8807616], [42.3218768, -122.8808427], [42.3219709, -122.8809029], [42.322079, -122.8809582], [42.322205, -122.8810056], [42.322349, -122.881042], [42.3223556, -122.8810611], [42.3223556, -122.8843367], [42.3223868, -122.8859381], [42.3223782, -122.885962 ...[4722 chars]
+services-along-walk.html:142:   const services = [{"name": "First Presbyterian Church", "kind": "amenity=place_of_worship", "lat": 42.324193, "lng": -122.874986, "addr": "85 South Holly Street", "osm": "way/953191379", "phone": "+1-541-779-1711", "web": "https://www.firstpreschurchmedford.org/", "hours": null, "cat": "Places of worship", "type": "Church", "icon": "cross", "inside": true}, {"name": "Bank of America", "kind": "amenity=bank", "cat": "Banking & finance", "type": "Bank", "lat": 42.324935, "lng": -122.875929, "addr": "", "osm": "way/953191389", "phone": null, "web": null, "hours": null, "icon": "money", "inside" ...[8991 chars]
+services-along-walk.html:143:   const busStops = [{"name": "Hamilton and West Main - Probation Office", "ref": "220140", "lat": 42.3232804, "lng": -122.8852733}, {"name": "W Main St - East of Summit Ave", "ref": "220150", "lat": 42.3237706, "lng": -122.8874919}, {"name": "384 W Main St", "ref": "250010", "lat": 42.3243712, "lng": -122.8766195}, {"name": "762 W Main St", "ref": "250020", "lat": 42.3237975, "lng": -122.8802382}, {"name": "West Main and Hamilton - Probation Office", "ref": "250030", "lat": 42.3237764, "lng": -122.884449}, {"name": "Medford City Hall", "ref": "220300", "lat": 42.3229818, "lng": -122.8765548},  ...[901 chars]
+services-along-walk.html:144:   const marks = [];   // everything the declutter keeps apart: photo pins (fixed), icons and bus stops, block bubbles
+services-along-walk.html:145: 
+services-along-walk.html:146:   const COLORS = {
+services-along-walk.html:147:     "Health & social services": "#c2255c", "Government & courts": "#5f3dc4", "Education": "#1971c2", "Places of worship": "#7a5c2e",
+services-along-walk.html:148:     "Recreation & parks": "#2b8a3e", "Banking & finance": "#0c8599", "Arts & culture": "#e67700"
+services-along-walk.html:149:   };
+services-along-walk.html:150: 
+services-along-walk.html:151:   // How far out you can look: west to N Ross Ln, east to E 9th St (north/south kept in proportion).
+services-along-walk.html:152:   const VIEW = L.latLngBounds([[42.3170, -122.8994], [42.3340, -122.8693]]);
+services-along-walk.html:153:   const map = L.map("map", { zoomSnap: 0.25, zoomDelta: 0.5, maxBounds: VIEW, maxBoundsViscosity: 1 });
+services-along-walk.html:154:   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+services-along-walk.html:155:     maxZoom: 19, attribution: "&copy; OpenStreetMap contributors"
+services-along-walk.html:156:   }).addTo(map);
+services-along-walk.html:157:   const fitMinZoom = () => map.setMinZoom(map.getBoundsZoom(VIEW, true));
+services-along-walk.html:158: 
+services-along-walk.html:159:   const css = getComputedStyle(document.documentElement);
+services-along-walk.html:160:   const accent = css.getPropertyValue("--accent").trim();
+services-along-walk.html:161:   const zoneColor = css.getPropertyValue("--zone").trim();
+services-along-walk.html:162: 
+services-along-walk.html:163:   // Shaded zone: the exact outline used for every count (band + local bulges - small notches).
+services-along-walk.html:164:   L.polygon(zoneRings, { color: zoneColor, weight: 1, opacity: 1, fillColor: zoneColor, fillOpacity: 1, interactive: false, className: "zone" }).addTo(map);
+services-along-walk.html:165:   /*HOMES_LAYERS*/
+services-along-walk.html:166:   const path = L.polyline(route, { color: accent, weight: 4, opacity: .9, lineJoin: "round", lineCap: "round" }).addTo(map);
+services-along-walk.html:167: 
+services-along-walk.html:168:   stops.forEach(s => {
+services-along-walk.html:169:     const m = L.marker([s.lat, s.lng], {
+services-along-walk.html:170:       icon: L.divIcon({ className: "", html: `<div class="pin">${s.n}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] }),
+services-along-walk.html:171:       zIndexOffset: 1000
+services-along-walk.html:172:     }).addTo(map).bindPopup(`<img src="${s.src}" alt="Photo ${s.n}"><b>Photo #${s.n} · ${s.time}</b>`);
+services-along-walk.html:173:     marks.push({ m, ll: L.latLng(s.lat, s.lng), kind: "pin" });
+services-along-walk.html:174:   });
+services-along-walk.html:175: 
+services-along-walk.html:176:   // Glyphs (24×24): building/runner/tree/cap/dollar/bus/book adapted from Material Icons (Apache 2.0); cross, scales, apple and track drawn here.
+services-along-walk.html:177:   const ICONS = {
+services-along-walk.html:178:     cross: `<svg viewBox="0 0 24 24"><rect x="10" y="2" width="4" height="20" rx=".6"/><rect x="5" y="6.5" width="14" height="4" rx=".6"/></svg>`,
+services-along-walk.html:179:     gov: `<svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/></svg>`,
+services-along-walk.html:180:     scales: `<svg viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.7"/><rect x="11" y="4" width="2" height="15"/><rect x="3" y="5.6" width="18" height="1.8" rx=".9"/><rect x="7" y="19" width="10" height="2.4" rx="1"/><path d="M5 7.2 2 14h1.4L5 10.3 6.6 14H8L5 7.2Zm14 0L16 14h1.4l1.6-3.7 1.6 3.7H22l-3-6.8Z"/><path d="M1.6 14h6.8a3.4 3 0 0 1-6.8 0Zm14 0h6.8a3.4 3 0 0 1-6.8 0Z"/></svg>`,
+services-along-walk.html:181:     run: `<svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9 1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>`,
+services-along-walk.html:182:     medical: `<svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>`,
+services-along-walk.html:183:     school: `<svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>`,
+services-along-walk.html:184:     apple: `<svg class="big" viewBox="0 0 24 24"><path fill="#e03131" d="M12 8.2c-1.8-1.3-4.1-1.6-5.8-.7C3.4 9 2.5 12.4 3.5 15.8c1 3.5 3.4 6.4 5.6 6.4 1.2 0 1.8-.6 2.9-.6s1.7.6 2.9.6c2.2 0 4.6-2.9 5.6-6.4 1-3.4.1-6.8-2.7-8.3-1.7-.9-4-.6-5.8.7Z"/><path fill="#7a4a1e" d="M11.2 8.4c-.2-2.2.3-4 1.6-5.6l1.4 1c-1.1 1.3-1.5 2.8-1.3 4.6Z"/><path fill="#2b8a3e" d="M13.4 5.6c.9-2.4 2.9-3.7 5.6-3.6-.7 2.5-2.8 3.9-5.6 3.6Z"/></svg>`,
+services-along-walk.html:185:     money: `<svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>`,
+services-along-walk.html:186:     people: `<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`,
+services-along-walk.html:187:     shield: `<svg viewBox="0 0 24 24"><path d="M12 1.5 3.5 4.8v6.1c0 5.3 3.6 10.2 8.5 11.6 4.9-1.4 8.5-6.3 8.5-11.6V4.8L12 1.5Z"/><path fill="#fff" d="m12 6.8 1.5 3.1 3.4.5-2.5 2.4.6 3.4-3-1.6-3 1.6.6-3.4-2.5-2.4 3.4-.5Z"/></svg>`,
+services-along-walk.html:188:     mask: `<svg viewBox="0 0 24 24"><path d="M4 3h16v8.5C20 16.7 16.4 21 12 21s-8-4.3-8-9.5V3Z"/><path fill="#fff" d="M7 8.2c.7-1 2.6-1 3.3 0-.5 1.2-2.8 1.2-3.3 0Zm6.7 0c.7-1 2.6-1 3.3 0-.5 1.2-2.8 1.2-3.3 0ZM7.8 13h8.4c-.6 2.4-2.2 3.8-4.2 3.8s-3.6-1.4-4.2-3.8Z"/></svg>`,
+services-along-walk.html:189:     tree: `<svg viewBox="0 0 24 24"><path d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.95v-4H21l-4-6z"/></svg>`,
+services-along-walk.html:190:     track: `<svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="6.5" y="9" width="11" height="6" rx="3"/></svg>`,
+services-along-walk.html:191:     book: `<svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>`,
+services-along-walk.html:192:     bus: `<svg viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/></svg>`
+services-along-walk.html:193:   };
+services-along-walk.html:194:   const ICON_LABEL = { cross: "Church", gov: "Government office", scales: "Court", shield: "Jail / police", medical: "Medical clinic",
+services-along-walk.html:195:     apple: "Food pantry", people: "Community center", school: "School", tree: "Park", track: "Field & track", run: "Fitness center",
+services-along-walk.html:196:     money: "Bank / finance", mask: "Theater", book: "Library (historic)" };
+services-along-walk.html:197: 
+services-along-walk.html:198:   const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+services-along-walk.html:199: 
+services-along-walk.html:200:   busStops.forEach(b => {
+services-along-walk.html:201:     const m = L.marker([b.lat, b.lng], {
+services-along-walk.html:202:       icon: L.divIcon({ className: "", html: `<div class="ic bus">${ICONS.bus}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] }),
+services-along-walk.html:203:       title: `Bus stop: ${b.name}`
+services-along-walk.html:204:     }).addTo(map).bindPopup(`<b>${esc(b.name)}</b>`);
+services-along-walk.html:205:     addMark(m, b, "icon");
+services-along-walk.html:206:   });
+services-along-walk.html:207: 
+services-along-walk.html:208:   const list = document.getElementById("list");
+services-along-walk.html:209:   const items = [];
+services-along-walk.html:210:   // Sections use the same inside/outside rule as the stats; the "nearby" section only appears if something is outside.
+services-along-walk.html:211:   const sections = [[true, "Inside the shaded area", "counted in the stats"], [false, "Nearby, outside the shading", "not counted"]].map(([inside, title, sub]) => {
+services-along-walk.html:212:     const n = services.filter(s => s.inside === inside).length;
+services-along-walk.html:213:     if (!n) return null;
+services-along-walk.html:214:     const h3 = document.createElement("h3");
+services-along-walk.html:215:     h3.innerHTML = `${title} (${n}) <span>· ${sub}</span>`;
+services-along-walk.html:216:     const cols = document.createElement("div");
+services-along-walk.html:217:     cols.className = "cols";
+services-along-walk.html:218:     list.append(h3, cols);
+services-along-walk.html:219:     return { inside, cols };
+services-along-walk.html:220:   }).filter(Boolean);
+services-along-walk.html:221:   Object.keys(COLORS).forEach(cat => sections.forEach(({ inside, cols }) => {
+services-along-walk.html:222:     const group = services.filter(s => s.cat === cat && s.inside === inside).sort((a, b) => a.name.localeCompare(b.name));
+services-along-walk.html:223:     if (!group.length) return;
+services-along-walk.html:224:     const grp = document.createElement("div");
+services-along-walk.html:225:     grp.className = "grp";
+services-along-walk.html:226:     grp.innerHTML = `<h2><span class="dot" style="background:${COLORS[cat]}"></span>${esc(cat)} (${group.length})</h2>`;
+services-along-walk.html:227:     cols.appendChild(grp);
+services-along-walk.html:228:     group.forEach(s => {
+services-along-walk.html:229:       const m = L.marker([s.lat, s.lng], {
+services-along-walk.html:230:         icon: L.divIcon({ className: "", html: `<div class="ic" style="color:${COLORS[cat]}">${ICONS[s.icon]}</div>`, iconSize: [22, 22], iconAnchor: [11, 11] }),
+services-along-walk.html:231:         title: s.name
+services-along-walk.html:232:       }).addTo(map).bindPopup(`<b>${esc(s.name)}</b>`);
+services-along-walk.html:233:       addMark(m, s, "icon");
+services-along-walk.html:234:       const el = document.createElement("div");
+services-along-walk.html:235:       el.className = "svc";
+services-along-walk.html:236:       el.innerHTML = `<span class="nm">${ICONS[s.icon].replace("<svg ", `<svg class="li-ic" style="color:${COLORS[cat]}" `)}${esc(s.name)}</span> ${s.note ? `<span class="meta">${esc(s.note)}</span>` : ""}`;
+services-along-walk.html:237:       el.onclick = () => { map.setView([s.lat, s.lng], 18); m.openPopup(); };
+services-along-walk.html:238:       m.on("popupopen", () => { items.forEach(x => x.classList.remove("active")); el.classList.add("active"); });
+services-along-walk.html:239:       items.push(el);
+services-along-walk.html:240:       grp.appendChild(el);
+services-along-walk.html:241:     });
+services-along-walk.html:242:   }));
+services-along-walk.html:243: 
+services-along-walk.html:244:   // Icon legend (only the icons on this map), collapsible.
+services-along-walk.html:245:   const iconKey = L.control({ position: "topright" });
+services-along-walk.html:246:   iconKey.onAdd = () => {
+services-along-walk.html:247:     const d = L.DomUtil.create("details", "icon-key"); d.open = true;
+services-along-walk.html:248:     const used = [...new Set(services.map(s => s.icon))];
+services-along-walk.html:249:     const color = k => COLORS[(services.find(s => s.icon === k) || {}).cat] || "#333";
+services-along-walk.html:250:     d.innerHTML = `<summary>Map icons</summary><div class="rows">` +
+services-along-walk.html:251:       `<div class="row"><span class="pin">1</span>Photo (in order)</div>` +
+services-along-walk.html:252:       `<div class="row"><span class="ic bus">${ICONS.bus}</span>Bus stop</div>` +
+services-along-walk.html:253:       used.map(k => `<div class="row"><span class="ic" style="color:${color(k)}">${ICONS[k]}</span>${ICON_LABEL[k] || k}</div>`).join("") + `</div>`;
+services-along-walk.html:254:     L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+services-along-walk.html:255:     return d;
+services-along-walk.html:256:   };
+services-along-walk.html:257:   iconKey.addTo(map);
+services-along-walk.html:258: 
+services-along-walk.html:259:   function addMark(m, p, kind) {
+services-along-walk.html:260:     const leader = kind === "icon" ? L.polyline([], { color: "#555", weight: 1, opacity: .7, interactive: false }).addTo(map) : null;
+services-along-walk.html:261:     marks.push({ m, ll: L.latLng(p.lat, p.lng), kind, leader });
+services-along-walk.html:262:   }
+services-along-walk.html:263: 
+services-along-walk.html:264:   // Shrink markers when zoomed out, then keep everything apart in screen space (boxes, not circles):
+services-along-walk.html:265:   // photo pins never move; icons and bus stops move off pins and each other (with a thin leader line back to the true spot);
+services-along-walk.html:266:   // block bubbles give way to everything else.
+services-along-walk.html:267:   function declutter() {
+services-along-walk.html:268:     const z = map.getZoom();
+services-along-walk.html:269:     map.getContainer().style.setProperty("--s", z >= 17 ? 1 : z >= 16 ? .85 : .72);
+services-along-walk.html:270:     const GAP = 2, PRI = { pin: 0, icon: 1, bubble: 2 };
+services-along-walk.html:271:     const live = marks.filter(o => map.hasLayer(o.m));
+services-along-walk.html:272:     live.forEach(o => o.m.setLatLng(o.ll));
+services-along-walk.html:273:     const box = live.map(o => {
+services-along-walk.html:274:       const el = o.m.getElement(), inner = el && el.firstElementChild;
+services-along-walk.html:275:       const r = inner ? inner.getBoundingClientRect() : { width: 20, height: 20 };
+services-along-walk.html:276:       const p = map.latLngToLayerPoint(o.ll);
+services-along-walk.html:277:       return { x: p.x, y: p.y, w: r.width, h: r.height, pri: PRI[o.kind] };
+services-along-walk.html:278:     });
+services-along-walk.html:279:     for (let it = 0; it < 80; it++) {
+services-along-walk.html:280:       let moved = false;
+services-along-walk.html:281:       for (let i = 0; i < box.length; i++) for (let j = i + 1; j < box.length; j++) {
+services-along-walk.html:282:         const a = box[i], b = box[j];
+services-along-walk.html:283:         const dx = b.x - a.x, dy = b.y - a.y;
+services-along-walk.html:284:         const px = (a.w + b.w) / 2 + GAP - Math.abs(dx), py = (a.h + b.h) / 2 + GAP - Math.abs(dy);
+services-along-walk.html:285:         if (px <= 0 || py <= 0) continue;
+services-along-walk.html:286:         if (a.pri === 0 && b.pri === 0) continue;
+services-along-walk.html:287:         let sa, sb;   // share of the push each takes
+services-along-walk.html:288:         if (a.pri === b.pri) { sa = .5; sb = .5; } else if (a.pri < b.pri) { sa = 0; sb = 1; } else { sa = 1; sb = 0; }
+services-along-walk.html:289:         if (px < py) { const s = (dx >= 0 ? 1 : -1) * px; a.x -= s * sa; b.x += s * sb; }
+services-along-walk.html:290:         else { const s = (dy >= 0 ? 1 : -1) * py; a.y -= s * sa; b.y += s * sb; }
+services-along-walk.html:291:         moved = true;
+services-along-walk.html:292:       }
+services-along-walk.html:293:       if (!moved) break;
+services-along-walk.html:294:     }
+services-along-walk.html:295:     live.forEach((o, i) => {
+services-along-walk.html:296:       const home = map.latLngToLayerPoint(o.ll), at = L.point(box[i].x, box[i].y);
+services-along-walk.html:297:       if (o.kind !== "pin") o.m.setLatLng(map.layerPointToLatLng(at));
+services-along-walk.html:298:       if (o.leader) o.leader.setLatLngs(home.distanceTo(at) > 3 ? [o.ll, map.layerPointToLatLng(at)] : []);
+services-along-walk.html:299:     });
+services-along-walk.html:300:   }
+services-along-walk.html:301:   map.on("zoomend", declutter);
+services-along-walk.html:302:   const fit = () => { map.invalidateSize(); fitMinZoom(); map.fitBounds(path.getBounds(), { padding: [50, 50] }); declutter(); };
+services-along-walk.html:303:   fit(); window.addEventListener("load", fit); window.addEventListener("resize", fitMinZoom);
+services-along-walk.html:304: 
+services-along-walk.html:305:   // Caret under the map: hide/show the stats and list (remembered in this browser only).
+services-along-walk.html:306:   const toggleBtn = document.getElementById("statsToggle");
+services-along-walk.html:307:   function setCollapsed(c) {
+services-along-walk.html:308:     document.body.classList.toggle("collapsed", c);
+services-along-walk.html:309:     toggleBtn.setAttribute("aria-expanded", String(!c));
+services-along-walk.html:310:     toggleBtn.querySelector(".lbl").textContent = c ? "Show stats" : "Hide stats";
+services-along-walk.html:311:     map.invalidateSize({ pan: false }); fitMinZoom(); declutter();
+services-along-walk.html:312:     try { localStorage.setItem("statsCollapsed", c ? "1" : "0"); } catch (e) {}
+services-along-walk.html:313:   }
+services-along-walk.html:314:   toggleBtn.addEventListener("click", () => setCollapsed(!document.body.classList.contains("collapsed")));
+services-along-walk.html:315:   try { if (localStorage.getItem("statsCollapsed") === "1") setCollapsed(true); } catch (e) {}
+services-along-walk.html:316: </script>
+services-along-walk.html:317: </body>
+services-along-walk.html:318: </html>
+services-along-walk.html:319: 

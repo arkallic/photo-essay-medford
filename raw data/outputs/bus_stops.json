@@ -1,0 +1,65 @@
+[
+ {
+  "name": "Hamilton and West Main - Probation Office",
+  "ref": "220140",
+  "lat": 42.3232804,
+  "lng": -122.8852733,
+  "dist": 51
+ },
+ {
+  "name": "W Main St - East of Summit Ave",
+  "ref": "220150",
+  "lat": 42.3237706,
+  "lng": -122.8874919,
+  "dist": 2
+ },
+ {
+  "name": "384 W Main St",
+  "ref": "250010",
+  "lat": 42.3243712,
+  "lng": -122.8766195,
+  "dist": 26
+ },
+ {
+  "name": "762 W Main St",
+  "ref": "250020",
+  "lat": 42.3237975,
+  "lng": -122.8802382,
+  "dist": 8
+ },
+ {
+  "name": "West Main and Hamilton - Probation Office",
+  "ref": "250030",
+  "lat": 42.3237764,
+  "lng": -122.884449,
+  "dist": 6
+ },
+ {
+  "name": "Medford City Hall",
+  "ref": "220300",
+  "lat": 42.3229818,
+  "lng": -122.8765548,
+  "dist": 9
+ },
+ {
+  "name": "W 8th St - East of Lincoln St",
+  "ref": "220270",
+  "lat": 42.3223626,
+  "lng": -122.8866322,
+  "dist": 156
+ },
+ {
+  "name": "W 8th St - East of Cannon St",
+  "ref": "220280",
+  "lat": 42.3223908,
+  "lng": -122.8830117,
+  "dist": 148
+ },
+ {
+  "name": "W 8th St - West of Mistletoe St",
+  "ref": "220290",
+  "lat": 42.3223977,
+  "lng": -122.8795127,
+  "dist": 28
+ }
+]
