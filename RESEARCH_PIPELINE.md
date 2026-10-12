@@ -11,7 +11,9 @@ The work was done in one long conversation (Oct 10–11, 2026) between the photo
 
 ### The photographer
 - **Set the project.** Asked for a numbered map of where the photos were taken, ordered by capture time. Then asked for a second map that shades the area around the walk and shows the services and homes in it, and later a third with every building coloured by type.
-- **Drew the route and the area by hand.** Sketched the walking route on a screenshot, corrected it between photos #4 and #5 with a second sketch, and sketched how wide the shaded band should be. Later widened the band by a measure they chose (the distance between the Alba Park and Oregon Pacific Financial icons). Asked for local bulges to take in nearby services, and notches to leave out lone houses at the edge.
+- **Drew the route and the area by hand.** Sketched the walking route on a screenshot, corrected it between photos #4 and #5 with a second sketch, and sketched how wide the shaded band should be. Asked for the inside of the loop to be filled with the same shade as the band. Later widened the band evenly by a measure they chose: the distance between the Alba Park and Oregon Pacific Financial icons.
+  - Asked for the band to be extended only locally, and naturally, to take in nearby services: the Education Service District and Holly Theater, Medford Police, and the community center.
+  - Asked for notches to leave out a block's only house where it sits at the edge (W 8th St near Lincoln St, and N Oakdale Ave near W 3rd St).
 - **Decided what counts as a service, and how each is shown.**
   - Chose which places to add: the employment department, city hall, the park along S Ivy, Health & Human Services, St Mark's, First Presbyterian, Bank of America, the old library, McLoughlin field, the Lausmann Annex, and others.
   - Chose which to merge: the courthouse and county offices.
@@ -75,8 +77,8 @@ Every number on the page exists because the photographer asked for it, or asked 
 - **Garages and sheds:** as part of asking for each building to be coloured by how it was counted, these are shown on the map but not counted as homes.
 
 **Area and density**
-- Asked for the area of the shaded band to be measured and used to calculate home density. Asked for the same per-area idea to be applied to every icon category, so each category gets a density.
-- Proposed the idea behind the "homes per service" figures: if you know how dense the homes are, you can work out how much access each home has to services, per acre. They asked whether there was a better way to show it.
+- Asked for the area of the shaded band to be measured and used to calculate home density. The density covers the whole shaded area, streets and public land included. Asked for the same per-area idea to be applied to every icon category, so each category gets a density.
+- Proposed the idea behind the "homes per service" figures: if you know how dense the homes are, you can work out how much access each home has to services, per acre. They asked whether there was a better way to show it. Together we arrived at measuring the walk from every home to its nearest service of each kind, and they finalized how it is shown: typical home, farthest home, and share within 10 minutes.
 - **Units:**
   - Dropped square feet because the numbers were too large to grasp.
   - Questioned "36 bus stops per sq mi" and "0.33 sq mi", which led to a recheck and a unit change.

@@ -28,25 +28,18 @@ You have lived in this area for over 20 years. These facts about the walk and th
 
 ## Your ideas and decisions (what to measure)
 
-These shape every number on the page. They are choices, so no outside source applies.
+These shape every number on the page. They are choices, so no outside source applies. The biggest:
 
 | Idea or decision | Where it shows up |
 |---|---|
-| Shade a band along the route and study only what is inside it | The shaded zone; every count and statistic |
-| Fill the inside of the loop with the same shade as the band | The shaded zone |
-| Widen the band evenly by the distance from Alba Park to Oregon Pacific Financial | `buf` = 152 m in `settings/zone_cfg.json` |
-| Extend the band only locally, and naturally, to take in the Education Service District and Holly Theater, Medford Police, and the community center | The three `bulges` in `settings/zone_cfg.json` |
-| Pull the zone edge back where a block's only house sits at the edge (W 8th St near Lincoln St, and N Oakdale Ave near W 3rd St) | The two `carves` in `settings/zone_cfg.json` |
-| Count apartment buildings and houses as "homes", ignoring businesses; count each apartment building once | Homes tile, density, coloured buildings |
-| **Density, and access to services.** <br>• Measure the shaded area and turn the approximate home count into density (homes per acre, over the whole shaded area, with streets and public land included). <br>• Apply the same per-area idea to every kind of service on the map. <br>• Your reasoning: if you know the density of homes, you can work out the "density" of what those homes have access to. So the ratio of homes to services per unit of area is what matters, not the raw counts. <br>• You then asked for a better way to show that access. Together we arrived at measuring the walk from every home to its nearest service of each kind, and you finalized how it is shown: typical home, farthest home, and share within 10 minutes. | Density tile; the "1 per ≈ N acres" and "≈ N homes each" lines on every tile; the walk-time lines (typical home, farthest home, share within 10 min) |
-| Service counts are the icons on the map, not every building | "map icons" wording; icon counts kept separate from building counts |
-| Separate public (government-run: city, county, state) from businesses, churches and nonprofits, each with its own colour | Building classes and colours; Other buildings tile |
-| Businesses get their own tile but are not listed | Businesses tile |
-| Banking and Education are separate categories | Category tiles and list |
-| Road access is a category of its own, "because that's how you get places" | Streets tile |
-| All walking is on roads | Walk-time method (streets and alleys only) |
-| Check walk times against the photo timestamps and distances | The measured pace (≈ 60 m/min) |
-| Acres only; no square feet, no square miles, no distances in feet | Units throughout |
+| Study only what is inside a shaded band along the route. You set its width and shaped its edges. | The shaded zone; every count and statistic; `settings/zone_cfg.json` |
+| Count houses and apartment buildings as homes, each building once, and turn the count into density | Homes and Density tiles; coloured buildings |
+| Access to services: the ratio of homes to services per acre. Together we arrived at measuring each home's walk to the nearest service, and you finalized how it is shown. | "1 per ≈ N acres", "≈ N homes each" and walk-time lines on every tile |
+| Count services as map icons, separate from buildings. Split government, businesses, churches and nonprofits. | Tile wording; building colours; Businesses and Other buildings tiles |
+| Road access as its own category, and all walking on roads, checked against your photo timestamps | Streets tile; walk-time method and pace |
+| Acres only | Units throughout |
+
+The full list is in `../RESEARCH_PIPELINE.md`, under *Measurements and statistics the photographer chose*.
 
 ## Your design
 
