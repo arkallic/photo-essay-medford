@@ -15,7 +15,7 @@ Where every piece of data on `../analysis-and-map.html` came from. All downloads
 
 ## Your local knowledge
 
-Facts about the walk and the neighbourhood that came from you, not from a dataset:
+You have lived in this area for over 20 years. These facts about the walk and the neighbourhood came from that first-hand knowledge, not from a dataset:
 
 - **The food stop.** You stopped for about 15 minutes, by your best guess, between photos #4 and #5 for food and drinks, across from Schuller apartments. That leg is left out of the walking pace.
 - **Adult Supervision is also an election office.** Jackson County Adult Supervision Service is also the election office / ballot drop box, so they share one icon.
@@ -51,80 +51,53 @@ These shape every number on the page. They are choices, so no outside source app
 ## Your design
 
 ### The map and page
+You designed how the map looks and works. Claude built each version, and you reviewed it in the browser.
 
-You designed how the map looks and works. Claude built it to your specifications, and you reviewed each version in the browser.
-
-- **The three-step build.**
-  - First, a photo map: numbered pins in capture order, plus your route.
-  - Then a separate copy with the shaded band and the services in it, keeping the photo map unchanged.
-  - Then a copy of that with every building coloured by how it was counted.
-- **The icons:**
-  - crosses for churches;
-  - a government-building icon (from an example image you supplied);
-  - scales for courts;
-  - a running man for the YMCA;
-  - trees for parks;
-  - a school icon distinct from government buildings;
-  - a medical cross for clinics;
-  - a clearer apple for the food pantry;
-  - a money sign for the bank;
-  - a recreation icon for the school field;
-  - bus icons, first small cars and then buses, made bigger, recoloured so they don't blend in, and set in their own bubble.
-- **Keeping the map readable:**
-  - icons must not overlap the photo numbers or each other at any zoom;
-  - no jail dot;
-  - no numbers on bus stops;
-  - block bubbles that shrink as you zoom out instead of covering icons;
-  - popups that show the name only.
-- **Legends and keys:**
-  - an icon legend on the map;
-  - a colour key for buildings;
-  - no duplicate colour coding under the housing numbers, since it's already on the map.
-- **The stats layout:**
-  - tiles in a grid;
-  - a shorter explanatory paragraph;
-  - explanations placed next to the tiles they explain;
-  - the stats moved back under the map;
-  - a caret to collapse them so the map can be nearly full screen;
-  - a drawer that covers most of the window;
-  - a stats button that is always visible;
-  - every load starts with the stats collapsed.
-- **The zoom:**
-  - the zoom level you planned for screenshots set the icon sizes;
-  - the zoom-out limit runs from N Ross Ln to E 9th St, on any screen size;
-  - the map opens fully zoomed out on a computer, and zoomed in more on a phone so it isn't cramped.
-- **The list:**
-  - compressed, so it fits a reasonable screenshot;
-  - no bus-stop entries or addresses;
-  - no feet distances.
+- **Build:**
+  - a photo map with numbered pins and your route;
+  - then a separate copy with the shaded band and services;
+  - then a copy with coloured buildings.
+- **Icons:**
+  - your choices: crosses, a government building (from your example image), scales, a running man, trees, a school, a medical cross, a clearer apple, a money sign, and a recreation field;
+  - bus icons that went from small cars to larger buses, in their own bubble and a colour that stands out.
+- **Readability:**
+  - no overlaps at any zoom;
+  - no jail dot and no numbers on bus stops;
+  - block bubbles that shrink as you zoom out;
+  - name-only popups;
+  - an icon legend and a building colour key, without repeating the colours under the housing numbers.
+- **Stats:**
+  - a tile grid with a short paragraph, and explanations beside their tiles;
+  - shown under the map in a collapsible drawer that covers most of the window;
+  - an always-visible button to open it;
+  - closed on every load.
+- **Zoom:**
+  - icon sizes set at your planned screenshot zoom;
+  - the zoom-out limit from N Ross Ln to E 9th St, on any screen;
+  - opens fully zoomed out on a computer and closer in on a phone.
+- **List:** compressed, with no bus stops, addresses or distances in feet.
 
 ### The research and verification process
+You set how the work was researched and checked; Claude and its AI agents carried it out.
 
-You designed how the work was researched and checked. Claude and its AI agents carried it out.
+- **Data:**
+  - you asked about using Google Maps, then had buildings verified with official Jackson County assessor data, which you approved downloading;
+  - you required proof that the county server is Jackson County's;
+  - you required every formula to be written out with sources that prove it.
+- **Verification:** you asked for "a full pass on all data we have and verify", at Claude Code's highest thinking level. That meant:
+  - every part checked;
+  - every number recomputed from the raw data;
+  - every reported problem independently tested;
+  - nothing missed.
 
-- **Where data comes from.** You chose to verify buildings rather than guess, and approved downloading the Jackson County assessor data to do it (after asking whether Google Maps could be used). You also asked how the county map server is known to be Jackson County's, and required proof.
-- **The verification standard.** You declared the map final, asked for "a full pass on all data we have and verify", and set Claude Code to its highest thinking level. That standard required:
-  - every part to be checked;
-  - every number to be recomputed from the raw data;
-  - every reported problem to be independently tested;
-  - nothing to be missed.
-
-  It produced the 245-agent verification and source-checking described in `../RESEARCH_PIPELINE.md`.
-- **Proof for the method.** You asked for every formula to be written out, and for sources that prove each one.
-- **Review loop.** You checked each version yourself and questioned anything that looked off. You asked whether anything else needed the same fix, so each correction was carried through everywhere it applied.
-- **Rules for the files and data:**
+  The result was the 245-agent work in `../RESEARCH_PIPELINE.md`.
+- **Review:** you checked each version, questioned anything that looked off, and had each fix carried through everywhere it applied.
+- **Files and publishing:**
   - keep only the final version;
-  - organise the data and scripts into `raw data/`, with scripts in their own folder;
-  - keep everything needed to check or rebuild the map;
+  - data and scripts organised in `raw data/`, with everything needed to check or rebuild the map;
   - delete only to the Trash;
-  - publish on GitHub with a public web page.
-- **The documentation:** this file, `../README.md` (how to use and rebuild everything) and `../RESEARCH_PIPELINE.md` (how it was done and checked), each written to your specification and corrected by you.
-
-## Comparisons you brought in
-
-| What | How it was used |
-|---|---|
-| A ChatGPT estimate of about 250 homes ("green squares") | Compared against the county-based count; not used as data |
+  - publish on GitHub with a public page;
+  - document it in this file, `../README.md` and `../RESEARCH_PIPELINE.md`, each written to your specification and corrected by you.
 
 ## OpenStreetMap
 
