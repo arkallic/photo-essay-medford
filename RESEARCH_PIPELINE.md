@@ -2,7 +2,7 @@
 
 This document explains how `analysis-and-map.html` was produced: where the data came from, what was looked up online, how the numbers were calculated, and how the result was independently checked by teams of AI agents. For how to *use* or *rebuild* the map, see `README.md`. For the full source list and formula citations, see `raw data/SOURCES.md`.
 
-The work was done in one long conversation (Oct 10–11, 2026) between Jordan and Claude, an AI assistant from Anthropic, running in Claude Code on this Mac.
+The work was done in one long conversation (Sunday, Oct 11, 2026, about 11:57 AM – 8:30 PM; the walk itself was on Saturday, Oct 10) between Jordan and Claude, an AI assistant from Anthropic, running in Claude Code on this Mac.
 
 - **Claude's part:** wrote and ran the scripts, downloaded the data Jordan pointed to, ran the checks, and reported back.
 - **Jordan's part:** decided what the project would be and steered it at every step: what to show, what to calculate, which statistics to run and display, what to research and how, and when the result was right.

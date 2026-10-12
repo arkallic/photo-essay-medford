@@ -4,6 +4,14 @@
 
 **Jordan Whitlock - PSU.edu Communities Class Assignment**
 
+**Time spent: Sunday, Oct 11, 2026, about 11:57 AM – 8:30 PM (≈ 8½ hours)**
+
+| | |
+|---|---|
+| Direct work, Jordan and Claude together | ≈ 5¾ hours of active back-and-forth: designing, building, reviewing and correcting (breaks longer than 15 minutes not counted) |
+| AI agent runs | 4 runs, ≈ 2 hours of run time, running alongside the direct work. 245 agents with ≈ 10 hours of combined agent working time, because many ran at once. |
+| When the agents ran | 2:29–3:42 PM full verification · 3:50–4:07 PM re-check · 5:23–5:42 PM final check · 6:12–6:26 PM formula sources |
+
 A map of a photo walk in Medford, Oregon (Saturday Oct 10, 2026), with the area around the route shaded and analysed: homes, services, bus stops, streets and walking times.
 
 - **How this was researched, downloaded and verified:** `RESEARCH_PIPELINE.md` (Work done by myself shown here: my AI pipeline design -- How I designed workflow, personally trained AI context, and got data. Also details on personal designs, by hand work and more)
