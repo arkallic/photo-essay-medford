@@ -8,8 +8,57 @@ Where every piece of data on `../analysis-and-map.html` came from. All downloads
 |---|---|---|
 | 6 iPhone photos (HEIC), taken Sat Oct 10, 2026, 3:38–4:37 PM | Photo pins (numbered by capture time), photo locations, walking pace | Originals in `../photos/`; pin data in `data/photos/photos.json`, metadata-free images in `data/photos/photo-1–6.jpg` |
 | Photo capture times and GPS positions | Order of the photos, pin positions, pace (≈ 2.2 mph from the time and distance between photos) | Read from the photos' metadata with macOS Spotlight (`mdls`) |
-| Route sketch, route correction (#4 → #5), band-width sketch | The walking route and the original band width | `data/sketches/` |
-| Your notes | Food stop (~15 min between photos #4 and #5, left out of the pace); Jackson County Adult Supervision Service is also the election office / ballot drop box; the "Sheriff" entry is really the jail with some sheriff's staff; places added, removed, merged or renamed; the three zone bulges and two notches | `settings/zone_cfg.json`, `scripts/build.py` |
+| Route sketch drawn with a mouse on a map screenshot | The walking route | `data/sketches/Pasted 2026-10-11 at 12.00.35 PM.png` |
+| Band-width sketch (black lines showing roughly how far out to shade on each side of the route) | The original band width | `data/sketches/Pasted 2026-10-11 at 12.07.43 PM.png` |
+| Route correction between photos #4 and #5 | The corrected route | `data/sketches/Pasted 2026-10-11 at 12.22.01 PM.png` |
+| Screenshots of the map at the zoom level you planned to use, and of later versions | Icon sizes, overlap fixes, the zoom-out limits, layout fixes | `../preview screenshots/` |
+
+## Your local knowledge
+
+Facts about the walk and the neighbourhood that came from you, not from a dataset:
+
+- **The food stop.** You stopped for about 15 minutes, by your best guess, between photos #4 and #5 for food and drinks, across from Schuller apartments. That leg is left out of the walking pace.
+- **Adult Supervision is also an election office.** Jackson County Adult Supervision Service is also the election office / ballot drop box, so they share one icon.
+- **The "Sheriff" entry is really the jail**, with a small amount of sheriff's staff.
+- **The Lausmann Annex.** You noted it as a postal service, which is why it was included. Research then identified it as City of Medford offices; see *Other references*.
+- **The McLoughlin school field** is used by the public as a walking and running track, for walking dogs and for hanging out on the grass. That is why it counts as recreation.
+- **The bus stop count.** There are 7 bus stops along the walk (at that point the map was missing one). You also spotted a bus stop by the community center that wasn't counted.
+- **Places to add**, which you knew were there: the employment department, city hall, the park along S Ivy St, Jackson County Health & Human Services, St Mark's Episcopal Parish Church, First Presbyterian, Bank of America and the old library.
+- **Things that looked wrong**, which led to checks and corrections: the La Clinica, YMCA and church buildings shown as "public"; walk times that seemed too short for the pace you walked; "36 bus stops per sq mi" and "0.33 sq mi"; and "9 government and courts".
+
+## Your ideas and decisions
+
+These shape every number on the page. They are choices, so no outside source applies.
+
+| Idea or decision | Where it shows up |
+|---|---|
+| Shade a band along the route and study only what is inside it | The shaded zone; every count and statistic |
+| Fill the inside of the loop with the same shade as the band | The shaded zone |
+| Widen the band evenly by the distance from Alba Park to Oregon Pacific Financial | `buf` = 152 m in `settings/zone_cfg.json` |
+| Extend the band only locally, and naturally, to take in the Education Service District and Holly Theater, Medford Police, and the community center | The three `bulges` in `settings/zone_cfg.json` |
+| Pull the zone edge back where a block's only house sits at the edge (W 8th St near Lincoln St, and N Oakdale Ave near W 3rd St) | The two `carves` in `settings/zone_cfg.json` |
+| Count apartment buildings and houses as "homes", ignoring businesses; count each apartment building once | Homes tile, density, coloured buildings |
+| Turn the home count into density, and use the same per-area idea for each kind of service | "1 per ≈ N acres" lines on every tile |
+| The ratio of homes to services shows what each home has access to | "≈ N homes each" lines |
+| Service counts are the icons on the map, not every building | "map icons" wording; icon counts kept separate from building counts |
+| Separate public (government-run: city, county, state) from businesses, churches and nonprofits, each with its own colour | Building classes and colours; Other buildings tile |
+| Businesses get their own tile but are not listed | Businesses tile |
+| Banking and Education are separate categories | Category tiles and list |
+| Road access is a category of its own, "because that's how you get places" | Streets tile |
+| All walking is on roads | Walk-time method (streets and alleys only) |
+| Check walk times against the photo timestamps and distances | The measured pace (≈ 60 m/min) |
+| Acres only; no square feet, no square miles, no distances in feet | Units throughout |
+| Per-block home bubbles, black for houses and "+N" for multi-unit; shrink rather than combine when zooming out; none on bus stops | Block bubbles |
+| Zoom-out limit from N Ross Ln to E 9th St | Map zoom limits |
+| The icon choices: crosses, scales, a running man, trees, a school icon, an apple, a money sign, bigger bus icons in their own bubble, and an icon legend | Map icons and legend |
+| Popups show the name only (no addresses, phone numbers, links or hours) | Map popups |
+| Stats under the map in a collapsible drawer, with explanations next to the tiles they explain | Page layout |
+
+## Comparisons you brought in
+
+| What | How it was used |
+|---|---|
+| A ChatGPT estimate of about 250 homes ("green squares") | Compared against the county-based count; not used as data |
 
 ## OpenStreetMap
 
