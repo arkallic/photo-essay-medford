@@ -26,6 +26,11 @@
     padding:5px 16px; display:flex; align-items:center; gap:6px; }
   .toggle-bar button:hover { color:var(--fg); }
   .toggle-bar .caret { display:inline-block; transition:transform .15s; }
+  /* top-of-map opener: always on screen, even when the bottom of the window is off-screen or behind the Dock */
+  .stats-open { position:fixed; top:10px; left:50%; transform:translateX(-50%); z-index:1050; font:600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color:#fff; background:var(--accent); border:0; border-radius:16px; padding:8px 14px; cursor:pointer; box-shadow:0 1px 5px rgba(0,0,0,.35); white-space:nowrap; }
+  .stats-open:hover { filter:brightness(1.1); }
+  body:not(.collapsed) .stats-open { display:none; }
   body.collapsed .toggle-bar .caret { transform:rotate(180deg); }
   .drawer-body { flex:1 1 auto; overflow-y:auto; overscroll-behavior:contain; }
   aside { padding:20px 24px 28px; max-width:1240px; margin:0 auto; }
@@ -107,6 +112,7 @@
 <body class="collapsed">
 <div class="layout">
   <div id="map"></div>
+  <button class="stats-open" id="statsOpen" type="button" aria-controls="stats-panel">▴ Show stats &amp; list</button>
   <div class="drawer" id="drawer">
   <div class="toggle-bar"><button id="statsToggle" type="button" aria-expanded="true" aria-controls="stats-panel"><span class="caret">▾</span><span class="lbl">Hide stats &amp; list</span></button></div>
   <div class="drawer-body">
@@ -271,7 +277,7 @@
       const el = document.createElement("div");
       el.className = "svc";
       el.innerHTML = `<span class="nm">${ICONS[s.icon].replace("<svg ", `<svg class="li-ic" style="color:${COLORS[cat]}" `)}${esc(s.name)}</span> ${s.note ? `<span class="meta">${esc(s.note)}</span>` : ""}`;
-      el.onclick = () => { setCollapsed(true); map.setView([s.lat, s.lng], 18); m.openPopup(); };
+      el.onclick = () => { touched = true; setCollapsed(true); map.setView([s.lat, s.lng], 18); m.openPopup(); };
       m.on("popupopen", () => { items.forEach(x => x.classList.remove("active")); el.classList.add("active"); });
       items.push(el);
       grp.appendChild(el);
@@ -338,22 +344,30 @@
     });
   }
   map.on("zoomend", declutter);
-  const fit = () => { map.invalidateSize(); fitMinZoom(); map.fitBounds(path.getBounds(), { padding: [50, 50] }); declutter(); };
-  fit(); window.addEventListener("load", fit); map.on("resize", fitMinZoom);   // after Leaflet has measured the new size
+  // Every load opens fully zoomed out (N Ross Ln to E 9th St). Until someone moves the map, a resize re-fits it
+  // (also fixes a page opened in a background tab, which has no size when it first loads).
+  let touched = false;
+  ["pointerdown", "wheel", "keydown"].forEach(ev => map.getContainer().addEventListener(ev, () => { touched = true; }));
+  const fit = () => {
+    map.invalidateSize(); fitMinZoom();
+    if (map.getSize().x) map.setView(VIEW.getCenter(), map.getMinZoom(), { animate: false });
+    declutter();
+  };
+  fit(); window.addEventListener("load", fit);
+  map.on("resize", () => { fitMinZoom(); if (!touched) fit(); });   // after Leaflet has measured the new size
 
-  // Stats drawer: caret bar at the bottom opens/closes it (starts closed; choice remembered in this browser only).
+  // Stats drawer: opened by the button at the top of the map or the bar at the bottom; closed by the bar or Esc.
+  // Always starts closed.
   const toggleBtn = document.getElementById("statsToggle");
   function setCollapsed(c) {
     document.body.classList.toggle("collapsed", c);
     toggleBtn.setAttribute("aria-expanded", String(!c));
     toggleBtn.querySelector(".lbl").textContent = c ? "Show stats & list" : "Hide stats & list";
-    try { localStorage.setItem("statsCollapsed", c ? "1" : "0"); } catch (e) {}
   }
   toggleBtn.addEventListener("click", () => setCollapsed(!document.body.classList.contains("collapsed")));
+  document.getElementById("statsOpen").addEventListener("click", () => setCollapsed(false));
   document.addEventListener("keydown", e => { if (e.key === "Escape") setCollapsed(true); });
-  let startOpen = false;
-  try { startOpen = localStorage.getItem("statsCollapsed") === "0"; } catch (e) {}
-  setCollapsed(!startOpen);
+  setCollapsed(true);
 </script>
 </body>
 </html>
