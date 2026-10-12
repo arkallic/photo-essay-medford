@@ -100,7 +100,7 @@ Both data layers were requested for the same box as the OpenStreetMap data: lng 
 
 | What | Source |
 |---|---|
-| Lausmann Annex (200 S Ivy St) is City of Medford offices (building officials and inspectors) | Southern Oregon builders' association directory — https://members.buildso.com/list/member/city-of-medford-3560 |
+| Lausmann Annex (200 S Ivy St) is City of Medford offices (Building Safety, and Business Licensing on the second floor) | City of Medford official website: Building Safety, location "Lausmann Annex, 200 South Ivy" — https://www.medfordoregon.gov/Government/Departments/Building-Safety ; Business Licensing, "Lausmann Annex, 200 South Ivy Street, Second Floor" — https://www.medfordoregon.gov/Business/Development-Services/Business-Licensing/New-Business-Listings (checked Oct 12, 2026; replaces a builders' association directory link that no longer works) |
 | Metres per degree at Medford's latitude (42.325° N): 111,079.6 m (latitude), 82,427.8 m (longitude) | Exact WGS 84 ellipsoid formulas — see **Formulas** below |
 
 ## Software and icons

@@ -211,7 +211,7 @@ The exact download commands are in `README.md`.
 Web searches and page reads were used to:
 - Find the Jackson County GIS map layers and their field definitions.
 - Find what the county property class and building class codes mean, and confirm the code tables are official.
-- Identify places on the map. For example, the **Lausmann Annex** (200 S Ivy St) was confirmed as City of Medford building-department offices through the Southern Oregon builders' association directory (buildso.com).
+- Identify places on the map. For example, the **Lausmann Annex** (200 S Ivy St) was confirmed as City of Medford offices (Building Safety and Business Licensing) through the City of Medford's official website. A builders' association directory was the source first used, but that link later stopped working.
 - Find authoritative sources for every formula (section 4, Round 4).
 
 When Jordan asked for business vs. house to be verified, they approved downloading the county assessor records. Each building's type now comes from its official county class, not from checking buildings one at a time. Places that appear on the map but not in OpenStreetMap's tags (for example the old Medford library and the merged Courthouse & County Offices) were added or changed on Jordan's instructions. They are listed in the "user edits" block of `raw data/scripts/build.py`.
