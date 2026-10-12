@@ -171,7 +171,7 @@
   const zoneColor = css.getPropertyValue("--zone").trim();
 
   // Shaded zone: the exact outline used for every count (band + local bulges - small notches).
-  L.polygon(zoneRings, { color: zoneColor, weight: 1, opacity: 1, fillColor: zoneColor, fillOpacity: 1, interactive: false, className: "zone" }).addTo(map);
+  const zoneLayer = L.polygon(zoneRings, { color: zoneColor, weight: 1, opacity: 1, fillColor: zoneColor, fillOpacity: 1, interactive: false, className: "zone" }).addTo(map);
   /*HOMES_LAYERS*/
   const path = L.polyline(route, { color: accent, weight: 4, opacity: .9, lineJoin: "round", lineCap: "round" }).addTo(map);
 
@@ -311,13 +311,16 @@
     });
   }
   map.on("zoomend", declutter);
-  // Every load opens fully zoomed out (N Ross Ln to E 9th St). Until someone moves the map, a resize re-fits it
+  // Every load opens fully zoomed out (N Ross Ln to E 9th St); on phones it opens on the shaded area instead, so it isn't cramped.
+  // Until someone moves the map, a resize re-fits it
   // (also fixes a page opened in a background tab, which has no size when it first loads).
   let touched = false;
   ["pointerdown", "wheel", "keydown"].forEach(ev => map.getContainer().addEventListener(ev, () => { touched = true; }));
   const fit = () => {
     map.invalidateSize(); fitMinZoom();
-    if (map.getSize().x) map.setView(VIEW.getCenter(), map.getMinZoom(), { animate: false });
+    const size = map.getSize();
+    if (size.x && size.x <= 760) map.fitBounds(zoneLayer.getBounds(), { padding: [8, 8], animate: false });
+    else if (size.x) map.setView(VIEW.getCenter(), map.getMinZoom(), { animate: false });
     declutter();
   };
   fit(); window.addEventListener("load", fit);

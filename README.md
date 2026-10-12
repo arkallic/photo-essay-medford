@@ -60,7 +60,7 @@ Open `analysis-and-map.html` in any web browser (double-click it in Finder).
   | brown | church |
   | pink | nonprofit / community |
 - **Number bubbles** (white, green outline; zoom in to see them): homes per street block. The black number counts houses. The blue **+N** counts multi-unit buildings, duplex up to apartment building.
-- **Zoom and pan**: the map always opens fully zoomed out. Scroll, pinch, or use the + / − buttons. You can zoom out until the view spans N Ross Ln (west) to E 9th St (east), on any screen size. Dragging stops at the edge of that area.
+- **Zoom and pan**: the map always opens fully zoomed out (on a phone it opens zoomed in to fit the shaded area). Scroll, pinch, or use the + / − buttons. You can zoom out until the view spans N Ross Ln (west) to E 9th St (east), on any screen size. Dragging stops at the edge of that area.
 
 **The stats drawer**
 - The page always opens with the drawer closed. To open it, click the orange **▴ Show stats & list** button at the top of the map, or the bar along the bottom. The drawer slides up over the map (about 85% of the window). To close it, click **Hide stats & list** or press **Esc**.
