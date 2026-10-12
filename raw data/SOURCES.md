@@ -10,7 +10,6 @@ Where every piece of data on `../analysis-and-map.html` came from. All downloads
 | AI agent runs | 4 runs, ≈ 2 hours of real (clock) time, running alongside the direct work. Because many of the 245 agents worked at once (up to about 10–16 at a time), this added up to ≈ 10 agent-hours of work, counting each agent's time separately, like person-hours. |
 | When the agents ran | 2:29–3:42 PM full verification · 3:50–4:07 PM re-check · 5:23–5:42 PM final check · 6:12–6:26 PM formula sources |
 
-*Why 2 hours of agent runs adds up to about 10 agent-hours:* the agents worked side by side. If 10 people each work for 1 hour at the same time, an hour passes on the clock but 10 hours of work get done.
 
 | Run | Real time | Agent time added together |
 |---|---|---|
