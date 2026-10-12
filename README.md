@@ -4,22 +4,12 @@
 
 **Jordan Whitlock - PSU.edu Communities Class Assignment**
 
-**Time spent: Sunday, Oct 11, 2026, about 11:57 AM – 8:30 PM (≈ 8½ hours)**
+**Time spent: Sunday, Oct 11, 2026, 11:57 AM – 8:30 PM**
 
 | | |
 |---|---|
-| Direct work, Jordan and Claude together | ≈ 5¾ hours of active back-and-forth: designing, building, reviewing and correcting (breaks longer than 15 minutes not counted) |
-| AI agent runs | 4 runs, ≈ 2 hours of real (clock) time, running alongside the direct work. Because many of the 245 agents worked at once (up to about 10–16 at a time), this added up to ≈ 10 agent-hours of work, counting each agent's time separately, like person-hours. |
-| When the agents ran | 2:29–3:42 PM full verification · 3:50–4:07 PM re-check · 5:23–5:42 PM final check · 6:12–6:26 PM formula sources |
-
-
-| Run | Real time | Agent time added together |
-|---|---|---|
-| Full verification | 73 min | ≈ 6 h 21 min (151 agents) |
-| Re-check | 17 min | ≈ 59 min (13 agents) |
-| Final check | 19 min | ≈ 1 h 6 min (18 agents) |
-| Formula sources | 14 min | ≈ 1 h 29 min (63 agents) |
-| **Total** | **≈ 2 h** | **≈ 9 h 55 min** |
+| Direct work time (Jordan and Claude) | ≈ 5¾ hours |
+| Direct agent run time | ≈ 2 hours, in 4 runs: 2:29–3:42 PM, 3:50–4:07 PM, 5:23–5:42 PM, 6:12–6:26 PM |
 
 A map of a photo walk in Medford, Oregon (Saturday Oct 10, 2026), with the area around the route shaded and analysed: homes, services, bus stops, streets and walking times.
 
