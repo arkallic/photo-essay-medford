@@ -39,7 +39,7 @@ These shape every number on the page. They are choices, so no outside source app
 | Road access as its own category, and all walking on roads, checked against Jordan's photo timestamps | Streets tile; walk-time method and pace |
 | Acres only | Units throughout |
 
-The full list is in `../RESEARCH_PIPELINE.md`, under *Measurements and statistics the photographer chose*.
+The full list is in `../RESEARCH_PIPELINE.md`, under *Measurements and statistics Jordan chose*.
 
 ## Jordan's design
 

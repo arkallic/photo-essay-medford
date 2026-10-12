@@ -2,14 +2,14 @@
 
 This document explains how `analysis-and-map.html` was produced: where the data came from, what was looked up online, how the numbers were calculated, and how the result was independently checked by teams of AI agents. For how to *use* or *rebuild* the map, see `README.md`. For the full source list and formula citations, see `raw data/SOURCES.md`.
 
-The work was done in one long conversation (Oct 10–11, 2026) between the photographer and Claude, an AI assistant from Anthropic, running in Claude Code on this Mac.
+The work was done in one long conversation (Oct 10–11, 2026) between Jordan and Claude, an AI assistant from Anthropic, running in Claude Code on this Mac.
 
-- **Claude's part:** wrote and ran the scripts, downloaded the data the photographer pointed to, ran the checks, and reported back.
-- **The photographer's part:** decided what the project would be and steered it at every step: what to show, what to calculate, which statistics to run and display, what to research and how, and when the result was right.
+- **Claude's part:** wrote and ran the scripts, downloaded the data Jordan pointed to, ran the checks, and reported back.
+- **Jordan's part:** decided what the project would be and steered it at every step: what to show, what to calculate, which statistics to run and display, what to research and how, and when the result was right.
 
 ## Who did what
 
-### The photographer
+### Jordan
 - **Set the project.** Asked for a numbered map of where the photos were taken, ordered by capture time. Then asked for a second map that shades the area around the walk and shows the services and homes in it, and later a third with every building coloured by type.
 - **Drew the route and the area by hand.** Sketched the walking route on a screenshot, corrected it between photos #4 and #5 with a second sketch, and sketched how wide the shaded band should be. Asked for the inside of the loop to be filled with the same shade as the band. Later widened the band evenly by a measure they chose: the distance between the Alba Park and Oregon Pacific Financial icons.
   - Asked for the band to be extended only locally, and naturally, to take in nearby services: the Education Service District and Holly Theater, Medford Police, and the community center.
@@ -31,7 +31,7 @@ The work was done in one long conversation (Oct 10–11, 2026) between the photo
     - bus icons, first small cars, then larger buses in their own bubble and in a colour that stands out.
   - Asked for the jail dot to be removed.
   - Corrected how places were described (for example, the sheriff entry is a jail with some sheriff staff).
-- **Defined the categories and chose what to measure, how to measure it, and how to show it.** The full list is in [Measurements and statistics the photographer chose](#measurements-and-statistics-the-photographer-chose) below.
+- **Defined the categories and chose what to measure, how to measure it, and how to show it.** The full list is in [Measurements and statistics Jordan chose](#measurements-and-statistics-jordan-chose) below.
 - **Directed the research and how it was done.**
   - Asked for business vs. house to be verified. They first asked whether Google Maps could be used, then approved downloading the Jackson County assessor data instead.
   - Asked how we know the county map server really belongs to Jackson County, and for proof.
@@ -51,11 +51,11 @@ The work was done in one long conversation (Oct 10–11, 2026) between the photo
   - Publish it all on GitHub, with a public web page for the map.
   - Never delete permanently; move things to the Trash.
   - Never download owner names or addresses.
-  - Leave the photographer's own folders (`photos/`, `preview screenshots/`) untouched.
+  - Leave Jordan's own folders (`photos/`, `preview screenshots/`) untouched.
 
-### Measurements and statistics the photographer chose
+### Measurements and statistics Jordan chose
 
-Every number on the page exists because the photographer asked for it, or asked for it to be changed.
+Every number on the page exists because Jordan asked for it, or asked for it to be changed.
 
 **What gets counted**
 - **Homes:**
@@ -121,8 +121,8 @@ Every number on the page exists because the photographer asked for it, or asked 
   - the stats under the map, with a collapse caret;
   - the stats drawer to cover most of the window.
 
-### How the photographer directed the agents and guided the checking
-- **Set the standard the agents worked to, not just the instruction to use them.** On Oct 11, about 2:26 PM, the photographer declared the map final and asked for "a full pass on all data we have and verify." At the same time they raised Claude Code's thinking level to its highest setting (Ultracode). The meat of the request, and what they wanted, was more than "use agents". It was:
+### How Jordan directed the agents and guided the checking
+- **Set the standard the agents worked to, not just the instruction to use them.** On Oct 11, about 2:26 PM, Jordan declared the map final and asked for "a full pass on all data we have and verify." At the same time they raised Claude Code's thinking level to its highest setting (Ultracode). The meat of the request, and what they wanted, was more than "use agents". It was:
   - check everything, not a sample;
   - don't trust the first answer;
   - prove each number from the raw data;
@@ -133,17 +133,17 @@ Every number on the page exists because the photographer asked for it, or asked 
   - **"Verify"** meant the checks had to be independent. Each agent started fresh, with no access to the reasoning that produced the numbers, and wrote its own scripts. Agreement therefore meant two separate routes arrived at the same answer.
   - **Not trusting the first answer** applied to the checkers too. Every problem a checker reported went to three skeptics whose job was to *disprove* it by reproducing it themselves. A problem only counted if it survived. This is why two-thirds of all agents were skeptics.
   - **Making sure nothing was missed** meant a completeness critic. It reviewed what had been covered and named what nobody had checked, and gap agents then checked those things.
-  - **Fixes were checked too.** Once the problems were fixed, a second team re-verified the changed parts (Run 2). After the photographer's next round of changes, a third team checked again (Run 3).
-  - **Sources were held to the same standard.** When the photographer asked for proof of the formulas, each source a researcher found was reopened by two separate verifiers. They had to confirm the source states the exact formula or value claimed (Run 4). That is how the WGS 72 vs. WGS 84 mix-up was caught.
-- **Kept that standard on for all the agent work.** The highest thinking level stayed on until about 6:30 PM. All four agent runs happened inside that window. The photographer then switched it off for the remaining smaller edits, which were made directly, without agent teams.
+  - **Fixes were checked too.** Once the problems were fixed, a second team re-verified the changed parts (Run 2). After Jordan's next round of changes, a third team checked again (Run 3).
+  - **Sources were held to the same standard.** When Jordan asked for proof of the formulas, each source a researcher found was reopened by two separate verifiers. They had to confirm the source states the exact formula or value claimed (Run 4). That is how the WGS 72 vs. WGS 84 mix-up was caught.
+- **Kept that standard on for all the agent work.** The highest thinking level stayed on until about 6:30 PM. All four agent runs happened inside that window. Jordan then switched it off for the remaining smaller edits, which were made directly, without agent teams.
 - **What prompted each run:**
   - **Run 1, the full verification:** the request above.
   - **Run 2, the re-check:** Run 1's fixes, made under the same standing instruction.
-  - **Run 3, the final check:** the photographer's next round of changes: separating public buildings from businesses, the bus icon colour, the icon legend, the zoom bounds, and more.
+  - **Run 3, the final check:** Jordan's next round of changes: separating public buildings from businesses, the bus icon colour, the icon legend, the zoom bounds, and more.
   - **Run 4, the formula sources:** their direct request to "find sources that prove" each formula.
-- **Pointed the checking at specific doubts.** Many checks started from something the photographer questioned. Each doubt listed under *Measurements and statistics the photographer chose* was rechecked from the raw data and, where it was wrong, corrected. So were the page problems they reported (see *Reviewed every version* above).
+- **Pointed the checking at specific doubts.** Many checks started from something Jordan questioned. Each doubt listed under *Measurements and statistics Jordan chose* was rechecked from the raw data and, where it was wrong, corrected. So were the page problems they reported (see *Reviewed every version* above).
 
-**Agent stats: what the photographer's request added up to**
+**Agent stats: what Jordan's request added up to**
 
 | | |
 |---|---|
@@ -159,10 +159,10 @@ The full breakdown, by job and by subject, is in section 4 under *Agent statisti
 
 ### Claude
 - **Turned each request into working code.** Wrote the Python scripts and the web page, and rebuilt the map after every change.
-- **Fetched the data.** Downloaded from the sources the photographer approved: OpenStreetMap, the Jackson County layers and code tables, and the Nominatim place search. Read the photo times and positions, and stripped the camera metadata from the photos.
+- **Fetched the data.** Downloaded from the sources Jordan approved: OpenStreetMap, the Jackson County layers and code tables, and the Nominatim place search. Read the photo times and positions, and stripped the camera metadata from the photos.
 - **Did the research legwork.** Ran web searches and read pages to find the county layers, what the codes mean, who owns the code tables, what some places are, and published sources for the formulas.
-- **Worked out the methods.** Designed the methods for the photographer to approve or change: the zone outline, matching buildings to parcels, routing along roads, measuring the pace from the photos, and keeping icons apart.
-- **Ran the checks** described below, reported the problems found, and fixed them. Corrections were made where the photographer had questioned something.
+- **Worked out the methods.** Designed the methods for Jordan to approve or change: the zone outline, matching buildings to parcels, routing along roads, measuring the pace from the photos, and keeping icons apart.
+- **Ran the checks** described below, reported the problems found, and fixed them. Corrections were made where Jordan had questioned something.
 
 ---
 
@@ -170,7 +170,7 @@ The full breakdown, by job and by subject, is in section 4 under *Agent statisti
 
 | | |
 |---|---|
-| Inputs from the photographer | 6 iPhone photos (HEIC), 3 hand-drawn sketches, and many rounds of feedback |
+| Inputs from Jordan | 6 iPhone photos (HEIC), 3 hand-drawn sketches, and many rounds of feedback |
 | Public data sources | OpenStreetMap (map data + place search), Jackson County Assessor & GIS (parcels, buildings, code tables) |
 | Software | Python 3 standard library only (no extra packages); Leaflet 1.9.4 for the web map |
 | AI agents used for checking and research | **245 started, 237 finished**, across 4 multi-agent runs (details below) |
@@ -181,9 +181,9 @@ The full breakdown, by job and by subject, is in section 4 under *Agent statisti
 
 ## 1. Gathering the data
 
-**The photographer's photos.** The capture time and GPS position of each photo were read with macOS's built-in `mdls` tool. Photos were numbered 1–6 by capture time. Copies were converted to JPEG with camera metadata removed (location, device details), and photo #3 was rotated upright.
+**Jordan's photos.** The capture time and GPS position of each photo were read with macOS's built-in `mdls` tool. Photos were numbered 1–6 by capture time. Copies were converted to JPEG with camera metadata removed (location, device details), and photo #3 was rotated upright.
 
-**The photographer's sketches.** The three sketches (route, route correction, band width) are kept in `raw data/data/sketches/`. After the widening described above, the band is 152 m.
+**Jordan's sketches.** The three sketches (route, route correction, band width) are kept in `raw data/data/sketches/`. After the widening described above, the band is 152 m.
 
 **OpenStreetMap.** One download from the official OpenStreetMap API (`/api/0.6/map`) for a box around the walk gave every street, alley, building outline, named place and bus stop. The Overpass query service was tried first, but it was overloaded and returned errors, so the main API was used instead. The OpenStreetMap place search (Nominatim) gave the positions of N Ross Ln and E 9th St, which set the zoom-out limit.
 
@@ -207,7 +207,7 @@ Web searches and page reads were used to:
 - Identify places on the map. For example, the **Lausmann Annex** (200 S Ivy St) was confirmed as City of Medford building-department offices through the Southern Oregon builders' association directory (buildso.com).
 - Find authoritative sources for every formula (section 4, Round 4).
 
-When the photographer asked for business vs. house to be verified, they approved downloading the county assessor records. Each building's type now comes from its official county class, not from checking buildings one at a time. Places that appear on the map but not in OpenStreetMap's tags (for example the old Medford library and the merged Courthouse & County Offices) were added or changed on the photographer's instructions. They are listed in the "user edits" block of `raw data/scripts/build.py`.
+When Jordan asked for business vs. house to be verified, they approved downloading the county assessor records. Each building's type now comes from its official county class, not from checking buildings one at a time. Places that appear on the map but not in OpenStreetMap's tags (for example the old Medford library and the merged Courthouse & County Offices) were added or changed on Jordan's instructions. They are listed in the "user edits" block of `raw data/scripts/build.py`.
 
 ## 3. Turning data into the map
 
@@ -215,8 +215,8 @@ All processing is done by nine small Python scripts in `raw data/scripts/`, run 
 
 1. **Shaded zone.** The loop of the route, plus everything within 152 m of the route line, plus three tapered bulges, minus two small notches. It is traced as one outline on a 2 m grid. The same outline is used both to draw the shading and to decide what counts as "inside".
 2. **Building classes.** Each OpenStreetMap building outline is matched to the county parcel it sits on. It is then classed from that parcel's county records: house, duplex–fourplex, apartment, business, government, church, nonprofit, or garage/shed. Government, church and nonprofit are told apart by the parcel's owner type (city, county, state, school district, church, benevolent organisation…), as recorded in the county's property class.
-3. **Places and bus stops.** Named places and bus stops inside the zone come from OpenStreetMap, plus the photographer's additions, removals and merges.
-4. **Walk times.** For every home, the shortest walk along streets and alleys only (Dijkstra's shortest-path method) is found to the nearest place of each kind. Walk distances are turned into minutes at about 60 m/min (≈ 2.2 mph), the pace measured from the photographer's own photo timestamps.
+3. **Places and bus stops.** Named places and bus stops inside the zone come from OpenStreetMap, plus Jordan's additions, removals and merges.
+4. **Walk times.** For every home, the shortest walk along streets and alleys only (Dijkstra's shortest-path method) is found to the nearest place of each kind. Walk distances are turned into minutes at about 60 m/min (≈ 2.2 mph), the pace measured from Jordan's own photo timestamps.
 5. **Page.** Everything is written into one self-contained HTML file, with the photos embedded.
 
 ## 4. Independent checking by AI agent teams
@@ -279,7 +279,7 @@ These figures come from the session's run logs. A "tool action" is one step an a
 
 **By job**
 
-| Job | What the photographer had them do | Agents started | Finished | Tool actions | Share of agents |
+| Job | What Jordan had them do | Agents started | Finished | Tool actions | Share of agents |
 |---|---|---|---|---|---|
 | Checkers | Own one area of the map and recompute it from the raw data | 14 | 14 | 573 | 6% |
 | Skeptics | Try to refute each reported problem by reproducing it independently (3 per problem) | 164 | 156 | 1,754 | 67% |
@@ -320,5 +320,5 @@ Each row counts that subject's checkers and skeptics across all runs.
 
 - OpenStreetMap and county records are only as current and complete as their volunteers and assessors make them. A few county dwelling records have no matching building outline, so homes may be slightly undercounted.
 - Walk times use roads and alleys only (no cut-throughs across parking lots or parks), at one person's measured pace.
-- Which places count as "services", and in which category, are editorial choices made by the photographer, not something the data decides.
+- Which places count as "services", and in which category, are editorial choices made by Jordan, not something the data decides.
 - The verification agents are AI models. They are independent of each other and of the original work, and every reported problem had to be reproduced by several of them. Still, they are not a substitute for a human expert's review.
