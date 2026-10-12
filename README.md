@@ -2,6 +2,8 @@
 
 **[View Data page and map](https://arkallic.github.io/photo-essay-medford/)** — https://arkallic.github.io/photo-essay-medford/
 
+**Jordan Whitlock - PSU.edu Communities Class Assignment**
+
 A map of a photo walk in Medford, Oregon (Saturday Oct 10, 2026), with the area around the route shaded and analysed: homes, services, bus stops, streets and walking times.
 
 - **How this was researched, downloaded and verified:** `RESEARCH_PIPELINE.md`
