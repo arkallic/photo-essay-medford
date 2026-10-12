@@ -7,8 +7,18 @@ Where every piece of data on `../analysis-and-map.html` came from. All downloads
 | | |
 |---|---|
 | Direct work, Jordan and Claude together | ≈ 5¾ hours of active back-and-forth: designing, building, reviewing and correcting (breaks longer than 15 minutes not counted) |
-| AI agent runs | 4 runs, ≈ 2 hours of run time, running alongside the direct work. 245 agents with ≈ 10 hours of combined agent working time, because many ran at once. |
+| AI agent runs | 4 runs, ≈ 2 hours of real (clock) time, running alongside the direct work. Because many of the 245 agents worked at once (up to about 10–16 at a time), this added up to ≈ 10 agent-hours of work, counting each agent's time separately, like person-hours. |
 | When the agents ran | 2:29–3:42 PM full verification · 3:50–4:07 PM re-check · 5:23–5:42 PM final check · 6:12–6:26 PM formula sources |
+
+*Why 2 hours of agent runs adds up to about 10 agent-hours:* the agents worked side by side. If 10 people each work for 1 hour at the same time, an hour passes on the clock but 10 hours of work get done.
+
+| Run | Real time | Agent time added together |
+|---|---|---|
+| Full verification | 73 min | ≈ 6 h 21 min (151 agents) |
+| Re-check | 17 min | ≈ 59 min (13 agents) |
+| Final check | 19 min | ≈ 1 h 6 min (18 agents) |
+| Formula sources | 14 min | ≈ 1 h 29 min (63 agents) |
+| **Total** | **≈ 2 h** | **≈ 9 h 55 min** |
 
 ## Jordan's own material
 
