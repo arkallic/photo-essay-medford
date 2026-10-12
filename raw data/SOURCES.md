@@ -2,6 +2,14 @@
 
 Where every piece of data on `../analysis-and-map.html` came from. All downloads were made on **Oct 11, 2026**.
 
+**Time spent: Sunday, Oct 11, 2026, about 11:57 AM – 8:30 PM (≈ 8½ hours)**
+
+| | |
+|---|---|
+| Direct work, Jordan and Claude together | ≈ 5¾ hours of active back-and-forth: designing, building, reviewing and correcting (breaks longer than 15 minutes not counted) |
+| AI agent runs | 4 runs, ≈ 2 hours of run time, running alongside the direct work. 245 agents with ≈ 10 hours of combined agent working time, because many ran at once. |
+| When the agents ran | 2:29–3:42 PM full verification · 3:50–4:07 PM re-check · 5:23–5:42 PM final check · 6:12–6:26 PM formula sources |
+
 ## Jordan's own material
 
 | What | Used for | File(s) here |

@@ -7,6 +7,14 @@ The work was done in one long conversation (Sunday, Oct 11, 2026, about 11:57 AM
 - **Claude's part:** wrote and ran the scripts, downloaded the data Jordan pointed to, ran the checks, and reported back.
 - **Jordan's part:** decided what the project would be and steered it at every step: what to show, what to calculate, which statistics to run and display, what to research and how, and when the result was right.
 
+**Time spent: Sunday, Oct 11, 2026, about 11:57 AM – 8:30 PM (≈ 8½ hours)**
+
+| | |
+|---|---|
+| Direct work, Jordan and Claude together | ≈ 5¾ hours of active back-and-forth: designing, building, reviewing and correcting (breaks longer than 15 minutes not counted) |
+| AI agent runs | 4 runs, ≈ 2 hours of run time, running alongside the direct work. 245 agents with ≈ 10 hours of combined agent working time, because many ran at once. |
+| When the agents ran | 2:29–3:42 PM full verification · 3:50–4:07 PM re-check · 5:23–5:42 PM final check · 6:12–6:26 PM formula sources |
+
 ## Who did what
 
 ### Jordan
