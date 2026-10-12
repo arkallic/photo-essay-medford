@@ -50,54 +50,23 @@ These shape every number on the page. They are choices, so no outside source app
 
 ## Your design
 
-### The map and page
-You designed how the map looks and works. Claude built each version, and you reviewed it in the browser.
+**The map and page.** You designed what the map shows and how it reads. It grew in three steps: a photo map, then the shaded services map, then coloured buildings. Your rules shaped every layer:
+- your choice of icons;
+- nothing overlapping at any zoom;
+- name-only popups;
+- a stats drawer you can always open;
+- zoom limits set by real streets.
 
-- **Build:**
-  - a photo map with numbered pins and your route;
-  - then a separate copy with the shaded band and services;
-  - then a copy with coloured buildings.
-- **Icons:**
-  - your choices: crosses, a government building (from your example image), scales, a running man, trees, a school, a medical cross, a clearer apple, a money sign, and a recreation field;
-  - bus icons that went from small cars to larger buses, in their own bubble and a colour that stands out.
-- **Readability:**
-  - no overlaps at any zoom;
-  - no jail dot and no numbers on bus stops;
-  - block bubbles that shrink as you zoom out;
-  - name-only popups;
-  - an icon legend and a building colour key, without repeating the colours under the housing numbers.
-- **Stats:**
-  - a tile grid with a short paragraph, and explanations beside their tiles;
-  - shown under the map in a collapsible drawer that covers most of the window;
-  - an always-visible button to open it;
-  - closed on every load.
-- **Zoom:**
-  - icon sizes set at your planned screenshot zoom;
-  - the zoom-out limit from N Ross Ln to E 9th St, on any screen;
-  - opens fully zoomed out on a computer and closer in on a phone.
-- **List:** compressed, with no bus stops, addresses or distances in feet.
+Claude built each version, and you reviewed it in the browser until it was right.
 
-### The research and verification process
-You set how the work was researched and checked; Claude and its AI agents carried it out.
+**The research and verification process.** You set the standard the work was held to:
+- official county data instead of guesses, with proof the source is Jackson County's;
+- written formulas, each backed by published sources;
+- a full independent verification of everything, at Claude Code's highest thinking level.
 
-- **Data:**
-  - you asked about using Google Maps, then had buildings verified with official Jackson County assessor data, which you approved downloading;
-  - you required proof that the county server is Jackson County's;
-  - you required every formula to be written out with sources that prove it.
-- **Verification:** you asked for "a full pass on all data we have and verify", at Claude Code's highest thinking level. That meant:
-  - every part checked;
-  - every number recomputed from the raw data;
-  - every reported problem independently tested;
-  - nothing missed.
+That standard produced the 245-agent checking and source research. You reviewed every result and had each fix carried through.
 
-  The result was the 245-agent work in `../RESEARCH_PIPELINE.md`.
-- **Review:** you checked each version, questioned anything that looked off, and had each fix carried through everywhere it applied.
-- **Files and publishing:**
-  - keep only the final version;
-  - data and scripts organised in `raw data/`, with everything needed to check or rebuild the map;
-  - delete only to the Trash;
-  - publish on GitHub with a public page;
-  - document it in this file, `../README.md` and `../RESEARCH_PIPELINE.md`, each written to your specification and corrected by you.
+For the full detail of everything you designed, decided and directed, see `../RESEARCH_PIPELINE.md` (*Who did what*).
 
 ## OpenStreetMap
 
