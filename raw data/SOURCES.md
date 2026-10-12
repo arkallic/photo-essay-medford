@@ -2,7 +2,7 @@
 
 Where every piece of data on `../analysis-and-map.html` came from. All downloads were made on **Oct 11, 2026**.
 
-## Your own material
+## Jordan's own material
 
 | What | Used for | File(s) here |
 |---|---|---|
@@ -11,55 +11,55 @@ Where every piece of data on `../analysis-and-map.html` came from. All downloads
 | Route sketch drawn with a mouse on a map screenshot | The walking route | `data/sketches/Pasted 2026-10-11 at 12.00.35 PM.png` |
 | Band-width sketch (black lines showing roughly how far out to shade on each side of the route) | The original band width | `data/sketches/Pasted 2026-10-11 at 12.07.43 PM.png` |
 | Route correction between photos #4 and #5 | The corrected route | `data/sketches/Pasted 2026-10-11 at 12.22.01 PM.png` |
-| Screenshots of the map at the zoom level you planned to use, and of later versions | Icon sizes, overlap fixes, the zoom-out limits, layout fixes | `../preview screenshots/` |
+| Screenshots of the map at the zoom level Jordan planned to use, and of later versions | Icon sizes, overlap fixes, the zoom-out limits, layout fixes | `../preview screenshots/` |
 
-## Your local knowledge
+## Jordan's local knowledge
 
-You have lived in this area for over 20 years. These facts about the walk and the neighbourhood came from that first-hand knowledge, not from a dataset:
+Jordan has lived in this area for over 20 years. These facts about the walk and the neighbourhood came from that first-hand knowledge, not from a dataset:
 
-- **The food stop.** You stopped for about 15 minutes, by your best guess, between photos #4 and #5 for food and drinks, across from Schuller apartments. That leg is left out of the walking pace.
+- **The food stop.** Jordan stopped for about 15 minutes (Jordan's best guess) between photos #4 and #5 for food and drinks, across from Schuller apartments. That leg is left out of the walking pace.
 - **Adult Supervision is also an election office.** Jackson County Adult Supervision Service is also the election office / ballot drop box, so they share one icon.
 - **The "Sheriff" entry is really the jail**, with a small amount of sheriff's staff.
-- **The Lausmann Annex.** You noted it as a postal service, which is why it was included. Research then identified it as City of Medford offices; see *Other references*.
+- **The Lausmann Annex.** Jordan noted it as a postal service, which is why it was included. Research then identified it as City of Medford offices; see *Other references*.
 - **The McLoughlin school field** is used by the public as a walking and running track, for walking dogs and for hanging out on the grass. That is why it counts as recreation.
-- **The bus stop count.** There are 7 bus stops along the walk (at that point the map was missing one). You also spotted a bus stop by the community center that wasn't counted.
-- **Places to add**, which you knew were there: the employment department, city hall, the park along S Ivy St, Jackson County Health & Human Services, St Mark's Episcopal Parish Church, First Presbyterian, Bank of America and the old library.
-- **Things that looked wrong**, which led to checks and corrections: the La Clinica, YMCA and church buildings shown as "public"; walk times that seemed too short for the pace you walked; "36 bus stops per sq mi" and "0.33 sq mi"; and "9 government and courts".
+- **The bus stop count.** There are 7 bus stops along the walk (at that point the map was missing one). Jordan also spotted a bus stop by the community center that wasn't counted.
+- **Places to add**, which Jordan knew were there: the employment department, city hall, the park along S Ivy St, Jackson County Health & Human Services, St Mark's Episcopal Parish Church, First Presbyterian, Bank of America and the old library.
+- **Things that looked wrong**, which led to checks and corrections: the La Clinica, YMCA and church buildings shown as "public"; walk times that seemed too short for the pace Jordan walked; "36 bus stops per sq mi" and "0.33 sq mi"; and "9 government and courts".
 
-## Your ideas and decisions (what to measure)
+## Jordan's ideas and decisions (what to measure)
 
 These shape every number on the page. They are choices, so no outside source applies. The biggest:
 
 | Idea or decision | Where it shows up |
 |---|---|
-| Study only what is inside a shaded band along the route. You set its width and shaped its edges. | The shaded zone; every count and statistic; `settings/zone_cfg.json` |
+| Study only what is inside a shaded band along the route. Jordan set its width and shaped its edges. | The shaded zone; every count and statistic; `settings/zone_cfg.json` |
 | Count houses and apartment buildings as homes, each building once, and turn the count into density | Homes and Density tiles; coloured buildings |
-| Access to services: the ratio of homes to services per acre. Together we arrived at measuring each home's walk to the nearest service, and you finalized how it is shown. | "1 per ≈ N acres", "≈ N homes each" and walk-time lines on every tile |
+| Access to services: the ratio of homes to services per acre. Together we arrived at measuring each home's walk to the nearest service, and Jordan finalized how it is shown. | "1 per ≈ N acres", "≈ N homes each" and walk-time lines on every tile |
 | Count services as map icons, separate from buildings. Split government, businesses, churches and nonprofits. | Tile wording; building colours; Businesses and Other buildings tiles |
-| Road access as its own category, and all walking on roads, checked against your photo timestamps | Streets tile; walk-time method and pace |
+| Road access as its own category, and all walking on roads, checked against Jordan's photo timestamps | Streets tile; walk-time method and pace |
 | Acres only | Units throughout |
 
 The full list is in `../RESEARCH_PIPELINE.md`, under *Measurements and statistics the photographer chose*.
 
-## Your design
+## Jordan's design
 
-**The map and page.** You designed what the map shows and how it reads. It grew in three steps: a photo map, then the shaded services map, then coloured buildings. Your rules shaped every layer:
-- your choice of icons;
+**The map and page.** Jordan designed what the map shows and how it reads. It grew in three steps: a photo map, then the shaded services map, then coloured buildings. Jordan's rules shaped every layer:
+- Jordan's choice of icons;
 - nothing overlapping at any zoom;
 - name-only popups;
-- a stats drawer you can always open;
+- a stats drawer that can always be opened;
 - zoom limits set by real streets.
 
-Claude built each version, and you reviewed it in the browser until it was right.
+Claude built each version, and Jordan reviewed it in the browser until it was right.
 
-**The research and verification process.** You set the standard the work was held to:
+**The research and verification process.** Jordan set the standard the work was held to:
 - official county data instead of guesses, with proof the source is Jackson County's;
 - written formulas, each backed by published sources;
 - a full independent verification of everything, at Claude Code's highest thinking level.
 
-That standard produced the 245-agent checking and source research. You reviewed every result and had each fix carried through.
+That standard produced the 245-agent checking and source research. Jordan reviewed every result and had each fix carried through.
 
-For the full detail of everything you designed, decided and directed, see `../RESEARCH_PIPELINE.md` (*Who did what*).
+For the full detail of everything Jordan designed, decided and directed, see `../RESEARCH_PIPELINE.md` (*Who did what*).
 
 ## OpenStreetMap
 
@@ -190,6 +190,6 @@ distance point → segment:  t = clamp(((P − A)·(B − A)) / |B − A|², 0, 
 - Zone outline traced from a grid — marching squares, the 2-D case of W. E. Lorensen & H. E. Cline, "Marching cubes: a high resolution 3D surface construction algorithm", *ACM SIGGRAPH Computer Graphics* 21(4): 163–169 (1987), doi:10.1145/37402.37422 ; described with linear interpolation in the scikit-image documentation for `measure.find_contours`, https://scikit-image.org/docs/stable/api/skimage.measure.html
 - Outline simplification — D. H. Douglas & T. K. Peucker, "Algorithms for the reduction of the number of points required to represent a digitized line or its caricature", *Cartographica* 10(2): 112–122 (1973), doi:10.3138/FM57-6770-U75U-7727
 
-### 7. Walking pace (from your photos — no outside source)
+### 7. Walking pace (from Jordan's photos — no outside source)
 
 Distance along the route between consecutive photos ÷ time between their timestamps, over the legs #1→#2, #2→#3, #3→#4 and #5→#6 (the #4→#5 leg, with the food stop, is left out): 1,733 m in 29.1 min ≈ 60 m per minute.

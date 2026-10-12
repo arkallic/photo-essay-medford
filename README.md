@@ -17,10 +17,10 @@ Photo Essay/
 ├── README.md                this file
 ├── RESEARCH_PIPELINE.md     how the work was done and checked
 ├── photos/                  the six original iPhone photos (HEIC)
-├── preview screenshots/     your screenshots
+├── preview screenshots/     Jordan's screenshots
 └── raw data/                everything needed to check or rebuild the map
     ├── SOURCES.md
-    ├── data/          raw inputs (as downloaded or as you provided them)
+    ├── data/          raw inputs (as downloaded or as Jordan provided them)
     ├── settings/      the things you might edit
     ├── scripts/       the Python scripts that build the map
     ├── outputs/       what the scripts produce (regenerated on every rebuild)
@@ -96,7 +96,7 @@ Open `analysis-and-map.html` in any web browser (double-click it in Finder).
 | `jackson-county/Stat_Class.json`, `Property_Class_Descriptions.json` | Official meanings of the county codes. |
 | `photos/photos.json`, `photos/photo-1.jpg`–`photo-6.jpg` | The six photo pins: number (by capture time), position, time, original file name; images with camera metadata removed (#3 rotated upright). |
 | `route.json` | The walking route as a closed loop of [lat, lng] points. |
-| `sketches/` | Your sketches: route (`…12.00.35 PM.png`), band width (`…12.07.43 PM.png`), route correction between photos #4 and #5 (`…12.22.01 PM.png`). |
+| `sketches/` | Jordan's sketches: route (`…12.00.35 PM.png`), band width (`…12.07.43 PM.png`), route correction between photos #4 and #5 (`…12.22.01 PM.png`). |
 
 ### `settings/` — what you might edit
 
